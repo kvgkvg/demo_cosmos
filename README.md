@@ -5,9 +5,10 @@ egocentric video captioning (EgoDex `val` split).
 
 Two independent things live here:
 
-1. **`infer_cosmos.py`** — a standalone Cosmos3-Nano captioning script. Same
-   chunked 2-stage mechanism as the VR-finetune-VLM rollout, but it imports
-   nothing from that repo: copy this folder anywhere and it runs.
+1. **`infer_cosmos.py`** — a standalone Cosmos3-Nano captioning script. Nothing
+   is imported from any other repo, and the 15 clips plus a ready-made manifest
+   ship here, so a fresh clone can run inference straight away. **Most of this
+   README is about setting that up and running it.**
 2. **`index.html`** — a static presentation page walking through the review
    findings (Qwen better / Cosmos better / both bad, plus Cosmos' strengths and
    weaknesses), each backed by real example clips and side-by-side captions.
@@ -18,80 +19,25 @@ Two independent things live here:
 
 ```
 demo_cosmos/
-├── infer_cosmos.py     standalone Cosmos3-Nano inference (no repo imports)
-├── system_prompt.txt   caption-format contract fed to the model as the system prompt
-├── build_demo.py       regenerates index.html + videos/ + captions/ from the repo JSONLs
-├── index.html          the presentation page (open it directly, no server needed)
-├── examples.json       the data the page embeds, as a standalone file
-├── videos/ep<NNN>.mp4  15 example clips (~112 MB)
-├── posters/ep<NNN>.jpg poster frame per clip, so nothing shows as a black box
-└── captions/ep<NNN>/   gt.srt · qwen.srt · cosmos.srt  per example
+├── infer_cosmos.py         standalone Cosmos3-Nano inference (no repo imports)
+├── system_prompt.txt       caption-format contract, fed as the system prompt
+├── example_manifest.jsonl  15 episodes pointing at videos/ — run inference on this
+├── videos/ep<NNN>.mp4      the 15 clips (~112 MB)
+│
+├── index.html              the presentation page (open it directly, no server)
+├── build_demo.py           regenerates the page + clips + captions + the manifest
+├── examples.json           the data the page embeds, as a standalone file
+├── posters/ep<NNN>.jpg     poster frame per clip, so nothing shows as a black box
+└── captions/ep<NNN>/       gt.srt · qwen.srt · cosmos.srt  per example
 ```
 
-`<NNN>` is the 0-based line number of that episode in
-`stage0/benchmark/caption/val.jsonl` — the same index the review server shows in
-its JUDGE queue, so a number in the page maps straight back to the manifest.
+`<NNN>` numbers the examples; it is the 0-based line number of that episode in
+the benchmark split the demo was cut from, so a number on the page maps back to
+the original manifest.
 
 ---
 
-## 1. View the demo
-
-```bash
-xdg-open index.html          # or just double-click it
-```
-
-No server, no build step, no network — the page inlines its data and reads the
-clips from `videos/`. Keep `index.html`, `videos/` and `captions/` together.
-
-How to drive it during a presentation:
-
-- Sections at the top: **Overall verdict → Strengths → Weaknesses**.
-- Every finding shows its example episodes inline — the real clip, playable on
-  the spot, nothing to expand first.
-- Each example is: **video + live caption strip** on the left, the **dot
-  timeline** on the right.
-- **The dot timeline is the main visual.** One shared time axis per episode:
-
-  ```
-  Qwen     •      •        •     •  •
-  ═══════════════════════════════════════
-  Cosmos  •    •         •        •
-  ```
-
-  **One dot = one caption**, placed at that caption's start timestamp. Qwen above the
-  line, Cosmos below it, one shared time axis. Density and alignment read in one
-  glance: a cluster of dots = too many captions, a bare stretch = a gap, dots
-  that don't line up across the axis = the two models disagree about when
-  something happened. The caption's exact span is in its hover tooltip.
-- **The axis is normalized to the longest timestamp in the episode, not to the
-  clip.** Models routinely predict cues that run past the end of the video, and
-  clipping the axis at the clip length would push those dots off the widget
-  entirely. So the axis covers `max(clip length, latest predicted end)` and the
-  line runs the full width of it. Dot positions stay linear and true throughout;
-  nothing is clamped or faked, and the tick labels are the real times. How far a
-  track overruns the clip is called out in its lane label — `+30s past end` on a
-  10-second clip.
-- **Press play and the captions run with the video.** The strip under the player
-  shows what each of the three says *at the current frame*, side by side; on the
-  timeline a playhead sweeps across and the dot currently speaking lights up on
-  each lane. When a model has nothing at that moment the strip says
-  **“— no caption —”** in red — that is the gap weakness, live, not a claim in a
-  table.
-- **Hover a dot to read its caption**, **click a dot to jump the video to it**,
-  and **click anywhere on a lane or the axis to scrub**.
-- Ground truth is not on the timeline (two lanes only, by design). It is still
-  in the live caption strip and in the full text under *“Full caption text, all
-  three tracks”*, one click away, if someone asks to see everything.
-- Playing one clip pauses any other, so nothing talks over you.
-- `[left hand]` / `[right hand]` / `[both hands]` / `[ego]` are bolded — that is
-  the hand-identity claim, readable at a glance.
-
-Clips use `preload="none"` and a poster frame, so the page opens instantly and
-only the clip you actually play is read off disk.
-
----
-
-## 2. Run Cosmos inference
+## 1. Set up and run inference
 
 ### Requirements
 
@@ -180,24 +126,40 @@ overlap prompt. Run it after editing the script.
 
 ### Smoke test one episode
 
+`example_manifest.jsonl` ships in this repo and points at the 15 clips in
+`videos/`, so there is nothing to fetch or wire up — run it from the repo root:
+
 ```bash
 python infer_cosmos.py \
-    --manifest ../VR-finetune-VLM/stage0/benchmark/caption/val.jsonl \
-    --prompt   system_prompt.txt \
+    --manifest example_manifest.jsonl \
     --out      preds/smoke.jsonl \
     --limit    1
 ```
 
+`--prompt` defaults to `./system_prompt.txt`, so it only needs passing when you
+want a different prompt.
+
 ### Full run
+
+All 15 example episodes — 5.4 minutes of video:
 
 ```bash
 python infer_cosmos.py \
-    --manifest ../VR-finetune-VLM/stage0/benchmark/caption/val.jsonl \
-    --prompt   system_prompt.txt \
+    --manifest example_manifest.jsonl \
     --out      preds/cosmos3-nano_val.jsonl
 ```
 
 Progress prints per episode (`ok=`, `err=`, events, chunks, seconds/episode).
+Re-running skips episodes already in `--out`, so a killed run resumes.
+
+### Run it on your own videos
+
+Point `--manifest` at your own JSONL — the schema is two required fields, see
+the next section:
+
+```bash
+python infer_cosmos.py --manifest /path/to/your_manifest.jsonl --out preds/mine.jsonl
+```
 
 ### Input format — organizing your data
 
@@ -206,9 +168,12 @@ wrapping array and no trailing commas. Blank lines are skipped. Videos are *not*
 copied or moved — the manifest points at wherever they already live, so you do
 not have to restructure a dataset to run this.
 
+`example_manifest.jsonl` is exactly this, and is the shortest thing to copy —
+its first two lines:
+
 ```json
-{"episode_uid": "assemble_jenga_v2.1/episode_000519", "video": "/data/egodex/.../episode_000519.mp4", "instruction": "assemble_jenga: Assemble block pieces into a Jenga tower on a brown background while sitting.", "duration_s": 10.0}
-{"episode_uid": "assemble_jenga_v2.1/episode_000202", "video": "/data/egodex/.../episode_000202.mp4", "instruction": "Assemble Jenga: Assemble a tower using 18 wooden Jenga blocks on a wooden table.", "duration_s": 10.0}
+{"episode_uid": "assemble_disassemble_soft_legos_v2.1/episode_000137", "video": "videos/ep024.mp4", "instruction": "assemble_disassemble_soft_legos: Disassemble the soft lego tower back into separate pieces on a white background while sitting.", "duration_s": 10.0}
+{"episode_uid": "assemble_disassemble_legos_v2.1/episode_000184", "video": "videos/ep027.mp4", "instruction": "assemble_disassemble_legos: Assemble six legos on a blue tablecloth while sitting against a pink background.", "duration_s": 7.266667}
 ```
 
 Fields, exactly as the code reads them:
@@ -216,7 +181,7 @@ Fields, exactly as the code reads them:
 | Field | Type | Required | Used for |
 |---|---|---|---|
 | `episode_uid` | string | **yes** | identity — carried into the predictions, and the key resume skips on. Must be unique across the manifest. |
-| `video` | string | **yes** | absolute path to the `.mp4`. Checked at startup; a missing file aborts the run before the model loads. |
+| `video` | string | **yes** | path to the `.mp4`. Absolute, or relative to the directory you run from (the example manifest uses `videos/…`, so run it from the repo root). Checked at startup; a missing file aborts the run before the model loads. |
 | `instruction` | string | no | appended to the system prompt as "## Episode context". Missing = empty, the run still works but the model loses the task hint. |
 | `duration_s` | number | no | clip length. Missing or `0` = `ffprobe`d from the video, which costs one subprocess per episode. |
 
@@ -227,7 +192,8 @@ Any other key is ignored, so a richer manifest (the benchmark one carries
 that machine's absolute paths; rather than editing the file, remap at run time:
 
 ```bash
-python infer_cosmos.py --video-root-map /mnt/SSD4/dataset=/data/mnt --manifest ... --prompt ... --out ...
+python infer_cosmos.py --video-root-map /mnt/SSD4/dataset=/data/mnt \
+    --manifest /path/to/their_manifest.jsonl --out preds/mine.jsonl
 ```
 
 Repeatable, longest prefix wins, applied before the existence check.
@@ -365,10 +331,69 @@ rollout — change it in `GEN_KWARGS` at the top of the script, not on the CLI.
 
 ---
 
+## 2. View the demo
+
+```bash
+xdg-open index.html          # or just double-click it
+```
+
+No server, no build step, no network — the page inlines its data and reads the
+clips from `videos/`. Keep `index.html`, `videos/` and `captions/` together.
+
+How to drive it during a presentation:
+
+- Sections at the top: **Overall verdict → Strengths → Weaknesses**.
+- Every finding shows its example episodes inline — the real clip, playable on
+  the spot, nothing to expand first.
+- Each example is: **video + live caption strip** on the left, the **dot
+  timeline** on the right.
+- **The dot timeline is the main visual.** One shared time axis per episode:
+
+  ```
+  Qwen     •      •        •     •  •
+  ═══════════════════════════════════════
+  Cosmos  •    •         •        •
+  ```
+
+  **One dot = one caption**, placed at that caption's start timestamp. Qwen above the
+  line, Cosmos below it, one shared time axis. Density and alignment read in one
+  glance: a cluster of dots = too many captions, a bare stretch = a gap, dots
+  that don't line up across the axis = the two models disagree about when
+  something happened. The caption's exact span is in its hover tooltip.
+- **The axis is normalized to the longest timestamp in the episode, not to the
+  clip.** Models routinely predict cues that run past the end of the video, and
+  clipping the axis at the clip length would push those dots off the widget
+  entirely. So the axis covers `max(clip length, latest predicted end)` and the
+  line runs the full width of it. Dot positions stay linear and true throughout;
+  nothing is clamped or faked, and the tick labels are the real times. How far a
+  track overruns the clip is called out in its lane label — `+30s past end` on a
+  10-second clip.
+- **Press play and the captions run with the video.** The strip under the player
+  shows what each of the three says *at the current frame*, side by side; on the
+  timeline a playhead sweeps across and the dot currently speaking lights up on
+  each lane. When a model has nothing at that moment the strip says
+  **“— no caption —”** in red — that is the gap weakness, live, not a claim in a
+  table.
+- **Hover a dot to read its caption**, **click a dot to jump the video to it**,
+  and **click anywhere on a lane or the axis to scrub**.
+- Ground truth is not on the timeline (two lanes only, by design). It is still
+  in the live caption strip and in the full text under *“Full caption text, all
+  three tracks”*, one click away, if someone asks to see everything.
+- Playing one clip pauses any other, so nothing talks over you.
+- `[left hand]` / `[right hand]` / `[both hands]` / `[ego]` are bolded — that is
+  the hand-identity claim, readable at a glance.
+
+Clips use `preload="none"` and a poster frame, so the page opens instantly and
+only the clip you actually play is read off disk.
+
+---
+
 ## 3. Rebuild the demo page
 
-`build_demo.py` regenerates `index.html`, `videos/`, `posters/` and `captions/`
-from a VR-finetune-VLM checkout:
+Only needed to change which episodes the page shows — running inference does not
+require any of this. `build_demo.py` regenerates `index.html`, `videos/`,
+`posters/`, `captions/` and `example_manifest.jsonl` from a VR-finetune-VLM
+checkout (the source of the clips and the two prediction files):
 
 ```bash
 python build_demo.py                              # defaults to ../VR-finetune-VLM

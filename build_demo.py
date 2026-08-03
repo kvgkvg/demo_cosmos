@@ -583,7 +583,14 @@ def main():
     examples = build_examples(args.repo, copy_videos=not args.no_videos)
     (HERE / "examples.json").write_text(json.dumps(examples, indent=1))
     (HERE / "index.html").write_text(render_html(examples))
+    # a runnable manifest over the clips vendored here, so infer_cosmos.py has
+    # something to point at without a VR-finetune-VLM checkout
+    (HERE / "example_manifest.jsonl").write_text("".join(
+        json.dumps({"episode_uid": ex["uid"], "video": ex["video"],
+                    "instruction": ex["instruction"], "duration_s": ex["duration"]}) + "\n"
+        for ex in examples.values()))
     print(f"\n{len(examples)} examples -> {HERE/'index.html'}")
+    print(f"{len(examples)}-episode manifest -> {HERE/'example_manifest.jsonl'}")
 
 
 if __name__ == "__main__":

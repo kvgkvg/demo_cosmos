@@ -199,21 +199,101 @@ python infer_cosmos.py \
 
 Progress prints per episode (`ok=`, `err=`, events, chunks, seconds/episode).
 
-### Input format
+### Input format — organizing your data
 
-One JSON object per line. Only four fields are read:
+The manifest is **JSONL**: one JSON object per line, one line per episode, no
+wrapping array and no trailing commas. Blank lines are skipped. Videos are *not*
+copied or moved — the manifest points at wherever they already live, so you do
+not have to restructure a dataset to run this.
 
 ```json
-{
-  "episode_uid": "assemble_jenga_v2.1/episode_000519",
-  "video": "/mnt/SSD4/dataset/egodex/.../episode_000519.mp4",
-  "instruction": "assemble_jenga: Assemble block pieces into a Jenga tower ...",
-  "duration_s": 10.0
-}
+{"episode_uid": "assemble_jenga_v2.1/episode_000519", "video": "/data/egodex/.../episode_000519.mp4", "instruction": "assemble_jenga: Assemble block pieces into a Jenga tower on a brown background while sitting.", "duration_s": 10.0}
+{"episode_uid": "assemble_jenga_v2.1/episode_000202", "video": "/data/egodex/.../episode_000202.mp4", "instruction": "Assemble Jenga: Assemble a tower using 18 wooden Jenga blocks on a wooden table.", "duration_s": 10.0}
 ```
 
-`duration_s` is optional — it is ffprobed when missing. Anything else in the
-line is ignored, so the benchmark manifest works as-is.
+Fields, exactly as the code reads them:
+
+| Field | Type | Required | Used for |
+|---|---|---|---|
+| `episode_uid` | string | **yes** | identity — carried into the predictions, and the key resume skips on. Must be unique across the manifest. |
+| `video` | string | **yes** | absolute path to the `.mp4`. Checked at startup; a missing file aborts the run before the model loads. |
+| `instruction` | string | no | appended to the system prompt as "## Episode context". Missing = empty, the run still works but the model loses the task hint. |
+| `duration_s` | number | no | clip length. Missing or `0` = `ffprobe`d from the video, which costs one subprocess per episode. |
+
+Any other key is ignored, so a richer manifest (the benchmark one carries
+`caption`, `srt`, `task`, `split`, …) works unchanged.
+
+**Paths.** `video` is used verbatim. Manifests written on another machine carry
+that machine's absolute paths; rather than editing the file, remap at run time:
+
+```bash
+python infer_cosmos.py --video-root-map /mnt/SSD4/dataset=/data/mnt --manifest ... --prompt ... --out ...
+```
+
+Repeatable, longest prefix wins, applied before the existence check.
+
+**Building a manifest from a folder of clips.** No metadata needed beyond the
+files themselves:
+
+```python
+import json, pathlib
+root = pathlib.Path("/data/my_clips")
+with open("manifest.jsonl", "w") as f:
+    for p in sorted(root.rglob("*.mp4")):
+        f.write(json.dumps({
+            "episode_uid": str(p.relative_to(root).with_suffix("")),
+            "video": str(p.resolve()),
+            "instruction": "",          # optional, but the model captions better with it
+        }) + "\n")
+```
+
+Leave `duration_s` out and the script ffprobes each clip.
+
+**Ground truth, if you have it.** `infer_cosmos.py` never reads it — it only
+generates. Ground truth matters to `build_demo.py`, which reads it from a
+`caption` field on the manifest line, as **SRT text** (see below).
+
+#### SRT format
+
+Both the ground truth `caption` field and every `pred` are SRT text: an index
+line, a timestamp line, one or more text lines, blocks separated by a blank
+line.
+
+```
+1
+00:00:00,000 --> 00:00:02,000
+[right hand] reach toward the scattered blocks | [left hand] rest near tower | [ego] look down
+
+2
+00:00:02,000 --> 00:00:06,087
+[right hand] place a block on the stack | [left hand] stabilize the stack
+```
+
+- Timestamps are `HH:MM:SS,mmm`. The demo's parser also accepts `.` as the
+  millisecond separator; the index line is **required**.
+- The caption body convention is `[role] action` segments joined by ` | `, with
+  roles `[left hand]`, `[right hand]`, `[both hands]`, `[ego]`. That contract
+  lives in `system_prompt.txt`, and the page bolds those markers.
+- The model is prompted to emit `MM:SS.d - MM:SS.d: text` lines per chunk, not
+  SRT; `infer_cosmos.py` parses those, shifts them back to global video time and
+  writes the SRT. You never author that intermediate form.
+
+#### What `build_demo.py` needs
+
+Beyond the above it reads two prediction files and joins everything on
+`episode_uid`:
+
+| Source | Fields read |
+|---|---|
+| manifest JSONL | `episode_uid`, `video`, `caption` (GT SRT), `duration_s`, `instruction`, `task` |
+| `v1_val.jsonl` (Qwen) | `episode_uid`, `pred` |
+| `cosmos3-nano_val.jsonl` (Cosmos) | `episode_uid`, `pred` |
+
+Two things differ from the inference script: `duration_s` should be present
+(it scales the timeline and the clock, and is not ffprobed here), and `video`
+must exist on disk unless you pass `--no-videos`. Episodes are selected by
+**0-based line number** in the manifest, so the `eps` lists in `SECTIONS` are
+positional — reordering the manifest reassigns every example.
 
 ### Output format
 

@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:02,251
+[both hands] place grey block on top of the stack | [ego] look down at blocks
+
+2
+00:00:02,251 --> 00:00:06,000
+[right hand] lift and move the closer stack to the right of the farther stack
+
+3
+00:00:06,000 --> 00:00:07,229
+[both hands]  grasp purple block | [ego] look left
+
+4
+00:00:07,229 --> 00:00:08,971
+[left hand] bring a pink block closer | [right hand] hold purple block

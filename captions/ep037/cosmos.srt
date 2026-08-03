@@ -1,0 +1,91 @@
+1
+00:00:00,000 --> 00:00:04,700
+[left hand] grasp the blue block | [right hand] grasp the green block | [both hands] place the blue and green blocks side by side on the table | [ego] stay still
+
+2
+00:00:04,700 --> 00:00:07,200
+[right hand] grasp the red block | [left hand] hold the blue and green blocks | [right hand] place the red block on top of the blue and green blocks | [ego] stay still
+
+3
+00:00:07,200 --> 00:00:10,700
+[left hand] grasp the purple block | [right hand] grasp the green block | [left hand] place the purple block on the stack | [right hand] place the green block on the stack | [ego] stay still
+
+4
+00:00:10,700 --> 00:00:12,300
+[left hand] grasp the yellow block | [right hand] hold the green block | [left hand] place the yellow block on the stack | [right hand] place the green block on the stack | [ego] stay still
+
+5
+00:00:12,300 --> 00:00:15,300
+[left hand] grasp the purple block | [right hand] grasp the white block | [left hand] place the purple block on the stack | [right hand] place the white block on the stack | [ego] stay still
+
+6
+00:00:15,300 --> 00:00:19,800
+[right hand] grasp the red block | [left hand] hold the stack | [right hand] place the red block on top of the stack | [right hand] grasp another red block | [right hand] place the red block on top of the stack | [ego] stay still
+
+7
+00:00:20,000 --> 00:00:22,200
+[right hand] grasp the red block | [left hand] hold the stack | [right hand] place the red block on top of the stack | [right hand] grasp another red block | [right hand] place the red block on top of the stack | [ego] stay still
+
+8
+00:00:22,200 --> 00:00:25,200
+[right hand] grasp the green block | [left hand] hold the stack | [right hand] place the green block on top of the stack | [ego] stay still
+
+9
+00:00:25,200 --> 00:00:28,200
+[left hand] grasp the green block | [right hand] grasp the purple block | [left hand] place the green block on the table | [right hand] place the purple block on the table | [ego] stay still
+
+10
+00:00:28,200 --> 00:00:30,800
+[right hand] grasp the purple block | [left hand] grasp the green block | [right hand] place the purple block on top of the stack | [left hand] place the green block on the table | [ego] stay still
+
+11
+00:00:30,800 --> 00:00:33,800
+[right hand] grasp the yellow block | [left hand] grasp the green block | [right hand] place the yellow block on top of the stack | [left hand] place the green block on the table | [ego] stay still
+
+12
+00:00:33,800 --> 00:00:36,800
+[right hand] grasp the white block | [left hand] grasp the green block | [right hand] place the white block on top of the stack | [left hand] place the green block on the table | [ego] stay still
+
+13
+00:00:36,800 --> 00:00:37,800
+[right hand] grasp the blue block | [left hand] hold the stack | [right hand] place the blue block on top of the stack | [ego] stay still
+
+14
+00:00:38,000 --> 00:00:39,700
+[right hand] grasp the gray block | [left hand] hold the stack | [right hand] place the gray block on top of the stack | [ego] stay still
+
+15
+00:00:39,700 --> 00:00:42,700
+[right hand] grasp the yellow block | [left hand] hold the stack | [right hand] place the yellow block on top of the stack | [ego] stay still
+
+16
+00:00:42,700 --> 00:00:46,200
+[right hand] grasp the blue block | [left hand] hold the stack | [right hand] place the blue block on top of the stack | [ego] stay still
+
+17
+00:00:46,200 --> 00:00:49,300
+[right hand] grasp the gray block | [left hand] hold the stack | [right hand] place the gray block on top of the stack | [ego] stay still
+
+18
+00:00:49,300 --> 00:00:52,300
+[right hand] grasp the gray block | [left hand] hold the stack | [right hand] place the gray block on top of the stack | [ego] stay still
+
+19
+00:00:52,300 --> 00:00:55,800
+[right hand] grasp the yellow block | [left hand] hold the stack | [right hand] place the yellow block on top of the stack | [ego] stay still
+
+20
+00:00:56,000 --> 00:00:58,800
+[right hand] grasp the blue block | [left hand] hold the stack | [right hand] place the blue block on top of the stack | [ego] stay still
+
+21
+00:00:58,800 --> 00:01:02,800
+[right hand] grasp the white block | [left hand] hold the stack | [right hand] place the white block on top of the stack | [ego] stay still
+
+22
+00:01:02,800 --> 00:01:07,500
+[right hand] grasp the green block | [left hand] hold the stack | [right hand] place the green block on top of the stack | [ego] stay still
+
+23
+00:01:07,500 --> 00:01:10,000
+[right hand] grasp the light blue block | [left hand] hold the stack | [right hand] place the light blue block on top of the stack | [ego] stay still

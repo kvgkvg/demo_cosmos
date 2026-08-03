@@ -1,0 +1,51 @@
+1
+00:00:00,100 --> 00:00:01,100
+[right hand] reach toward dominoes on the table | [ego] stay still
+
+2
+00:00:01,100 --> 00:00:03,200
+[left hand] grasp a domino | [right hand] grasp another domino | [ego] stay still
+
+3
+00:00:03,200 --> 00:00:05,200
+[left hand] lift a domino upward | [right hand] lift a domino upward | [ego] stay still
+
+4
+00:00:05,200 --> 00:00:08,200
+[left hand] place a domino upright on the table | [right hand] place a domino upright on the table | [ego] stay still
+
+5
+00:00:08,200 --> 00:00:11,800
+[left hand] adjust a domino into a vertical stack | [right hand] adjust a domino into a vertical stack | [ego] stay still
+
+6
+00:00:11,800 --> 00:00:16,300
+[left hand] pick up a domino and place it beside the stack | [right hand] hover near the stack | [ego] stay still
+
+7
+00:00:16,300 --> 00:00:19,800
+[right hand] pick up a domino and place it into the stack | [left hand] hover near the stack | [ego] stay still
+
+8
+00:00:20,000 --> 00:00:21,200
+[left hand] pick up a domino and place it into the stack | [right hand] hover near the stack | [ego] stay still
+
+9
+00:00:21,200 --> 00:00:25,800
+[left hand] pick up a domino and place it into the stack | [right hand] hover near the stack | [ego] stay still
+
+10
+00:00:25,800 --> 00:00:29,300
+[right hand] pick up a domino and place it into the stack | [left hand] hover near the stack | [ego] stay still
+
+11
+00:00:29,300 --> 00:00:34,900
+[left hand] pick up a domino and place it into the stack | [right hand] hover near the stack | [ego] stay still
+
+12
+00:00:34,900 --> 00:00:38,500
+[right hand] pick up a domino and place it into the stack | [left hand] hover near the stack | [ego] stay still
+
+13
+00:00:38,500 --> 00:00:41,400
+[both hands] hover near the completed domino stack | [ego] stay still

@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:02,000
+[left hand] resting | [right hand] place white brick on top of blue brick on table
+
+2
+00:00:02,000 --> 00:00:03,289
+[right hand] place green brick on white brick | [left hand] hold the stack
+
+3
+00:00:03,289 --> 00:00:05,757
+[right hand] place two red bricks on green brick
+
+4
+00:00:05,757 --> 00:00:07,267
+[right hand] place yellow brick on red bricks stack | [left hand] hold the stack

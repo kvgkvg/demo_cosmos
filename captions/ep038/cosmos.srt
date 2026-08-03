@@ -1,0 +1,47 @@
+1
+00:00:00,100 --> 00:00:01,100
+[left hand] reach toward scattered wooden blocks | [right hand] reach toward scattered wooden blocks | [ego] stay still
+
+2
+00:00:01,100 --> 00:00:02,200
+[left hand] grasp a wooden block | [right hand] grasp a wooden block | [ego] stay still
+
+3
+00:00:02,200 --> 00:00:03,200
+[left hand] place the wooden block onto a growing stack | [right hand] place the wooden block onto the growing stack | [ego] stay still
+
+4
+00:00:03,200 --> 00:00:04,200
+[left hand] reach toward scattered wooden blocks | [right hand] reach toward scattered wooden blocks | [ego] stay still
+
+5
+00:00:04,200 --> 00:00:04,700
+[left hand] grasp a wooden block | [right hand] grasp a wooden block | [ego] stay still
+
+6
+00:00:04,700 --> 00:00:05,800
+[left hand] place the wooden block onto the growing stack | [right hand] place the wooden block onto the growing stack | [ego] stay still
+
+7
+00:00:05,800 --> 00:00:06,800
+[left hand] reach toward scattered wooden blocks | [ego] stay still
+
+8
+00:00:06,800 --> 00:00:07,300
+[left hand] grasp a wooden block | [ego] stay still
+
+9
+00:00:07,300 --> 00:00:08,300
+[left hand] place the wooden block onto the growing stack | [ego] stay still
+
+10
+00:00:08,300 --> 00:00:09,300
+[left hand] reach toward scattered wooden blocks | [ego] stay still
+
+11
+00:00:09,300 --> 00:00:09,800
+[left hand] grasp a wooden block | [ego] stay still
+
+12
+00:00:09,800 --> 00:00:09,800
+[left hand] place the wooden block onto the growing stack | [ego] stay still

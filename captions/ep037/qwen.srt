@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:05,600
+[left hand] grasp the blue block | [right hand] grasp the green block | [ego] stay still
+
+2
+00:00:05,600 --> 00:00:10,600
+[left hand] place the blue block on the green block | [right hand] place the red block on the green block | [ego] stay still
+
+3
+00:00:10,600 --> 00:00:15,500
+[left hand] grasp the purple block | [right hand] grasp the green block | [ego] stay still
+
+4
+00:00:15,500 --> 00:00:20,200
+[left hand] place the purple block on the blue block | [right hand] place the green block on the red block | [ego] stay still
+
+5
+00:00:20,200 --> 00:00:25,100
+[left hand] grasp the green block | [right hand] grasp the red block | [ego] stay still
+
+6
+00:00:25,100 --> 00:00:30,100
+[left hand] place the green block on the purple block | [right hand] place the red block on the green block | [ego] stay still
+
+7
+00:00:30,100 --> 00:00:35,100
+[left hand] grasp the purple block | [right hand] grasp the yellow block | [ego] stay still
+
+8
+00:00:35,100 --> 00:00:40,100
+[left hand] place the purple block on the green block | [right hand] place the yellow block on the red block | [ego] stay still
+
+9
+00:00:40,100 --> 00:00:45,100
+[left hand] grasp the green block | [right hand] grasp the blue block | [ego] stay still
+
+10
+00:00:45,100 --> 00:00:50,100
+[left hand] place the green block on the yellow block | [right hand] place the blue block on the green block | [ego] stay still
+
+11
+00:00:50,100 --> 00:00:55,100
+[left hand] grasp the yellow block | [right hand] grasp the green block | [ego] stay still
+
+12
+00:00:55,100 --> 00:01:00,100
+[left hand] place the yellow block on the blue block | [right hand] place the green block on the yellow block | [ego] stay still
+
+13
+00:01:00,100 --> 00:01:05,100
+[left hand] grasp the blue block | [right hand] grasp the yellow block | [ego] stay still
+
+14
+00:01:05,100 --> 00:01:10,100
+[left hand] place the blue block on the green block | [right hand] place the yellow block on the blue block | [ego] stay still

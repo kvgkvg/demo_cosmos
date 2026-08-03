@@ -1,0 +1,75 @@
+1
+00:00:00,100 --> 00:00:01,100
+[left hand] grasp a domino tile | [right hand] reach toward another domino tile | [ego] stay still
+
+2
+00:00:01,100 --> 00:00:02,100
+[left hand] lift a domino tile upward | [right hand] pick up a domino tile | [ego] stay still
+
+3
+00:00:02,100 --> 00:00:06,200
+[left hand] place the domino tile upright on the table | [right hand] place the domino tile upright beside it | [ego] stay still
+
+4
+00:00:06,200 --> 00:00:08,200
+[right hand] pick up a domino tile from the scattered pile | [ego] stay still
+
+5
+00:00:08,200 --> 00:00:11,800
+[right hand] place the domino tile upright next to the existing line | [ego] stay still
+
+6
+00:00:11,800 --> 00:00:15,800
+[right hand] adjust the newly placed domino tile for alignment | [ego] stay still
+
+7
+00:00:15,800 --> 00:00:17,300
+[left hand] pick up a domino tile from the scattered pile | [ego] stay still
+
+8
+00:00:17,300 --> 00:00:19,800
+[left hand] place the domino tile upright at the end of the line | [ego] stay still
+
+9
+00:00:20,000 --> 00:00:21,700
+[left hand] pick up a domino tile from the table | [right hand] pick up a domino tile from the table | [ego] stay still
+
+10
+00:00:21,700 --> 00:00:24,700
+[left hand] place the domino tile upright at the end of the line | [right hand] place the domino tile upright at the end of the line | [ego] stay still
+
+11
+00:00:24,700 --> 00:00:26,700
+[right hand] point toward the domino line | [left hand] hold the domino line steady | [ego] stay still
+
+12
+00:00:26,700 --> 00:00:28,200
+[right hand] pick up a domino tile from the table | [ego] stay still
+
+13
+00:00:28,200 --> 00:00:31,800
+[right hand] place the domino tile upright at the end of the line | [left hand] hold the domino line steady | [ego] stay still
+
+14
+00:00:31,800 --> 00:00:33,800
+[left hand] pick up a domino tile from the table | [right hand] assist in holding the tile | [ego] stay still
+
+15
+00:00:33,800 --> 00:00:37,800
+[left hand] place the domino tile upright at the end of the line | [right hand] point toward the domino line | [ego] stay still
+
+16
+00:00:38,000 --> 00:00:39,300
+[left hand] hold the domino line steady | [right hand] adjust the last domino tile | [ego] stay still
+
+17
+00:00:39,300 --> 00:00:41,300
+[left hand] hold the domino line steady | [right hand] point toward the domino line | [ego] stay still
+
+18
+00:00:41,300 --> 00:00:44,000
+[left hand] hold the domino line steady | [right hand] point toward the domino line | [ego] stay still
+
+19
+00:00:44,000 --> 00:00:45,000
+[left hand] push the domino line forward, causing it to topple | [right hand] remain stationary | [ego] stay still

@@ -1,0 +1,31 @@
+1
+00:00:00,000 --> 00:00:05,000
+[left hand] grasp domino | [right hand] grasp domino | [ego] lean forward
+
+2
+00:00:05,000 --> 00:00:12,036
+[both hands] place dominoes upright
+
+3
+00:00:12,036 --> 00:00:16,660
+[left hand] place domino in row
+
+4
+00:00:16,660 --> 00:00:21,416
+[right hand] place domino in row
+
+5
+00:00:21,416 --> 00:00:25,620
+[left hand] place domino in row
+
+6
+00:00:25,620 --> 00:00:29,646
+[right hand] place domino in row
+
+7
+00:00:29,646 --> 00:00:35,000
+[left hand] place domino in row
+
+8
+00:00:35,000 --> 00:00:41,000
+[right hand] place domino in row

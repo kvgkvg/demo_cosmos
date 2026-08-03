@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:05,000
+[right hand] grasp white lego and place on blue lego | [ego] stay still
+
+2
+00:00:05,000 --> 00:00:10,000
+[right hand] grasp green lego and place on white lego | [ego] stay still
+
+3
+00:00:10,000 --> 00:00:15,000
+[right hand] grasp red lego and place on green lego | [ego] stay still
+
+4
+00:00:15,000 --> 00:00:20,000
+[right hand] grasp red lego and place on green lego | [ego] stay still
+
+5
+00:00:20,000 --> 00:00:25,000
+[right hand] grasp yellow lego and place on red lego | [ego] stay still

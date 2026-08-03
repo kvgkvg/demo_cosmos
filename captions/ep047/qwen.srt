@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:06,100
+[left hand] hover over the white Lego | [right hand] place green Lego on blue Lego, place red Lego on blue Lego, place yellow Lego on red Lego, place red Lego on yellow Lego | [ego] stay still
+
+2
+00:00:06,100 --> 00:00:07,400
+[left hand] place white Lego on green Lego | [ego] stay still

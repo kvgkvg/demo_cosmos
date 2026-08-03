@@ -1,0 +1,755 @@
+1
+00:00:00,000 --> 00:00:06,000
+[right hand] reach for the wooden structure | [left hand] hover over the table | [ego] stay still
+
+2
+00:00:06,000 --> 00:00:11,000
+[both hands] grasp and rotate the wooden structure | [ego] stay still
+
+3
+00:00:11,000 --> 00:00:16,000
+[right hand] extract the wooden block from the structure | [left hand] hold the yellow base | [ego] stay still
+
+4
+00:00:16,000 --> 00:00:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+5
+00:00:21,000 --> 00:00:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+6
+00:00:26,000 --> 00:00:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+7
+00:00:31,000 --> 00:00:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+8
+00:00:36,000 --> 00:00:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+9
+00:00:41,000 --> 00:00:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+10
+00:00:46,000 --> 00:00:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+11
+00:00:51,000 --> 00:00:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+12
+00:00:56,000 --> 00:01:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+13
+00:01:01,000 --> 00:01:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+14
+00:01:06,000 --> 00:01:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+15
+00:01:11,000 --> 00:01:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+16
+00:01:16,000 --> 00:01:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+17
+00:01:21,000 --> 00:01:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+18
+00:01:26,000 --> 00:01:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+19
+00:01:31,000 --> 00:01:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+20
+00:01:36,000 --> 00:01:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+21
+00:01:41,000 --> 00:01:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+22
+00:01:46,000 --> 00:01:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+23
+00:01:51,000 --> 00:01:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+24
+00:01:56,000 --> 00:02:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+25
+00:02:01,000 --> 00:02:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+26
+00:02:06,000 --> 00:02:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+27
+00:02:11,000 --> 00:02:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+28
+00:02:16,000 --> 00:02:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+29
+00:02:21,000 --> 00:02:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+30
+00:02:26,000 --> 00:02:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+31
+00:02:31,000 --> 00:02:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+32
+00:02:36,000 --> 00:02:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+33
+00:02:41,000 --> 00:02:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+34
+00:02:46,000 --> 00:02:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+35
+00:02:51,000 --> 00:02:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+36
+00:02:56,000 --> 00:03:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+37
+00:03:01,000 --> 00:03:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+38
+00:03:06,000 --> 00:03:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+39
+00:03:11,000 --> 00:03:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+40
+00:03:16,000 --> 00:03:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+41
+00:03:21,000 --> 00:03:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+42
+00:03:26,000 --> 00:03:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+43
+00:03:31,000 --> 00:03:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+44
+00:03:36,000 --> 00:03:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+45
+00:03:41,000 --> 00:03:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+46
+00:03:46,000 --> 00:03:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+47
+00:03:51,000 --> 00:03:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+48
+00:03:56,000 --> 00:04:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+49
+00:04:01,000 --> 00:04:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+50
+00:04:06,000 --> 00:04:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+51
+00:04:11,000 --> 00:04:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+52
+00:04:16,000 --> 00:04:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+53
+00:04:21,000 --> 00:04:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+54
+00:04:26,000 --> 00:04:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+55
+00:04:31,000 --> 00:04:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+56
+00:04:36,000 --> 00:04:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+57
+00:04:41,000 --> 00:04:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+58
+00:04:46,000 --> 00:04:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+59
+00:04:51,000 --> 00:04:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+60
+00:04:56,000 --> 00:05:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+61
+00:05:01,000 --> 00:05:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+62
+00:05:06,000 --> 00:05:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+63
+00:05:11,000 --> 00:05:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+64
+00:05:16,000 --> 00:05:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+65
+00:05:21,000 --> 00:05:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+66
+00:05:26,000 --> 00:05:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+67
+00:05:31,000 --> 00:05:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+68
+00:05:36,000 --> 00:05:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+69
+00:05:41,000 --> 00:05:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+70
+00:05:46,000 --> 00:05:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+71
+00:05:51,000 --> 00:05:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+72
+00:05:56,000 --> 00:06:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+73
+00:06:01,000 --> 00:06:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+74
+00:06:06,000 --> 00:06:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+75
+00:06:11,000 --> 00:06:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+76
+00:06:16,000 --> 00:06:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+77
+00:06:21,000 --> 00:06:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+78
+00:06:26,000 --> 00:06:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+79
+00:06:31,000 --> 00:06:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+80
+00:06:36,000 --> 00:06:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+81
+00:06:41,000 --> 00:06:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+82
+00:06:46,000 --> 00:06:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+83
+00:06:51,000 --> 00:06:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+84
+00:06:56,000 --> 00:07:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+85
+00:07:01,000 --> 00:07:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+86
+00:07:06,000 --> 00:07:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+87
+00:07:11,000 --> 00:07:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+88
+00:07:16,000 --> 00:07:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+89
+00:07:21,000 --> 00:07:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+90
+00:07:26,000 --> 00:07:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+91
+00:07:31,000 --> 00:07:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+92
+00:07:36,000 --> 00:07:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+93
+00:07:41,000 --> 00:07:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+94
+00:07:46,000 --> 00:07:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+95
+00:07:51,000 --> 00:07:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+96
+00:07:56,000 --> 00:08:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+97
+00:08:01,000 --> 00:08:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+98
+00:08:06,000 --> 00:08:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+99
+00:08:11,000 --> 00:08:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+100
+00:08:16,000 --> 00:08:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+101
+00:08:21,000 --> 00:08:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+102
+00:08:26,000 --> 00:08:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+103
+00:08:31,000 --> 00:08:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+104
+00:08:36,000 --> 00:08:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+105
+00:08:41,000 --> 00:08:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+106
+00:08:46,000 --> 00:08:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+107
+00:08:51,000 --> 00:08:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+108
+00:08:56,000 --> 00:09:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+109
+00:09:01,000 --> 00:09:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+110
+00:09:06,000 --> 00:09:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+111
+00:09:11,000 --> 00:09:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+112
+00:09:16,000 --> 00:09:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+113
+00:09:21,000 --> 00:09:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+114
+00:09:26,000 --> 00:09:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+115
+00:09:31,000 --> 00:09:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+116
+00:09:36,000 --> 00:09:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+117
+00:09:41,000 --> 00:09:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+118
+00:09:46,000 --> 00:09:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+119
+00:09:51,000 --> 00:09:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+120
+00:09:56,000 --> 00:10:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+121
+00:10:01,000 --> 00:10:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+122
+00:10:06,000 --> 00:10:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+123
+00:10:11,000 --> 00:10:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+124
+00:10:16,000 --> 00:10:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+125
+00:10:21,000 --> 00:10:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+126
+00:10:26,000 --> 00:10:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+127
+00:10:31,000 --> 00:10:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+128
+00:10:36,000 --> 00:10:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+129
+00:10:41,000 --> 00:10:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+130
+00:10:46,000 --> 00:10:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+131
+00:10:51,000 --> 00:10:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+132
+00:10:56,000 --> 00:11:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+133
+00:11:01,000 --> 00:11:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+134
+00:11:06,000 --> 00:11:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+135
+00:11:11,000 --> 00:11:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+136
+00:11:16,000 --> 00:11:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+137
+00:11:21,000 --> 00:11:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+138
+00:11:26,000 --> 00:11:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+139
+00:11:31,000 --> 00:11:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+140
+00:11:36,000 --> 00:11:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+141
+00:11:41,000 --> 00:11:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+142
+00:11:46,000 --> 00:11:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+143
+00:11:51,000 --> 00:11:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+144
+00:11:56,000 --> 00:12:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+145
+00:12:01,000 --> 00:12:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+146
+00:12:06,000 --> 00:12:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+147
+00:12:11,000 --> 00:12:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+148
+00:12:16,000 --> 00:12:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+149
+00:12:21,000 --> 00:12:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+150
+00:12:26,000 --> 00:12:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+151
+00:12:31,000 --> 00:12:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+152
+00:12:36,000 --> 00:12:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+153
+00:12:41,000 --> 00:12:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+154
+00:12:46,000 --> 00:12:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+155
+00:12:51,000 --> 00:12:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+156
+00:12:56,000 --> 00:13:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+157
+00:13:01,000 --> 00:13:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+158
+00:13:06,000 --> 00:13:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+159
+00:13:11,000 --> 00:13:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+160
+00:13:16,000 --> 00:13:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+161
+00:13:21,000 --> 00:13:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+162
+00:13:26,000 --> 00:13:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+163
+00:13:31,000 --> 00:13:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+164
+00:13:36,000 --> 00:13:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+165
+00:13:41,000 --> 00:13:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+166
+00:13:46,000 --> 00:13:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+167
+00:13:51,000 --> 00:13:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+168
+00:13:56,000 --> 00:14:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+169
+00:14:01,000 --> 00:14:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+170
+00:14:06,000 --> 00:14:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+171
+00:14:11,000 --> 00:14:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+172
+00:14:16,000 --> 00:14:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+173
+00:14:21,000 --> 00:14:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+174
+00:14:26,000 --> 00:14:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+175
+00:14:31,000 --> 00:14:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+176
+00:14:36,000 --> 00:14:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+177
+00:14:41,000 --> 00:14:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still
+
+178
+00:14:46,000 --> 00:14:51,000
+[right hand] place the wooden peg on the table | [left hand] release the yellow base | [ego] stay still
+
+179
+00:14:51,000 --> 00:14:56,000
+[right hand] reach for the yellow wheel | [left hand] hover over the table | [ego] stay still
+
+180
+00:14:56,000 --> 00:15:01,000
+[right hand] grasp the yellow wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+181
+00:15:01,000 --> 00:15:06,000
+[right hand] place the yellow wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+182
+00:15:06,000 --> 00:15:11,000
+[right hand] reach for the wooden block | [left hand] hover over the table | [ego] stay still
+
+183
+00:15:11,000 --> 00:15:16,000
+[right hand] grasp the wooden block and lift it | [left hand] hold the yellow base | [ego] stay still
+
+184
+00:15:16,000 --> 00:15:21,000
+[right hand] place the wooden block on the table | [left hand] release the yellow base | [ego] stay still
+
+185
+00:15:21,000 --> 00:15:26,000
+[right hand] reach for the black wheel | [left hand] hover over the table | [ego] stay still
+
+186
+00:15:26,000 --> 00:15:31,000
+[right hand] grasp the black wheel and lift it | [left hand] hold the yellow base | [ego] stay still
+
+187
+00:15:31,000 --> 00:15:36,000
+[right hand] place the black wheel on the table | [left hand] release the yellow base | [ego] stay still
+
+188
+00:15:36,000 --> 00:15:41,000
+[right hand] reach for the wooden peg | [left hand] hover over the table | [ego] stay still
+
+189
+00:15:41,000 --> 00:15:46,000
+[right hand] grasp the wooden peg and lift it | [left hand] hold the yellow base | [ego] stay still

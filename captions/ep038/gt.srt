@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:02,000
+[both hands] reach for scattered wooden blocks | [ego] look down
+
+2
+00:00:02,000 --> 00:00:04,000
+[both hands] place three blocks side-by-side to form a base | [ego] look down
+
+3
+00:00:04,000 --> 00:00:06,000
+[both hands] stack three blocks on top of the base | [ego] look down
+
+4
+00:00:06,000 --> 00:00:08,000
+[both hands] continue stacking three blocks | [ego] look down
+
+5
+00:00:08,000 --> 00:00:10,000
+[left hand] reach for and stack three more blocks | [right hand] hover near the tower | [ego] look down

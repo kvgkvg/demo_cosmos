@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:04,000
+[both hands] place blue and light green blocks side-by-side
+
+2
+00:00:04,000 --> 00:00:07,000
+[right hand] place red block iin center of blue and green blocks
+
+3
+00:00:07,000 --> 00:00:13,000
+[both hands] arrange purple, green, and light green blocks
+
+4
+00:00:14,913 --> 00:00:17,913
+[right hand] place cream block in center
+
+5
+00:00:17,000 --> 00:00:21,000
+[right hand] place red block on cream block
+
+6
+00:00:21,000 --> 00:00:26,000
+[right hand] place green block on red block
+
+7
+00:00:26,000 --> 00:00:34,000
+[both hands] place light green, purple, and yellow blocks around base
+
+8
+00:00:34,000 --> 00:00:37,000
+[left hand] place cream block on yellow block, next to red block
+
+9
+00:00:37,000 --> 00:00:43,000
+[right hand] stack light blue and yellow blocks on center column
+
+10
+00:00:43,000 --> 00:00:49,000
+[right hand] stack blue and light blue blocks on top
+
+11
+00:00:49,000 --> 00:00:55,000
+[right hand] stack light blue and yellow blocks on top
+
+12
+00:00:55,000 --> 00:01:01,000
+[right hand] stack blue and cream blocks on top
+
+13
+00:01:01,000 --> 00:01:07,000
+[right hand] stack green block on top
+
+14
+00:01:07,000 --> 00:01:12,000
+[right hand] place final light blue block on top

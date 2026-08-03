@@ -1,0 +1,23 @@
+1
+00:00:00,100 --> 00:00:01,100
+[left hand] reach toward the yellow plastic piece on the wooden table | [right hand] reach toward the wooden block nearby | [ego] stay still
+
+2
+00:00:01,100 --> 00:00:12,300
+[left hand] hold the yellow plastic piece steady | [right hand] insert and rotate the wooden block into the yellow piece, securing it | [ego] stay still
+
+3
+00:00:12,300 --> 00:00:14,300
+[right hand] remove the wooden block from the yellow plastic piece | [left hand] hold the yellow piece steady | [ego] stay still
+
+4
+00:00:14,300 --> 00:00:15,300
+[right hand] place the wooden block onto the table | [left hand] hold the yellow plastic piece steady | [ego] stay still
+
+5
+00:00:15,300 --> 00:00:17,900
+[right hand] pick up a black ring from the table | [left hand] hold the yellow plastic piece steady | [ego] stay still
+
+6
+00:00:17,900 --> 00:00:18,900
+[right hand] place the black ring onto the table | [left hand] release the yellow plastic piece | [ego] stay still

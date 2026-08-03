@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:02,000
+[right hand] reach toward the scattered blocks | [left hand] rest near tower | [ego] look down
+
+2
+00:00:02,000 --> 00:00:06,087
+[right hand] place a block on the stack | [left hand] stabilize the stack
+
+3
+00:00:06,087 --> 00:00:06,812
+[right hand] grasp another block from the table | [left hand] rest near tower
+
+4
+00:00:06,812 --> 00:00:09,000
+[right hand] place the block on the stack | [left hand] stabilize the stack
+
+5
+00:00:09,000 --> 00:00:10,000
+[both hands] align the blocks on the tower

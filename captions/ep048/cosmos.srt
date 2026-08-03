@@ -1,0 +1,91 @@
+1
+00:00:00,100 --> 00:00:04,700
+[right hand] grasp the green block at the end of the block train | [left hand] stabilize the line of blocks | [right hand] pull the green block away, detaching it from the train
+
+2
+00:00:04,700 --> 00:00:06,700
+[right hand] place the detached green block on the table to the right | [right hand] reach for the next block in line | [right hand] grasp and detach a small colorful block from the train
+
+3
+00:00:06,700 --> 00:00:08,200
+[right hand] place the detached block on the table near the green one | [right hand] reach for another block in the train | [right hand] grasp and lift a small block
+
+4
+00:00:08,200 --> 00:00:09,700
+[right hand] place the block on the table | [right hand] reach for a yellow block in the train | [right hand] grasp and detach the yellow block
+
+5
+00:00:09,700 --> 00:00:11,200
+[right hand] place the yellow block on the table | [right hand] reach for a purple block in the train | [right hand] grasp and detach the purple block
+
+6
+00:00:11,200 --> 00:00:12,300
+[right hand] place the purple block on the table | [right hand] reach for a yellow block in the train | [right hand] grasp and detach the yellow block
+
+7
+00:00:12,300 --> 00:00:14,300
+[right hand] place the yellow block on the table | [right hand] reach for a red block in the train | [right hand] grasp and detach the red block
+
+8
+00:00:14,300 --> 00:00:15,800
+[right hand] place the red block on the table | [right hand] reach for a green block in the train | [right hand] grasp and detach the green block
+
+9
+00:00:15,800 --> 00:00:17,300
+[right hand] place the green block on the table | [right hand] reach for a gray block in the train | [right hand] grasp and detach the gray block
+
+10
+00:00:17,300 --> 00:00:18,800
+[right hand] place the gray block on the table | [right hand] reach for a yellow block in the train | [right hand] grasp and detach the yellow block
+
+11
+00:00:18,800 --> 00:00:19,800
+[right hand] place the yellow block on the table | [right hand] reach for a green block in the train | [right hand] grasp and detach the green block
+
+12
+00:00:19,800 --> 00:00:20,000
+[right hand] place the green block on the table | [right hand] reach for a yellow block in the train | [right hand] grasp and detach the yellow block
+
+13
+00:00:20,000 --> 00:00:20,000
+[right hand] place the yellow block on the table | [right hand] reach for a red block in the train | [right hand] grasp and detach the red block
+
+14
+00:00:20,000 --> 00:00:20,000
+[right hand] place the red block on the table | [right hand] reach for a yellow block in the train | [right hand] grasp and detach the yellow block
+
+15
+00:00:20,000 --> 00:00:20,000
+[right hand] place the yellow block on the table | [right hand] reach for a red block in the train | [right hand] grasp and detach the red block
+
+16
+00:00:20,000 --> 00:00:20,000
+[right hand] place the red block on the table | [right hand] reach for a yellow block in the train | [right hand] grasp and detach the yellow block
+
+17
+00:00:20,000 --> 00:00:20,000
+[right hand] place the yellow block on the table | [right hand] reach for a red block in the train | [right hand] grasp and detach the red block
+
+18
+00:00:20,000 --> 00:00:20,000
+[right hand] place the red block on the table | [right hand] reach for a yellow block in the train | [right hand] grasp and detach the yellow block
+
+19
+00:00:20,000 --> 00:00:20,000
+[right hand] place the yellow block on the table | [right hand] reach for a red block in the train | [right hand] grasp and detach the red block
+
+20
+00:00:20,000 --> 00:00:21,300
+[right hand] grasp and detach the green block from the train | [right hand] place the green block on the table | [left hand] reach for the red and white block | [right hand] reach for the blue block in the train | [right hand] grasp and detach the blue block
+
+21
+00:00:21,300 --> 00:00:24,400
+[left hand] grasp and detach the red and white block from the train | [left hand] place the red and white block on the table | [right hand] grasp and detach the blue block from the train | [right hand] place the blue block on the table | [right hand] reach for the purple block in the train | [right hand] grasp and detach the purple block
+
+22
+00:00:24,400 --> 00:00:25,067
+[right hand] place the purple block on the table | [left hand] reach for the remaining red block in the train | [right hand] reach for the remaining green block in the train | [right hand] grasp and detach the green block | [right hand] place the green block on the table | [left hand] grasp and detach the red block | [left hand] place the red block on the table | [right hand] reach for the remaining blue block in the train | [right hand] grasp and detach the blue block | [right hand] place the blue block on the table
+
+23
+00:00:25,067 --> 00:00:25,067
+[left hand] grasp and detach the remaining red block from the train | [left hand] place the red block on the table | [right hand] reach for the remaining green block in the train | [right hand] grasp and detach the green block | [right hand] place the green block on the table | [left hand] grasp and detach the remaining red block from the train | [left hand] place the red block on the table | [right hand] reach for the remaining blue block in the train | [right hand] grasp and detach the blue block | [right hand] place the blue block on the table | [left hand] grasp and detach the remaining red block from the train | [left hand] place the red block on the table | [right hand] reach for the remaining green block in the train | [right hand] grasp and detach the green block | [right hand] place the green block on the table | [left hand] grasp and detach the remaining red block from the train | [left hand] place the red block on the table | [right hand] reach for the remaining blue block in the train | [right hand] grasp and detach the blue block | [right hand] place the blue block on the table | [left hand] grasp and detach the remaining red block from the train | [left hand] place the red block on the table | [right hand] reach for the remaining green block in the train | [right hand] grasp and detach the green block | [right hand] place the green block on the table | [left hand] grasp and detach the remaining red block from the train | [left hand] place the red block on the table | [right hand] reach for the remaining blue block in the train | [right hand] grasp and detach the blue block | [right hand] place the blue block on the table | [left hand] grasp and detach the remaining red block from the train | [left hand] place the red block on the table | [right hand] reach for the remaining green block in the train | [right hand] grasp and detach the green block | [right hand] place the green block on the table | [left hand] grasp and detach the remaining red block from the train | [left hand] place the red block on the table | [right hand] reach for the remaining blue block in the train | [right hand] grasp and detach the blue block | [right hand] place the blue block on the table | [left hand] grasp and detach the remaining red block from the train | [left hand] place the red block on the table | [right hand] reach for the remaining green block in the train | [right hand] grasp and detach the green block | [right hand] place the green block on the table | [left hand] grasp and detach the remaining red block from the train | [left hand] place the red block on the table | [right hand] reach for the remaining blue block in the train | [right hand] grasp and detach the blue block | [right hand] place the blue block on the table | [left hand] grasp and detach the remaining red block from the train | [left hand] place the red block on the table | [right hand] reach for the remaining green block in the train | [right hand] grasp and detach the green block

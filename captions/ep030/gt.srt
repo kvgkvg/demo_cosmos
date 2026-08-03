@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:02,000
+[both hands] reach for the wooden structure | [ego] look down
+
+2
+00:00:02,000 --> 00:00:07,403
+[right hand] grasp and unscrew rightward wooden block | [left hand] hold structure
+
+3
+00:00:07,403 --> 00:00:08,769
+[right hand] grasp and remove rightward wooden block | [left hand] hold structure
+
+4
+00:00:08,769 --> 00:00:11,000
+[right hand] extract wooden connector from yellow base | [left hand] hold yellow base
+
+5
+00:00:11,000 --> 00:00:13,700
+[both hands] place disassembled parts on table | [ego] look down

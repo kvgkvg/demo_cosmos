@@ -1,0 +1,27 @@
+1
+00:00:00,100 --> 00:00:01,200
+[left hand] reach toward the yellow and black toy car | [right hand] reach toward the yellow and black toy car | [ego] stay still
+
+2
+00:00:01,200 --> 00:00:02,200
+[left hand] grasp the yellow and black toy car | [right hand] grasp the yellow and black toy car | [ego] stay still
+
+3
+00:00:02,200 --> 00:00:09,900
+[left hand] rotate the yellow and black toy car while [right hand] remove wooden blocks from it | [ego] stay still
+
+4
+00:00:09,900 --> 00:00:10,400
+[left hand] place the yellow and black toy car on the table | [right hand] place the wooden block on the table | [ego] stay still
+
+5
+00:00:10,400 --> 00:00:11,500
+[left hand] grasp the yellow and black toy car | [right hand] grasp the yellow and black toy car | [ego] stay still
+
+6
+00:00:11,500 --> 00:00:12,000
+[left hand] place the yellow and black toy car on the table | [right hand] place the wooden block on the table | [ego] stay still
+
+7
+00:00:12,000 --> 00:00:13,500
+[left hand] reach toward the yellow and black toy car | [right hand] reach toward the yellow and black toy car | [ego] stay still

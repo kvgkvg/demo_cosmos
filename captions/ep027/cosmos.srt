@@ -1,0 +1,31 @@
+1
+00:00:00,100 --> 00:00:01,200
+[right hand] grasp the white Lego block | [left hand] reach toward the yellow Lego block | [ego] stay still
+
+2
+00:00:01,200 --> 00:00:02,200
+[right hand] place the white Lego block on the blue Lego block | [left hand] hover near the yellow Lego block | [ego] stay still
+
+3
+00:00:02,200 --> 00:00:03,200
+[right hand] grasp the green Lego block | [left hand] hover near the yellow Lego block | [ego] stay still
+
+4
+00:00:03,200 --> 00:00:04,300
+[right hand] place the green Lego block on top of the white block | [left hand] hover near the yellow Lego block | [ego] stay still
+
+5
+00:00:04,300 --> 00:00:05,300
+[right hand] grasp the red Lego block | [left hand] hover near the yellow Lego block | [ego] stay still
+
+6
+00:00:05,300 --> 00:00:06,300
+[right hand] place the red Lego block on top of the green block | [left hand] hover near the yellow Lego block | [ego] stay still
+
+7
+00:00:06,300 --> 00:00:07,200
+[right hand] grasp the yellow Lego block | [left hand] hover near the yellow Lego block | [ego] stay still
+
+8
+00:00:07,200 --> 00:00:07,267
+[right hand] place the yellow Lego block on top of the red block | [left hand] hover near the yellow Lego block | [ego] stay still

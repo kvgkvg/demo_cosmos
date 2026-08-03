@@ -1,0 +1,31 @@
+1
+00:00:00,000 --> 00:00:11,000
+[right hand] place the pink block on the table | [ego] stay still
+
+2
+00:00:11,000 --> 00:00:13,500
+[right hand] push the tower | [left hand] hold the tower | [ego] stay still
+
+3
+00:00:13,500 --> 00:00:16,500
+[right hand] lift the blocks from the back | [left hand] hold the tower | [ego] stay still
+
+4
+00:00:16,500 --> 00:00:19,500
+[right hand] place the blocks on the table | [left hand] release the tower | [ego] stay still
+
+5
+00:00:19,500 --> 00:00:25,000
+[left hand] push the blocks from the back | [ego] stay still
+
+6
+00:00:25,000 --> 00:00:29,500
+[left hand] disassemble the blocks from the back | [ego] stay still
+
+7
+00:00:29,500 --> 00:00:35,000
+[left hand] place the blocks on the table | [ego] stay still
+
+8
+00:00:35,000 --> 00:00:40,000
+[left hand] disassemble the blocks from the back | [ego] stay still

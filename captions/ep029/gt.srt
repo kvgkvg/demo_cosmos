@@ -1,0 +1,39 @@
+1
+00:00:00,000 --> 00:00:03,000
+[left hand] pick up domino | [right hand] pick up domino | [ego] look down at table
+
+2
+00:00:03,000 --> 00:00:06,225
+[both hands] place dominoes upright | [ego] lean forward
+
+3
+00:00:06,225 --> 00:00:10,141
+[right hand] place domino upright | [left hand] idle | [ego] look down
+
+4
+00:00:10,141 --> 00:00:16,620
+[right hand] place domino upright | [left hand] idle | [ego] look down
+
+5
+00:00:16,620 --> 00:00:20,000
+[left hand] pick up domino and place it | [ego] look down
+
+6
+00:00:20,000 --> 00:00:26,543
+[both hands] arrange dominoes in a curve | [ego] look down
+
+7
+00:00:26,543 --> 00:00:31,543
+[right hand] place domino at end of line | [ego] look down
+
+8
+00:00:31,543 --> 00:00:37,315
+[left hand] pick up domino and place it | [ego] look down
+
+9
+00:00:37,315 --> 00:00:43,627
+[both hands] place the last domino | [ego] look down
+
+10
+00:00:43,627 --> 00:00:45,000
+[left hand] push first domino | [ego] watch dominoes fall

@@ -1,0 +1,15 @@
+1
+00:00:00,100 --> 00:00:01,700
+[right hand] place a red block on the table | [ego] stay still
+
+2
+00:00:01,700 --> 00:00:04,200
+[right hand] pick up yellow and white blocks from the structure | [left hand] hold the base of the structure steady | [ego] stay still
+
+3
+00:00:04,200 --> 00:00:06,300
+[left hand] reach for and pick up a purple block from the scattered pieces | [right hand] hold yellow and white blocks | [ego] stay still
+
+4
+00:00:06,300 --> 00:00:09,800
+[left hand] place the purple block onto the table near the scattered pieces | [right hand] arrange yellow and white blocks on the table | [ego] stay still

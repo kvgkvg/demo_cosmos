@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:03,000
+[both hands] reach toward the wooden structure |  | [ego] look down
+
+2
+00:00:03,000 --> 00:00:11,000
+[both hands] twist and detach the wooden block from the yellow piece | [ego] look down
+
+3
+00:00:11,000 --> 00:00:13,000
+[right hand] place the wooden block on the table| [left hand] hold the structure steady | [ego] look down
+
+4
+00:00:13,000 --> 00:00:15,000
+[right hand] lift the yellow piece | [left hand] touch the axle | [ego] look down
+
+5
+00:00:15,000 --> 00:00:19,000
+[right hand] place the yellow piece on the table | [ego] look down

@@ -1,0 +1,31 @@
+1
+00:00:00,000 --> 00:00:05,000
+[left hand] touch the soft lego tower | [right hand] touch the soft lego tower | [ego] stay still
+
+2
+00:00:05,000 --> 00:00:07,000
+[right hand] disassemble the soft lego tower | [ego] stay still
+
+3
+00:00:07,000 --> 00:00:11,000
+[right hand] disassemble the soft lego tower | [left hand] touch the soft lego tower | [ego] stay still
+
+4
+00:00:11,000 --> 00:00:14,000
+[right hand] disassemble the soft lego tower | [ego] stay still
+
+5
+00:00:14,000 --> 00:00:18,000
+[right hand] disassemble the soft lego tower | [left hand] touch the soft lego tower | [ego] stay still
+
+6
+00:00:18,000 --> 00:00:20,000
+[right hand] disassemble the soft lego tower | [ego] stay still
+
+7
+00:00:20,000 --> 00:00:22,000
+[right hand] disassemble the soft lego tower | [left hand] disassemble the soft lego tower | [ego] stay still
+
+8
+00:00:22,000 --> 00:00:25,000
+[right hand] disassemble the soft lego tower | [left hand] disassemble the soft lego tower | [ego] stay still

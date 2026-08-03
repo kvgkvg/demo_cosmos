@@ -1,0 +1,19 @@
+1
+00:00:00,100 --> 00:00:01,100
+[right hand] pick up a wooden block from the scattered pile | [ego] stay still
+
+2
+00:00:01,100 --> 00:00:02,700
+[right hand] place the wooden block onto the growing tower | [left hand] lightly touch the side of the tower for stability | [ego] stay still
+
+3
+00:00:02,700 --> 00:00:05,200
+[right hand] adjust the newly placed block, aligning it with the others | [left hand] remain near the tower, ready to assist | [ego] stay still
+
+4
+00:00:05,200 --> 00:00:07,800
+[right hand] reach toward the scattered blocks and pick up another piece | [left hand] hover near the tower, preparing to stabilize | [ego] stay still
+
+5
+00:00:07,800 --> 00:00:09,800
+[right hand] place the block on top of the tower | [left hand] gently press down on the side to secure alignment | [ego] stay still

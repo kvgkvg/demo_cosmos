@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:01,700
+[left hand] hold a wooden block | [right hand] place a wooden block on the stack | [ego] stay still
+
+2
+00:00:01,700 --> 00:00:03,200
+[left hand] reach toward scattered blocks | [right hand] hover near the stack | [ego] stay still
+
+3
+00:00:03,200 --> 00:00:05,800
+[left hand] grasp a wooden block | [right hand] place a wooden block on the stack | [ego] stay still
+
+4
+00:00:05,800 --> 00:00:08,300
+[left hand] reach toward scattered blocks | [right hand] hover near the stack | [ego] stay still
+
+5
+00:00:08,300 --> 00:00:09,800
+[left hand] grasp a wooden block | [right hand] place a wooden block on the stack | [ego] stay still

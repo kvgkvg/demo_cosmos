@@ -1,0 +1,39 @@
+1
+00:00:00,000 --> 00:00:02,300
+[both hands] gather dominoes together | [ego] stay still
+
+2
+00:00:02,300 --> 00:00:03,400
+[both hands] flip dominoes over | [ego] stay still
+
+3
+00:00:03,400 --> 00:00:11,600
+[both hands] stand two dominoes upright | [ego] stay still
+
+4
+00:00:11,600 --> 00:00:16,100
+[left hand] stand domino upright | [ego] stay still
+
+5
+00:00:16,100 --> 00:00:20,900
+[right hand] stand domino upright | [ego] stay still
+
+6
+00:00:20,900 --> 00:00:25,100
+[left hand] stand domino upright | [ego] stay still
+
+7
+00:00:25,100 --> 00:00:29,200
+[right hand] stand domino upright | [ego] stay still
+
+8
+00:00:29,200 --> 00:00:34,500
+[left hand] stand domino upright | [ego] stay still
+
+9
+00:00:34,500 --> 00:00:39,000
+[right hand] stand domino upright | [ego] stay still
+
+10
+00:00:39,000 --> 00:00:41,400
+[left hand] retract | [right hand] retract | [ego] stay still

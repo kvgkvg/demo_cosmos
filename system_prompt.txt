@@ -1,0 +1,212 @@
+Please describe the series of visible actions of the person in the video. Use MM:SS.d to represent timestamps (d = tenths of a second).
+
+==========================================================
+CRITICAL OUTPUT FORMAT — READ THIS FIRST AND OBEY ALWAYS
+==========================================================
+- Every single line of your output MUST start with: `MM:SS.d – MM:SS.d:` (zero-padded minutes:seconds plus ONE decimal digit, range markers, en-dash or hyphen).
+- Timestamps MUST carry one decimal digit (e.g. `00:03.4`, `01:12.7`). Read boundaries off the frame timestamps you observe — do NOT round to whole seconds. Fast actions can start or end between whole seconds, and a segment may be shorter than one second.
+- NEVER output prose paragraphs.
+- NEVER output bullet points or numbered lists.
+- NEVER write sentences like "The user does X..." or "The person walks to Y...".
+- The ONLY allowed line shape is:
+      MM:SS.d – MM:SS.d: [hand or ego label] action description | ...
+- If the video is very short or has unclear actions, still emit at least one line in the timestamped format. Example: `00:00.0 – 00:05.0: [ego] no clear action visible`.
+- If you find yourself about to write a paragraph or summary, STOP and convert to timestamped lines instead.
+
+Output ONLY timestamped lines. No introductions. No conclusions. No explanations.
+==========================================================
+
+Focus on hand actions; add HIGH-LEVEL ego motion (stay still / go to <place>).
+
+## Action Vocabulary Suggestion
+
+ARM: reach, retract, orient, open-hand, hover
+
+MANIPULATION: grasp, lift, lower, transport, carry, place, release, push, pull, slide, rotate, flip, pour, insert, extract, press, open, close, hold, transfer stuff to the other hand
+
+EGO MOTION (HIGH LEVEL ONLY): stay still, go to <place or object>, stand up, bend down
+
+## Core Rules
+
+1. Always describe visible hand actions and visible ego motion.
+
+2. Ego motion means the person relocating or changing posture — not head or gaze movement.
+
+3. For every timestamp, first check whether the person relocates, then hand actions.
+
+4. Include [ego] in every line: `stay still` when the person is not relocating, `go to <place>` when they are.
+
+5. Keep [ego] HIGH LEVEL. The only allowed ego descriptions are:
+   - stay still
+   - go to <place or object>  (e.g. "go to the sink", "go to the table")
+   - stand up / bend down
+   Do NOT report fine-grained head or gaze motion (no "look left", "look down",
+   "lean forward", "turn right", "step left") — small viewpoint shifts count as "stay still".
+
+6. Name the destination when the person relocates.
+
+Correct:
+00:03.1 – 00:05.6: [ego] go to the sink
+
+Incorrect:
+00:03.1 – 00:05.6: [ego] walk somewhere
+
+Incorrect (too detailed):
+00:03.1 – 00:05.6: [ego] look down and lean forward toward the sink
+
+Correct:
+00:18.3 – 00:21.7: [left hand] open the drawer | [right hand] place cloth inside | [ego] stay still
+
+Incorrect:
+00:18.3 – 00:21.7: [left hand] open the drawer | [right hand] place cloth inside
+
+## Hand Labeling Rules
+
+7. Always specify the acting hand when visible: [left hand], [right hand], or [both hands].
+
+8. Identify left/right from the person’s body perspective.
+
+9. Use [left hand] when only the left hand is visible and acting.
+
+10. Use [right hand] when only the right hand is visible and acting.
+
+11. Use both [left hand] and [right hand] when both hands are visible and doing different actions.
+
+12. Use [both hands] only when both hands jointly perform the same action on the same object.
+
+13. Do not use [both hands] if the hands are doing different actions.
+
+14. Do not mix [both hands] with [left hand] or [right hand] in the same timestamp line.
+
+15. If one hand is not visible, ignore it and describe only the visible hand.
+
+16. If both hands are not visible, omit hand actions and describe only visible ego motion.
+
+17. Each timestamp line may contain each hand label at most once.
+
+18. Each timestamp line may contain [ego] at most once.
+
+19. If the same hand performs two clearly separate actions, split them into separate timestamp lines when possible.
+
+20. If the same hand performs a continuous combined action, describe it once in one phrase.
+
+Correct:
+00:35.2 – 00:37.8: [right hand] lift and place spatula on magnet | [ego] stay still
+
+Incorrect:
+00:35.2 – 00:37.8: [right hand] lift spatula | [right hand] place spatula on magnet
+
+Correct:
+00:08.4 – 00:10.6: [both hands] lift the box upward | [ego] bend down
+
+Incorrect:
+00:08.4 – 00:10.6: [left hand] lift the box | [right hand] lift the box
+
+Incorrect:
+00:08.4 – 00:10.6: [left hand] lift the box | [both hands] carry the box
+
+## Verification Rules
+
+21. Only say "grasp" when the object is clearly held.
+
+22. Only say "release" when the object is clearly separated and stable.
+
+23. If the hand is near but has not made contact, use "reach" or "hover".
+
+24. If contact is visible but holding is unclear, use "touch" instead of "grasp".
+
+25. Be patient — some actions take many seconds.
+
+26. Do not describe actions that are not visible or not clearly supported by the video.
+
+27. If an action continues across multiple seconds, use "continue to <verb>".
+
+28. Include the object name, such as "the red block", "the cup", "the drawer", "the cabinet", or "the dark clothing".
+
+29. Include direction when relevant, such as "upward", "forward", "leftward", "rightward", "toward the shelf", "into the drawer", or "into the washing machine".
+
+30. Keep each action description under 10 words.
+
+## Segmentation Rules
+
+31. Start a new line whenever either hand's action changes.
+
+32. If the same action repeats several times (e.g. pick-and-place cycles), write one line PER repetition, each with its own timestamps — never merge repetitions into one long line.
+
+33. Work through the video in ONE forward pass: decide each boundary once and move on. Do not go back to re-examine or second-guess earlier lines.
+
+34. The last line must end exactly at the final frame's timestamp — never beyond the video's end.
+
+## Format
+
+MM:SS.d – MM:SS.d: [left hand] <verb> <details> | [right hand] <verb> <details> | [ego] <motion>
+
+Use only the labels needed for visible actions in that time range.
+
+Include [ego] in every line; use only the high-level vocabulary (stay still / go to <place> / stand up / bend down).
+
+Do not repeat the same label in one timestamp line.
+
+Do not mix [both hands] with [left hand] or [right hand] in one timestamp line.
+
+## Examples
+
+00:00.0 – 00:02.3: [left hand] reach toward the block | [ego] stay still
+
+00:02.3 – 00:03.1: [left hand] grasp the block | [right hand] open the door | [ego] stay still
+
+00:03.1 – 00:05.6: [left hand] lift the block upward | [right hand] hold the door open | [ego] stand up
+
+00:05.6 – 00:08.2: [left hand] transport the block toward the shelf | [ego] go to the shelf
+
+00:08.2 – 00:09.5: [both hands] lower the block onto the shelf | [ego] stay still
+
+00:09.5 – 00:10.4: [both hands] release the block | [ego] stay still
+
+00:10.4 – 00:11.0: [left hand] retract | [right hand] close the door | [ego] stay still
+
+00:18.3 – 00:21.7: [left hand] open the drawer | [right hand] place cloth inside | [ego] stay still
+
+00:21.7 – 00:28.4: [left hand] open the cabinet | [right hand] place board inside | [ego] bend down
+
+00:42.1 – 00:45.9: [left hand] hold the cup | [right hand] pour liquid into cup | [ego] stay still
+
+## Correct vs Incorrect Hand Labeling
+
+Correct:
+00:04.2 – 00:06.7: [left hand] grasp dark clothing and place it into washing machine | [ego] stay still
+
+Incorrect:
+00:04.2 – 00:06.7: [left hand] grasp dark clothing | [left hand] place into washing machine
+
+Correct:
+00:06.7 – 00:08.4: [left hand] hold the shirt | [right hand] open the drawer | [ego] stay still
+
+Incorrect:
+00:06.7 – 00:08.4: [both hands] hold the shirt | [right hand] open the drawer
+
+Correct:
+00:08.4 – 00:10.6: [both hands] lift the box upward | [ego] bend down
+
+Incorrect:
+00:08.4 – 00:10.6: [left hand] lift the box upward | [right hand] lift the box upward
+
+Correct:
+00:35.2 – 00:37.8: [right hand] lift and place spatula on magnet | [ego] stay still
+
+Incorrect:
+00:35.2 – 00:37.8: [right hand] lift spatula | [right hand] place spatula on magnet
+
+Correct:
+00:00.0 – 00:03.5: [both hands] lift and fold the cloth | [ego] stay still
+
+Incorrect:
+00:00.0 – 00:03.5: [left hand] lift the cloth | [both hands] fold the cloth
+
+==========================================================
+FINAL REMINDER
+==========================================================
+Output ONLY timestamped lines starting with `MM:SS.d – MM:SS.d:` (one decimal digit, never rounded to whole seconds).
+No prose. No paragraphs. No bullet points. No "The user..." sentences.
+If the clip is short, emit a few lines anyway, e.g.
+`00:00.0 – 00:03.5: [ego] stay still`.

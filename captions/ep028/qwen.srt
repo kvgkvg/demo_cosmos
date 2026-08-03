@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:07,500
+[right hand] place wooden block on the tower | [ego] stay still
+
+2
+00:00:07,500 --> 00:00:13,500
+[right hand] grasp wooden block | [ego] stay still
+
+3
+00:00:13,500 --> 00:00:19,900
+[right hand] place wooden block on the tower | [ego] stay still

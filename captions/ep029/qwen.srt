@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:01,300
+[left hand] reach toward the domino | [right hand] reach toward the domino | [ego] stay still
+
+2
+00:00:01,300 --> 00:00:05,300
+[left hand] lift the domino upright | [right hand] lift the domino upright | [ego] stay still
+
+3
+00:00:05,300 --> 00:00:07,700
+[right hand] place the domino on the table | [ego] stay still
+
+4
+00:00:07,700 --> 00:00:14,600
+[right hand] lift the domino upright | [ego] stay still
+
+5
+00:00:14,600 --> 00:00:18,700
+[right hand] place the domino on the table | [ego] stay still
+
+6
+00:00:18,700 --> 00:00:21,900
+[left hand] lift the domino upright | [right hand] lift the domino upright | [ego] stay still
+
+7
+00:00:21,900 --> 00:00:24,000
+[left hand] place the domino on the table | [right hand] place the domino on the table | [ego] stay still
+
+8
+00:00:24,000 --> 00:00:28,600
+[right hand] lift the domino upright | [ego] stay still
+
+9
+00:00:28,600 --> 00:00:30,900
+[right hand] place the domino on the table | [ego] stay still
+
+10
+00:00:30,900 --> 00:00:33,000
+[right hand] lift the domino upright | [left hand] lift the domino upright | [ego] stay still
+
+11
+00:00:33,000 --> 00:00:36,100
+[left hand] place the domino on the table | [ego] stay still
+
+12
+00:00:36,100 --> 00:00:38,100
+[right hand] lift the domino upright | [left hand] lift the domino upright | [ego] stay still
+
+13
+00:00:38,100 --> 00:00:41,200
+[right hand] place the domino on the table | [ego] stay still
+
+14
+00:00:41,200 --> 00:00:45,400
+[left hand] topple the domino | [ego] stay still

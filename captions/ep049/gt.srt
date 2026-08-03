@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:03,000
+[right hand] grasp blue block from left tower | [left hand] stabilize left tower
+
+2
+00:00:03,000 --> 00:00:04,451
+[right hand] place blue block on right structure | [left hand] stabilize left tower
+
+3
+00:00:04,451 --> 00:00:05,232
+[right hand] grasp yellow block from left tower | [left hand] stabilize left tower
+
+4
+00:00:05,232 --> 00:00:09,000
+[right hand] place yellow block on right structure | [left hand] stabilize left tower
+
+5
+00:00:09,000 --> 00:00:11,000
+[right hand] remove light green block from left tower and place on table
+
+6
+00:00:11,000 --> 00:00:13,000
+[right hand] remove teal block from left tower and place on table
+
+7
+00:00:13,000 --> 00:00:15,000
+[right hand] remove grey block from left tower and place on table | [left hand] remove red block and place on table
+
+8
+00:00:15,000 --> 00:00:17,000
+[right hand] remove yellow block from right structure and place on table | [left hand] remove blue block from right structure and place on table
+
+9
+00:00:17,000 --> 00:00:18,476
+[left hand] remove white block from right structure and place on table | [right hand] hold the light green block
+
+10
+00:00:18,476 --> 00:00:20,372
+[right hand] remove light green block from right structure and place on table | [left hand] remove yellow block from right structure and place on table
+
+11
+00:00:20,372 --> 00:00:23,000
+[right hand] remove blue block from right structure and place on table | [left hand] hold the structure
+
+12
+00:00:23,000 --> 00:00:25,000
+[right hand] remove red block from right structure and place on table | [left hand] remove green from right structure and place on table
+
+13
+00:00:25,000 --> 00:00:27,000
+[right hand] remove purple block from right structure and place on table | [left hand] hold the structure
+
+14
+00:00:27,000 --> 00:00:29,000
+[right hand] remove yellow block from right structure and place on table | | [left hand] hold the structure
+
+15
+00:00:29,000 --> 00:00:31,000
+[right hand] remove light blue block from right structure and place on table | [left hand] remove white from right structure and place on table
+
+16
+00:00:31,000 --> 00:00:32,433
+[both hands] scatter remaining blocks on table

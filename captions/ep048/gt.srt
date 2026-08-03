@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:03,057
+[right hand] grasp the green block | [left hand] rest near the tower | [ego] look down
+
+2
+00:00:03,057 --> 00:00:08,057
+[right hand] pull the green block and attached blocks away | [left hand] rest near the tower | [ego] look down
+
+3
+00:00:08,057 --> 00:00:14,103
+[right hand] seperate the bottom half of the tower | [ego] look down
+
+4
+00:00:14,103 --> 00:00:20,984
+[right hand] seperate the other half of the tower | [ego] look down
+
+5
+00:00:20,984 --> 00:00:25,000
+[left hand] pull apart the red and white blocks | [right hand] separate the remaining tower | [ego] look down

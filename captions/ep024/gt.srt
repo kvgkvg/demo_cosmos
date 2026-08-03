@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:00,965
+[right hand] place red block on table | [ego] look down
+
+2
+00:00:00,965 --> 00:00:03,103
+[right hand] reach for a pile of blocks | [ego] move forward
+
+3
+00:00:03,103 --> 00:00:04,982
+[right hand] graps and pull blocks back | [left hand] reach for the remaining pile of blocks | [ego] move forward
+
+4
+00:00:04,982 --> 00:00:10,000
+[left hand]  grasp and pull small blocks back | [right hand] hold small blocks| [ego] move backward

@@ -1,0 +1,15 @@
+1
+00:00:00,100 --> 00:00:02,700
+[left hand] grasp the gray block | [right hand] assist in holding the gray block | [ego] stay still
+
+2
+00:00:02,700 --> 00:00:06,300
+[right hand] place the gray block on top of the green and white blocks | [ego] stay still
+
+3
+00:00:06,300 --> 00:00:07,800
+[left hand] pick up the purple block from the table | [right hand] hold the gray block | [ego] stay still
+
+4
+00:00:07,800 --> 00:00:09,800
+[left hand] pick up the red block from the table | [right hand] hold the purple block | [ego] stay still

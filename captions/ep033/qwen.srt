@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:01,700
+[left hand] lift the grey block | [right hand] hold the grey block | [ego] stay still
+
+2
+00:00:01,700 --> 00:00:03,400
+[both hands] place the grey block on the tower | [ego] stay still
+
+3
+00:00:03,400 --> 00:00:07,100
+[right hand] move the tower to the right | [left hand] grasp the purple block | [ego] stay still
+
+4
+00:00:07,100 --> 00:00:07,900
+[right hand] hold the purple block | [left hand] reach for the red block | [ego] stay still
+
+5
+00:00:07,900 --> 00:00:08,900
+[left hand] lift the red block | [right hand] hold the purple block | [ego] stay still
+
+6
+00:00:08,900 --> 00:00:10,000
+[left hand] place the red block on the table | [right hand] hold the purple block | [ego] stay still

@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:04,600
+[right hand] grasp a wooden block and place it on the Jenga tower | [left hand] hold the tower steady | [ego] stay still
+
+2
+00:00:04,600 --> 00:00:07,400
+[right hand] reach toward the scattered wooden blocks | [left hand] stay near the tower | [ego] stay still
+
+3
+00:00:07,400 --> 00:00:10,000
+[right hand] grasp another wooden block and place it on the Jenga tower | [left hand] hold the tower steady | [ego] stay still

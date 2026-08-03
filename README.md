@@ -100,7 +100,8 @@ only the clip you actually play is read off disk.
 | GPU | CUDA. Cosmos3-Nano in bf16 fits on one RTX 5090 (32 GB); `device_map="auto"` shards if it doesn't. |
 | Python | `torch` + `transformers>=5.11` (needs `Cosmos3OmniForConditionalGeneration`). |
 | Binaries | `ffmpeg` and `ffprobe` on `PATH` (frame sampling and chunk cutting). |
-| Weights | `nvidia/Cosmos3-Nano`, ~33 GB. Already cached on this machine under `~/.cache/huggingface`. |
+| Weights | `nvidia/Cosmos3-Nano` — **33 GB**, see below. |
+| Disk | ~35 GB free for the weights cache. |
 
 On this machine the `cosmos` conda env has all of it (torch 2.13.0+cu130,
 transformers 5.14.1):
@@ -113,9 +114,59 @@ Elsewhere:
 
 ```bash
 conda create -n cosmos python=3.11 -y && conda activate cosmos
-pip install "torch>=2.4" "transformers>=5.11" accelerate av
+pip install "torch>=2.4" "transformers>=5.11" accelerate av huggingface_hub
 sudo apt install ffmpeg      # provides ffprobe too
 ```
+
+### The model to download
+
+**One model, and only one: [`nvidia/Cosmos3-Nano`](https://huggingface.co/nvidia/Cosmos3-Nano).**
+Public and **not gated** — no HF token, no licence click-through.
+
+```bash
+hf download nvidia/Cosmos3-Nano
+```
+
+`hf` is the huggingface_hub CLI (`pip install huggingface_hub`). On
+huggingface_hub 1.x the old `huggingface-cli` is gone — it exits with
+*“`huggingface-cli` is deprecated and no longer works. Use `hf` instead.”*
+Version-independent alternative:
+
+```bash
+python -c "from huggingface_hub import snapshot_download; snapshot_download('nvidia/Cosmos3-Nano')"
+```
+
+Or skip it entirely: `infer_cosmos.py` downloads the weights on first run.
+
+That lands in `~/.cache/huggingface/hub/models--nvidia--Cosmos3-Nano`, or set
+`HF_HOME=/some/big/disk` first. `infer_cosmos.py` resolves the same cache, so
+once it is there just run the script; `--model /path/to/local/dir` points it at
+an explicit directory instead.
+
+Verified against the Hub on 2026-08-04: 68 files, revision
+`411f42a8fdfb8c5b2583cb8786e0938f49796eaa`, which is what is cached on this
+machine. Measured on disk:
+
+| Folder | Size | What it is |
+|---|---|---|
+| `transformer/` | 29 GB | the omni transformer — the part that writes the captions |
+| `sound_tokenizer/` | 1.9 GB | audio, unused by this script |
+| `vae/` | 1.4 GB | video generation, unused by this script |
+| `vision_encoder/` | 1.1 GB | encodes the sampled frames and chunk video |
+| `assets/` + `images/` | 62 MB | model-card media, unused |
+| `text_tokenizer/`, `scheduler/`, configs | 16 MB | — |
+| **total** | **33 GB** | |
+
+Cosmos3-Nano ships as one omni checkpoint (text/image/video/audio/action), so
+the video-generation and audio experts come down with it even though captioning
+never calls them. Budget the full 33 GB.
+
+Load class is `Cosmos3OmniForConditionalGeneration` — note the `Omni`. The
+checkpoint's `config.json` names `Cosmos3ForConditionalGeneration`, which does
+**not** exist in transformers 5.14.1; loading by that name fails.
+
+Nothing else needs downloading. The Qwen3.6 side of the comparison is already in
+this repo as prediction files — the demo never runs a Qwen model.
 
 ### Check the logic first (no GPU, no model, no ffmpeg)
 

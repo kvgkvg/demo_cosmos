@@ -73,7 +73,7 @@
 <text class="s-mono" x="136" y="472">1 · strip &lt;/think&gt;, drop unparseable lines</text>
 <text class="s-mono" x="136" y="488">2 · discard lines lying inside the overlap</text>
 <text class="s-mono" x="136" y="504">3 · shift to global video time, clamp to chunk</text>
-<text class="s-mono" x="136" y="517">4 · sort by start time</text>
+<text class="s-mono" x="136" y="517">4 · sort, rejoin actions split at a boundary</text>
 
 <path class="s-ar" d="M320,524 L320,552"/>
 <rect class="s-model" x="230" y="554" width="180" height="40" rx="8"/>

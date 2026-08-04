@@ -142,7 +142,9 @@ Sampling is fixed at `temperature=0.7, top_p=0.8, seed=0` in `GEN_KWARGS`.
    the system prompt + task instruction, the global caption, the previous
    chunk's last line, and an instruction not to re-caption the overlap.
 3. Model lines (`MM:SS.d - MM:SS.d: text`) are parsed, overlap duplicates
-   dropped, shifted back to global video time, and written as one SRT.
+   dropped, shifted back to global video time, and written as one SRT. Lines
+   that collapse to zero length are discarded, and an action cut in half by a
+   chunk boundary is rejoined, so the seams do not show in the output.
 
 ## Troubleshooting
 

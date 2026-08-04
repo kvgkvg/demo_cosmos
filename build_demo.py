@@ -670,7 +670,7 @@ def pipeline_svg(examples: dict[str, dict], standalone: bool = False) -> str:
 <text class="s-mono" x="136" y="472">1 · strip &lt;/think&gt;, drop unparseable lines</text>
 <text class="s-mono" x="136" y="488">2 · discard lines lying inside the overlap</text>
 <text class="s-mono" x="136" y="504">3 · shift to global video time, clamp to chunk</text>
-<text class="s-mono" x="136" y="517">4 · sort by start time</text>
+<text class="s-mono" x="136" y="517">4 · sort, rejoin actions split at a boundary</text>
 
 <path class="s-ar" d="M320,524 L320,552"/>
 <rect class="s-model" x="230" y="554" width="180" height="40" rx="8"/>
@@ -768,9 +768,10 @@ stub. Across this demo's {len(examples)} episodes that gives
 <p>The model answers in <code>MM:SS.d – MM:SS.d: text</code> lines, relative to
 the chunk. Any <code>&lt;/think&gt;</code> reasoning is stripped, unparseable
 lines dropped, lines lying entirely in the overlap discarded, and the rest
-shifted back to global video time and clamped to the chunk's bounds. Sorted by
-start time, the result is written as one SRT — the same format as the ground
-truth.</p>
+shifted back to global video time and clamped to the chunk's bounds. Lines that
+collapse to zero length are dropped, and an action the boundary cut in half is
+rejoined with its continuation, so the seams do not show. Sorted by start time,
+the result is written as one SRT — the same format as the ground truth.</p>
 
 <p class="decode">Decoding is identical across chunks: bf16 ·
 temperature {ic.GEN_KWARGS['temperature']} · top_p {ic.GEN_KWARGS['top_p']} ·

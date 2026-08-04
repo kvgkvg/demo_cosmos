@@ -200,16 +200,66 @@ def parse_hand_ego_lines(text: str) -> list[tuple[float, float, str]]:
 
 
 def _stamp(t: float) -> str:  # HH:MM:SS,mmm
-    if t < 0:
-        t = 0.0
-    h, r = divmod(t, 3600)
-    m, s = divmod(r, 60)
-    return f"{int(h):02d}:{int(m):02d}:{int(s):02d},{int(round((s % 1) * 1000)):03d}"
+    """Round to whole milliseconds *first*, then split.
+
+    Rounding the fraction on its own lets 0.9996 s round to 1000 ms and emit
+    `00:00:45,1000` — a four-digit field that is not valid SRT, and that a
+    reader expecting `\\d{3}` drops silently rather than rejecting. Carrying
+    through integer milliseconds keeps the seconds and the remainder in step."""
+    ms_total = max(0, int(round(t * 1000)))
+    h, ms_total = divmod(ms_total, 3_600_000)
+    m, ms_total = divmod(ms_total, 60_000)
+    s, ms = divmod(ms_total, 1000)
+    return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 
 
 def events_to_srt(events) -> str:
     return "\n\n".join(f"{i}\n{_stamp(s)} --> {_stamp(e)}\n{c}"
                        for i, (s, e, c) in enumerate(events, start=1))
+
+
+def remap_events(lines, start: float, end: float, offset: float):
+    """Chunk-local `(s, e, text)` lines -> episode-global events.
+
+    Lines lying entirely inside the overlap were already captioned by the
+    previous chunk, so they are dropped; the rest are shifted by the chunk's
+    start and clamped to its bounds. A line that collapses to zero length under
+    that clamp — or that the model emitted with end <= start — is dropped too:
+    a caption covering no time is not a label, and it renders as a cue with no
+    duration downstream."""
+    events = []
+    for local_start, local_end, caption in lines:
+        if local_end <= offset:                   # already captioned upstream
+            continue
+        global_start = min(start + max(local_start, offset), end)
+        global_end = min(max(start + local_end, global_start), end)
+        if global_end <= global_start:
+            continue
+        events.append((global_start, global_end, caption))
+    return events
+
+
+def merge_boundary_splits(events, boundaries, eps: float = 1e-3):
+    """Rejoin one action that got cut in half by a chunk boundary.
+
+    A line still running when its chunk ends is clamped to that end, and the
+    next chunk describes the same action again from the boundary — leaving a
+    stub like (38.2, 38.5) immediately followed by (38.5, 40.3) with identical
+    text. Merged only when all three hold: the text matches exactly, the cues
+    are contiguous, and the join sits on a chunk boundary. Two identical
+    captions the model emitted *within* one chunk are left alone — those may be
+    a genuinely repeated action, and guessing is worse than keeping both."""
+    out = []
+    for ev in events:
+        if out:
+            ps, pe, pt = out[-1]
+            s, e, t = ev
+            on_boundary = any(abs(pe - b) < eps for b in boundaries)
+            if pt == t and s <= pe + eps and on_boundary:
+                out[-1] = (ps, max(pe, e), pt)
+                continue
+        out.append(ev)
+    return out
 
 
 def plan_chunks(duration: float, chunk_seconds: float, overlap_seconds: float):
@@ -267,14 +317,37 @@ def load_model(model_id: str):
     return processor, model
 
 
+_PROCESSOR_KWARGS_SUPPORTED = None  # resolved once, on first use
+
+
+def _chat_template_kwargs(processor, fps: float | None) -> dict:
+    """Route `fps` the way this transformers wants it.
+
+    Newer versions take per-processor options in a `processor_kwargs` dict and
+    warn when they arrive as loose **kwargs. The loose form still works today,
+    but a version that stops honouring it would silently change chunk sampling
+    rather than fail — so prefer the supported spelling when it exists."""
+    global _PROCESSOR_KWARGS_SUPPORTED
+    kw = dict(tokenize=True, add_generation_prompt=True, return_dict=True,
+              return_tensors="pt")
+    if fps is None:
+        return kw
+    if _PROCESSOR_KWARGS_SUPPORTED is None:
+        import inspect  # noqa: PLC0415 — only this path needs it
+        _PROCESSOR_KWARGS_SUPPORTED = "processor_kwargs" in inspect.signature(
+            processor.apply_chat_template).parameters
+    if _PROCESSOR_KWARGS_SUPPORTED:
+        kw["processor_kwargs"] = {"fps": fps}
+    else:
+        kw["fps"] = fps
+    return kw
+
+
 def run_reasoner(processor, model, messages, max_new_tokens: int,
                  fps: float | None = None) -> str:
     import torch
 
-    kw = dict(tokenize=True, add_generation_prompt=True, return_dict=True,
-              return_tensors="pt")
-    if fps is not None:
-        kw["fps"] = fps
+    kw = _chat_template_kwargs(processor, fps)
     inputs = processor.apply_chat_template(messages, **kw).to(model.device, torch.bfloat16)
     torch.manual_seed(SEED)
     out = model.generate(**inputs, max_new_tokens=max_new_tokens, **GEN_KWARGS)
@@ -349,15 +422,11 @@ def process_episode(processor, model, sys_prompt: str, e: dict, args) -> dict:
             lines = parse_hand_ego_lines(raw)
             if not lines:
                 continue
-            for local_start, local_end, caption in lines:
-                if local_end <= offset:          # entirely inside the overlap
-                    continue
-                global_start = min(start + max(local_start, offset), end)
-                global_end = min(max(start + local_end, global_start), end)
-                all_events.append((global_start, global_end, caption))
+            all_events.extend(remap_events(lines, start, end, offset))
             previous_summary = lines[-1][2]
 
     all_events.sort(key=lambda ev: ev[0])
+    all_events = merge_boundary_splits(all_events, [c[1] for c in chunks])
     if not all_events:
         raise RuntimeError("no parseable timestamped lines in any chunk")
     return {"episode_uid": e["episode_uid"], "pred": events_to_srt(all_events),
@@ -454,9 +523,45 @@ def _selfcheck():
     assert srt.startswith("1\n00:00:00,000 --> 00:00:02,831\n[left hand] grasp domino")
     assert format_mmss(61.25) == "01:01.25"
 
+    # timestamps carry instead of emitting a 4-digit millisecond field, which
+    # is not valid SRT and gets dropped silently by readers
+    assert _stamp(45.9996) == "00:00:46,000"
+    assert _stamp(59.9999) == "00:01:00,000"
+    assert _stamp(3599.9999) == "01:00:00,000"
+    assert _stamp(45.166667) == "00:00:45,167"
+    assert _stamp(-1.0) == "00:00:00,000"
+    assert all(len(p.split(",")[1]) == 3
+               for p in (_stamp(i / 997) for i in range(2000)))
+
     # overlap prompt only appears after the first chunk
     assert "overlap" not in build_chunk_prompt("g", None, 0.0, False)
     assert "00:01.50" in build_chunk_prompt("g", "prev line", 1.5, False)
+
+    # chunk-local -> global remap, the step that stitches the chunks together
+    ev = remap_events([(0.0, 1.0, "in overlap"),      # dropped: ends at the offset
+                       (1.5, 4.0, "kept"),
+                       (4.0, 99.0, "clamped to the chunk end")],
+                      start=18.5, end=38.5, offset=1.5)
+    assert [e[2] for e in ev] == ["kept", "clamped to the chunk end"]
+    assert ev[0] == (20.0, 22.5, "kept")              # shifted by the chunk start
+    assert ev[1][1] == 38.5                           # never runs past the chunk
+    # a line the model emitted with no duration, and one the clamp collapses,
+    # are both dropped rather than becoming zero-length cues
+    assert remap_events([(2.0, 2.0, "zero")], 0.0, 10.0, 0.0) == []
+    assert remap_events([(12.0, 13.0, "past the end")], 0.0, 10.0, 0.0) == []
+    # first chunk has no offset, so nothing is dropped as overlap
+    assert len(remap_events([(0.0, 2.0, "a")], 0.0, 20.0, 0.0)) == 1
+
+    # boundary seam: the stub clamped to the chunk end rejoins its continuation
+    seam = merge_boundary_splits(
+        [(38.2, 38.5, "same"), (38.5, 40.3, "same")], boundaries=[20.0, 38.5])
+    assert seam == [(38.2, 40.3, "same")]
+    # identical captions *inside* a chunk are a possible repeat — left alone
+    assert len(merge_boundary_splits(
+        [(46.5, 49.6, "x"), (49.6, 52.6, "x")], boundaries=[20.0, 38.5])) == 2
+    # different text at a boundary is never merged
+    assert len(merge_boundary_splits(
+        [(38.0, 38.5, "a"), (38.5, 40.0, "b")], boundaries=[38.5])) == 2
 
     print("infer_cosmos selfcheck OK")
 

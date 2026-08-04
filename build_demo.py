@@ -31,9 +31,13 @@ import json
 import re
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+import infer_cosmos as ic  # noqa: E402 — the pipeline panel is generated from
+                           # the real constants, so it cannot drift from the code
 
 # --------------------------------------------------------------------------
 # The review findings. `eps` are 0-based line numbers in val.jsonl.
@@ -198,6 +202,9 @@ def build_examples(repo: Path, copy_videos: bool) -> dict[str, dict]:
             "instruction": e.get("instruction", ""), "duration": duration,
             "span": round(span, 3),
             "video": video_rel, "poster": poster_rel, "tracks": tracks,
+            # the served Qwen path reports its own usage; the pipeline panel
+            # quotes it rather than a remembered number
+            "qwen_prompt_tokens": qwen.get(uid, {}).get("prompt_tokens", 0),
             "stats": {name: dict(n=len(cues), over=overtime(cues, duration),
                                  **coverage_gaps(cues, duration))
                       for name, cues in tracks.items()},
@@ -234,6 +241,53 @@ h1{margin:0 0 6px;font-size:26px;letter-spacing:-.02em}
 .legend{display:flex;flex-wrap:wrap;gap:8px}
 .tag{font-size:12px;padding:3px 9px;border-radius:999px;background:var(--chip);color:var(--muted)}
 .tag.qwen{color:var(--qwen)} .tag.cosmos{color:var(--cosmos)} .tag.gt{color:var(--gt)}
+
+/* "how these captions were produced" panel */
+details.how{margin:22px 0 6px;border:1px solid var(--line);border-radius:12px;
+  background:var(--panel);overflow:hidden}
+details.how>summary{cursor:pointer;padding:13px 18px;font-size:15px;font-weight:600;
+  list-style:none;display:flex;align-items:center;gap:9px}
+details.how>summary::-webkit-details-marker{display:none}
+details.how>summary::before{content:"▸";color:var(--muted);font-size:12px}
+details.how[open]>summary{border-bottom:1px solid var(--line)}
+details.how[open]>summary::before{content:"▾"}
+.how-body{padding:16px 18px 20px;font-size:13.5px;line-height:1.62;max-width:900px}
+.how-body p{margin:0 0 12px}
+.how-body code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;
+  background:var(--chip);padding:1px 5px;border-radius:4px}
+.how-body .lede{color:var(--muted)}
+.how-body h4.step{margin:20px 0 8px;font-size:13px;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line);
+  padding-top:14px}
+.how-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
+@media (max-width:720px){.how-cols{grid-template-columns:1fr}}
+.how-card{border:1px solid var(--line);border-left-width:3px;border-radius:9px;padding:11px 13px}
+.how-card.qwen{border-left-color:var(--qwen)}
+.how-card.cosmos{border-left-color:var(--cosmos)}
+.how-card h4{margin:0 0 5px;font-size:13px}
+.how-card.qwen h4{color:var(--qwen)} .how-card.cosmos h4{color:var(--cosmos)}
+.how-card p{margin:0;color:var(--muted)}
+/* the 10 sample points sit at the midpoint of each of 10 equal spans, which is
+   where ffmpeg actually seeks — so draw them as ticks on the clip, not boxes */
+.frames{position:relative;height:22px;margin:0 0 14px;border-radius:5px;
+  background:var(--chip)}
+.frames i{position:absolute;top:3px;bottom:3px;width:3px;margin-left:-1.5px;
+  border-radius:2px;background:var(--cosmos)}
+.chunks{margin:0 0 14px}
+.chunks .ch{position:relative;height:24px;margin-bottom:4px}
+/* colour-mix rather than opacity: opacity would fade the label with the bar */
+.chunks .ch i{position:absolute;top:0;bottom:0;border-radius:5px;
+  background:color-mix(in srgb, var(--cosmos) 26%, transparent);
+  border:1px solid color-mix(in srgb, var(--cosmos) 55%, transparent);
+  font-style:normal;font-size:10.5px;color:var(--ink);display:flex;
+  align-items:center;justify-content:center;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.ingredients{margin:0 0 12px;padding-left:20px}
+.ingredients li{margin-bottom:5px}
+.how-body .decode{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:11.5px;color:var(--muted);background:var(--chip);display:inline-block;
+  padding:5px 10px;border-radius:6px}
+.how-body .why{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
 
 nav.jump{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);
   padding:10px 0;margin-bottom:26px;overflow-x:auto}
@@ -504,6 +558,102 @@ document.querySelectorAll('.ex').forEach(d =>
 """
 
 
+def pipeline_html(examples: dict[str, dict]) -> str:
+    """The "how these captions were produced" panel.
+
+    Every number is read from `infer_cosmos` or from the data — the chunk
+    diagram is a real `plan_chunks` call on the longest demo episode, and the
+    Qwen token count comes from that prediction's reported usage — so retuning
+    the pipeline updates the explanation instead of invalidating it."""
+    longest = max(examples.values(), key=lambda e: e["duration"])
+    chunks = ic.plan_chunks(longest["duration"], ic.CHUNK_SECONDS, ic.OVERLAP_SECONDS)
+    d = longest["duration"]
+    bars = "".join(
+        f'<div class="ch"><i style="left:{100*s/d:.2f}%;width:{100*(e-s)/d:.2f}%">'
+        f'{s:g}–{e:g}s</i></div>' for s, e in chunks)
+
+    # a clip whose token count is quotable: prefer a short one, so the "frames
+    # dominate the input" point lands
+    tok = min((e for e in examples.values() if e["qwen_prompt_tokens"]),
+              key=lambda e: e["duration"], default=None)
+    qwen_cost = (f" One request, one caption track. Video frames dominate the input — "
+                 f"<b>{tok['qwen_prompt_tokens']:,} prompt tokens</b> for a "
+                 f"{tok['duration']:.1f}-second clip." if tok else "")
+
+    counts = sorted({len(ic.plan_chunks(e["duration"], ic.CHUNK_SECONDS, ic.OVERLAP_SECONDS))
+                     for e in examples.values()})
+    n = ic.GLOBAL_NUM_FRAMES
+    frames = "".join(f'<i style="left:{100*(i+0.5)/n:.2f}%"></i>' for i in range(n))
+
+    return f"""<details class="how" open>
+<summary>How these captions were produced</summary>
+<div class="how-body">
+
+<p class="lede">The two tracks below come from two different mechanisms, and most
+of the findings trace back to that difference.</p>
+
+<div class="how-cols">
+  <div class="how-card qwen"><h4>Qwen3.6 — one shot</h4>
+    <p>The whole episode goes to a served Qwen3.6 in a single request, with the
+    system prompt plus the episode's task instruction.{qwen_cost}</p></div>
+  <div class="how-card cosmos"><h4>Cosmos3-Nano — two stages, chunked</h4>
+    <p>Run locally through <code>transformers</code>, no server. A global context
+    pass, then overlapping chunks stitched back into one track.</p></div>
+</div>
+
+<h4 class="step">① Global pass</h4>
+<p>{ic.GLOBAL_NUM_FRAMES} frames are cut with <code>ffmpeg</code>, one at the
+midpoint of each of {ic.GLOBAL_NUM_FRAMES} equal spans across the clip. They go
+in as images with the ask: <em>one global caption, at most 3 sentences, no
+timestamps</em> (≤{ic.GLOBAL_MAX_TOKENS} tokens). This is context for every chunk
+that follows — it is how a chunk that only sees {ic.CHUNK_SECONDS:g} seconds
+still knows what the episode is about.</p>
+<div class="frames">{frames}</div>
+
+<h4 class="step">② Chunk pass</h4>
+<p>The clip is cut into <b>{ic.CHUNK_SECONDS:g}-second chunks with
+{ic.OVERLAP_SECONDS:g} seconds of overlap</b>. If the leftover tail is shorter
+than 2× the overlap it is merged into the previous chunk instead of becoming a
+stub. Across this demo's {len(examples)} episodes that gives
+{counts[0]}–{counts[-1]} chunks; the longest clip here
+({d:g}s) splits like this:</p>
+<div class="chunks">{bars}</div>
+<p>Each chunk is re-encoded by <code>ffmpeg</code> and sampled at
+{ic.CHUNK_FPS:g} fps. Every chunk request carries four things:</p>
+<ol class="ingredients">
+  <li>the system prompt (<code>system_prompt.txt</code>) plus the episode's task
+      instruction</li>
+  <li>the global caption from stage ①</li>
+  <li>the previous chunk's last caption line, for continuity</li>
+  <li>an explicit instruction not to emit any line lying entirely inside the
+      overlap — plus, on every chunk but the last, <em>“if the final action is
+      still in progress, omit that line, it will be captioned in the next
+      chunk”</em></li>
+</ol>
+
+<h4 class="step">Stitch</h4>
+<p>The model answers in <code>MM:SS.d – MM:SS.d: text</code> lines, relative to
+the chunk. Any <code>&lt;/think&gt;</code> reasoning is stripped, unparseable
+lines dropped, lines lying entirely in the overlap discarded, and the rest
+shifted back to global video time and clamped to the chunk's bounds. Sorted by
+start time, the result is written as one SRT — the same format as the ground
+truth.</p>
+
+<p class="decode">Decoding is identical across chunks: bf16 ·
+temperature {ic.GEN_KWARGS['temperature']} · top_p {ic.GEN_KWARGS['top_p']} ·
+seed {ic.SEED}</p>
+
+<p class="why"><b>Why it shows up below.</b> Chunking is what bounds the damage:
+a bad chunk cannot poison the next one (<i>no error accumulation</i>), and no
+line can be emitted past the chunk's end (<i>no overtime</i>). It is also what
+causes the misses: chunks are captioned independently, so nothing enforces
+continuous coverage across a boundary (<i>gap timestamps</i>) or a consistent
+vocabulary between chunks (<i>inconsistent context</i>).</p>
+
+</div>
+</details>"""
+
+
 def render_html(examples: dict[str, dict]) -> str:
     def summary_row(ex):
         return (f'<span class="mono">#{ex["idx"]}</span>'
@@ -558,6 +708,7 @@ def render_html(examples: dict[str, dict]) -> str:
     <span class="tag cosmos">Cosmos3-Nano = local chunked rollout (20s chunks, 1.5s overlap)</span>
   </div>
 </div></header>
+<div class="wrap">{pipeline_html(examples)}</div>
 <nav class="jump"><div class="wrap">{nav}</div></nav>
 <main class="wrap">{"".join(parts)}</main>
 <script>

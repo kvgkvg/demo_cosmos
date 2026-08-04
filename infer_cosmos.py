@@ -61,6 +61,15 @@ from pathlib import Path
 GEN_KWARGS = dict(do_sample=True, temperature=0.7, top_p=0.8)
 SEED = 0
 
+# Pipeline defaults, here rather than inline in argparse so build_demo.py can
+# import them and describe the real mechanism instead of a copy of it.
+CHUNK_SECONDS = 20.0
+OVERLAP_SECONDS = 1.5
+CHUNK_FPS = 2.0
+GLOBAL_NUM_FRAMES = 10
+GLOBAL_MAX_TOKENS = 256
+CHUNK_MAX_TOKENS = 1024
+
 GLOBAL_SYSTEM_PROMPT = "You are a helpful assistant specialized in video captioning."
 GLOBAL_USER_PROMPT = (
     "These images are frames sampled uniformly, in chronological order, across "
@@ -365,13 +374,13 @@ def main():
     ap.add_argument("--out", type=Path, required=True, help="predictions JSONL (appended)")
     ap.add_argument("--model", default="nvidia/Cosmos3-Nano",
                     help="HF id or local dir (default: %(default)s)")
-    ap.add_argument("--chunk-seconds", type=float, default=20.0)
-    ap.add_argument("--overlap-seconds", type=float, default=1.5)
-    ap.add_argument("--chunk-fps", type=float, default=2.0,
+    ap.add_argument("--chunk-seconds", type=float, default=CHUNK_SECONDS)
+    ap.add_argument("--overlap-seconds", type=float, default=OVERLAP_SECONDS)
+    ap.add_argument("--chunk-fps", type=float, default=CHUNK_FPS,
                     help="fps passed to the processor for chunk videos")
-    ap.add_argument("--global-num-frames", type=int, default=10)
-    ap.add_argument("--global-max-tokens", type=int, default=256)
-    ap.add_argument("--chunk-max-tokens", type=int, default=1024)
+    ap.add_argument("--global-num-frames", type=int, default=GLOBAL_NUM_FRAMES)
+    ap.add_argument("--global-max-tokens", type=int, default=GLOBAL_MAX_TOKENS)
+    ap.add_argument("--chunk-max-tokens", type=int, default=CHUNK_MAX_TOKENS)
     ap.add_argument("--sample", type=int, help="random K episodes (reproducible via --seed)")
     ap.add_argument("--limit", type=int, help="first N episodes (ignored if --sample)")
     ap.add_argument("--seed", type=int, default=42)

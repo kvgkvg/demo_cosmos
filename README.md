@@ -5,6 +5,7 @@ comparing it against **Qwen3.6** on 15 EgoDex clips.
 
 ```
 infer_cosmos.py         the inference script — imports nothing from other repos
+requirements.txt        Python deps (ffmpeg is separate, see setup)
 system_prompt.txt       output-format contract, sent as the system prompt
 example_manifest.jsonl  15 episodes pointing at videos/ — ready to run
 videos/                 the clips (~112 MB)
@@ -27,8 +28,8 @@ conda activate cosmos
 Elsewhere:
 
 ```bash
-conda create -n cosmos python=3.11 -y && conda activate cosmos
-pip install "torch>=2.4" "transformers>=5.11" accelerate av huggingface_hub
+conda create -n cosmos python=3.13 -y && conda activate cosmos
+pip install -r requirements.txt
 ```
 
 **2. ffmpeg** — `ffmpeg` and `ffprobe` must be on `PATH` (frame sampling, chunk

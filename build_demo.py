@@ -217,6 +217,29 @@ def build_examples(repo: Path, copy_videos: bool) -> dict[str, dict]:
 # --------------------------------------------------------------------------
 # Page
 # --------------------------------------------------------------------------
+SVG_CSS = """
+.s-box{fill:var(--panel);stroke:var(--line)}
+.s-model{fill:var(--chip);stroke:var(--cosmos)}
+.s-t{fill:var(--ink);font:12px ui-sans-serif,system-ui,sans-serif}
+.s-tb{fill:var(--ink);font:600 12.5px ui-sans-serif,system-ui,sans-serif}
+.s-m{fill:var(--muted);font:11px ui-sans-serif,system-ui,sans-serif}
+.s-mono{fill:var(--muted);font:10.5px ui-monospace,SFMono-Regular,Menlo,monospace}
+.s-hd{fill:var(--cosmos);font:700 11px ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em}
+.s-ar{stroke:var(--muted);stroke-width:1.4;fill:none;marker-end:url(#a)}
+.s-ard{stroke:var(--cosmos);stroke-width:1.4;fill:none;stroke-dasharray:4 3;marker-end:url(#ac)}
+.s-chunk{fill:color-mix(in srgb,var(--cosmos) 26%,transparent);
+  stroke:color-mix(in srgb,var(--cosmos) 55%,transparent)}
+.s-tick{fill:var(--cosmos)}
+.s-strip{fill:var(--chip)}
+"""
+
+# concrete values for the standalone .svg, which has no page to inherit from
+SVG_STANDALONE_VARS = """
+:root{--panel:#ffffff;--ink:#16181d;--muted:#697086;--line:#e3e6ec;
+      --cosmos:#0e9f6e;--chip:#eef0f5}
+"""
+
+
 CSS = """
 :root{
   --bg:#f6f7f9; --panel:#fff; --ink:#16181d; --muted:#697086; --line:#e3e6ec;
@@ -259,6 +282,10 @@ details.how[open]>summary::before{content:"▾"}
 .how-body h4.step{margin:20px 0 8px;font-size:13px;letter-spacing:.04em;
   text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line);
   padding-top:14px}
+.pipe-fig{margin:0 0 18px}
+svg.pipe{width:100%;height:auto;display:block}
+.pipe-fig figcaption{margin-top:7px;font-size:11.5px;color:var(--muted)}
+""" + SVG_CSS + """
 .how-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
 @media (max-width:720px){.how-cols{grid-template-columns:1fr}}
 .how-card{border:1px solid var(--line);border-left-width:3px;border-radius:9px;padding:11px 13px}
@@ -558,6 +585,107 @@ document.querySelectorAll('.ex').forEach(d =>
 """
 
 
+def pipeline_svg(examples: dict[str, dict], standalone: bool = False) -> str:
+    """The Cosmos pipeline diagram.
+
+    Drawn from the real thing: the chunk staircase is a `plan_chunks` call on
+    the longest demo episode mapped onto the track, and the frame ticks sit at
+    the span midpoints `extract_n_frames` actually seeks to. Retuning the
+    pipeline redraws the picture instead of invalidating it."""
+    longest = max(examples.values(), key=lambda e: e["duration"])
+    d = longest["duration"]
+    chunks = ic.plan_chunks(d, ic.CHUNK_SECONDS, ic.OVERLAP_SECONDS)
+
+    # chunk staircase: [0, d] mapped onto x in [180, 460], one row each. Row
+    # spacing shrinks past 4 chunks so nothing below has to move.
+    x0, w = 180, 280
+    row_h = min(18, 72 / max(1, len(chunks)))
+    bars = "".join(
+        f'<text class="s-mono" x="174" y="{142 + i*row_h + 11:.1f}" text-anchor="end">'
+        f'{s:g}–{e:g} s</text>'
+        f'<rect class="s-chunk" x="{x0 + w*s/d:.1f}" y="{142 + i*row_h:.1f}" '
+        f'width="{max(3, w*(e-s)/d):.1f}" height="{min(14, row_h - 4):.1f}" rx="4"/>'
+        for i, (s, e) in enumerate(chunks))
+
+    n = ic.GLOBAL_NUM_FRAMES
+    ticks = "".join(
+        f'<rect class="s-tick" x="{524 + 300*(i+0.5)/n - 1.5:.1f}" y="75" '
+        f'width="3" height="12" rx="1.5"/>' for i in range(n))
+
+    body = f"""<defs>
+  <marker id="a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0 L7,3.5 L0,7 z" fill="var(--muted)"/></marker>
+  <marker id="ac" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0 L7,3.5 L0,7 z" fill="var(--cosmos)"/></marker>
+</defs>
+
+<rect class="s-box" x="180" y="14" width="280" height="40" rx="8"/>
+<text class="s-tb" x="320" y="32" text-anchor="middle">episode.mp4</text>
+<text class="s-mono" x="320" y="47" text-anchor="middle">{d:g} s · one clip, one manifest line</text>
+<path class="s-ar" d="M460,34 L516,34"/>
+<path class="s-ar" d="M320,54 L320,92"/>
+
+<text class="s-hd" x="524" y="14">① GLOBAL PASS</text>
+<rect class="s-box" x="524" y="22" width="300" height="38" rx="8"/>
+<text class="s-t" x="674" y="39" text-anchor="middle">ffmpeg — {n} frames</text>
+<text class="s-mono" x="674" y="53" text-anchor="middle">midpoint of each of {n} equal spans</text>
+<rect class="s-strip" x="524" y="72" width="300" height="18" rx="4"/>
+{ticks}
+<path class="s-ar" d="M674,90 L674,112"/>
+<rect class="s-model" x="584" y="114" width="180" height="36" rx="8"/>
+<text class="s-tb" x="674" y="137" text-anchor="middle">Cosmos3-Nano</text>
+<path class="s-ar" d="M674,150 L674,172"/>
+<rect class="s-box" x="524" y="174" width="300" height="42" rx="8"/>
+<text class="s-t" x="674" y="192" text-anchor="middle">global caption</text>
+<text class="s-mono" x="674" y="206" text-anchor="middle">≤ 3 sentences · no timestamps</text>
+
+<path class="s-ard" d="M674,216 L674,268 L474,268 L474,300 L466,300"/>
+<text class="s-hd" x="600" y="263" text-anchor="middle">CONTEXT FOR EVERY CHUNK</text>
+
+<text class="s-hd" x="180" y="86">② CHUNK PASS</text>
+<rect class="s-box" x="180" y="94" width="280" height="38" rx="8"/>
+<text class="s-t" x="320" y="111" text-anchor="middle">ffmpeg — {ic.CHUNK_SECONDS:g} s chunks, {ic.OVERLAP_SECONDS:g} s overlap</text>
+<text class="s-mono" x="320" y="125" text-anchor="middle">tail &lt; 2× overlap merges into the previous</text>
+{bars}
+<path class="s-ar" d="M320,214 L320,296"/>
+<text class="s-m" x="330" y="240">for each chunk, {ic.CHUNK_FPS:g} fps</text>
+
+<rect class="s-box" x="8" y="270" width="150" height="76" rx="8"/>
+<text class="s-mono" x="18" y="288">system_prompt.txt</text>
+<text class="s-mono" x="18" y="303">+ task instruction</text>
+<text class="s-mono" x="18" y="318">prev chunk's last line</text>
+<text class="s-mono" x="18" y="333">“skip the overlap”</text>
+<path class="s-ar" d="M158,308 L174,308"/>
+<rect class="s-model" x="180" y="298" width="280" height="38" rx="8"/>
+<text class="s-tb" x="320" y="322" text-anchor="middle">Cosmos3-Nano</text>
+
+<path class="s-ar" d="M320,336 L320,362"/>
+<rect class="s-box" x="180" y="364" width="280" height="42" rx="8"/>
+<text class="s-mono" x="320" y="382" text-anchor="middle">00:03.4 – 00:07.1: [right hand] …</text>
+<text class="s-m" x="320" y="396" text-anchor="middle">chunk-relative timestamps</text>
+
+<path class="s-ar" d="M320,406 L320,432"/>
+<rect class="s-box" x="120" y="434" width="400" height="90" rx="8"/>
+<text class="s-hd" x="136" y="453">STITCH</text>
+<text class="s-mono" x="136" y="472">1 · strip &lt;/think&gt;, drop unparseable lines</text>
+<text class="s-mono" x="136" y="488">2 · discard lines lying inside the overlap</text>
+<text class="s-mono" x="136" y="504">3 · shift to global video time, clamp to chunk</text>
+<text class="s-mono" x="136" y="517">4 · sort by start time</text>
+
+<path class="s-ar" d="M320,524 L320,552"/>
+<rect class="s-model" x="230" y="554" width="180" height="40" rx="8"/>
+<text class="s-tb" x="320" y="572" text-anchor="middle">one .srt per episode</text>
+<text class="s-mono" x="320" y="586" text-anchor="middle">same format as ground truth</text>"""
+
+    if standalone:
+        return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 610" '
+                f'width="840" height="610"><style>{SVG_STANDALONE_VARS}{SVG_CSS}</style>'
+                f'<rect x="0" y="0" width="840" height="610" fill="var(--panel)"/>'
+                f'{body}</svg>\n')
+    return f'<svg class="pipe" viewBox="0 0 840 610" role="img" ' \
+           f'aria-label="Cosmos3-Nano captioning pipeline">{body}</svg>'
+
+
 def pipeline_html(examples: dict[str, dict]) -> str:
     """The "how these captions were produced" panel.
 
@@ -591,6 +719,11 @@ def pipeline_html(examples: dict[str, dict]) -> str:
 
 <p class="lede">The two tracks below come from two different mechanisms, and most
 of the findings trace back to that difference.</p>
+
+<figure class="pipe-fig">{pipeline_svg(examples)}
+  <figcaption>The Cosmos3-Nano path. Chunk boundaries and frame positions are the
+  real ones, drawn for the longest clip in this demo.</figcaption>
+</figure>
 
 <div class="how-cols">
   <div class="how-card qwen"><h4>Qwen3.6 — one shot</h4>
@@ -736,12 +869,16 @@ def main():
     (HERE / "index.html").write_text(render_html(examples))
     # a runnable manifest over the clips vendored here, so infer_cosmos.py has
     # something to point at without a VR-finetune-VLM checkout
+    # standalone copy of the pipeline diagram, for slides — same drawing, but
+    # with concrete colours since there is no page to inherit them from
+    (HERE / "pipeline.svg").write_text(pipeline_svg(examples, standalone=True))
     (HERE / "example_manifest.jsonl").write_text("".join(
         json.dumps({"episode_uid": ex["uid"], "video": ex["video"],
                     "instruction": ex["instruction"], "duration_s": ex["duration"]}) + "\n"
         for ex in examples.values()))
     print(f"\n{len(examples)} examples -> {HERE/'index.html'}")
     print(f"{len(examples)}-episode manifest -> {HERE/'example_manifest.jsonl'}")
+    print(f"pipeline diagram -> {HERE/'pipeline.svg'}")
 
 
 if __name__ == "__main__":

@@ -6,11 +6,15 @@
 # build_demo.py needs nothing beyond the standard library.
 # `python infer_cosmos.py --selfcheck` also runs with none of this installed.
 #
-# Verified working: torch 2.13.0+cu130 · transformers 5.14.1 · accelerate 1.14.0
-#                   av 18.0.0 · huggingface_hub 1.25.1  (Python 3.13.14, CUDA)
+# Verified by building a fresh conda env from this file alone and running the
+# smoke test: Python 3.13, CUDA. Stock PyPI torch already carries sm_120, so
+# RTX 50-series needs no --index-url.
 
 torch>=2.4
+torchvision>=0.19         # Qwen2VLImageProcessor imports it
+torchcodec                # video decoding; transformers prefers it and the
+                          # torchvision fallback is broken (no io.read_video)
 transformers>=5.11        # Cosmos3OmniForConditionalGeneration
 accelerate>=0.26          # device_map="auto"
-av>=13                    # transformers' default video backend is pyav
+pillow>=10                # Qwen2VLImageProcessor imports PIL
 huggingface_hub>=0.34     # weight download, and the `hf` CLI

@@ -327,6 +327,28 @@ svg.pipe{width:100%;height:auto;display:block}
   padding:5px 10px;border-radius:6px}
 .how-body .why{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
 
+/* the findings by name, before the clips */
+.findings-index{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0 6px}
+@media (max-width:820px){.findings-index{grid-template-columns:1fr}}
+.fi-col{border:1px solid var(--line);border-radius:12px;background:var(--panel);
+  padding:13px 15px 14px}
+.fi-col h3{margin:0 0 9px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted)}
+.fi-col ol{margin:0;padding:0;list-style:none;counter-reset:fi}
+.fi-col li{counter-increment:fi;display:flex;align-items:baseline;gap:8px;
+  padding:5px 0 5px 20px;position:relative;font-size:13.5px;line-height:1.4;
+  border-top:1px solid var(--line)}
+.fi-col li:first-child{border-top:0}
+.fi-col li::before{content:counter(fi);position:absolute;left:0;top:5px;font-size:10.5px;
+  color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.fi-col li a{text-decoration:none;flex:1}
+.fi-col li a:hover{text-decoration:underline}
+.fi-col li.qwen a{color:var(--qwen)}
+.fi-col li.cosmos a,.fi-col li.good a{color:var(--cosmos)}
+.fi-col li.bad a{color:var(--bad)}
+.fi-col li span{font-size:10.5px;color:var(--muted);
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
 nav.jump{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);
   padding:10px 0;margin-bottom:26px;overflow-x:auto}
 nav.jump .wrap{display:flex;gap:8px;padding-bottom:0;padding-top:0;white-space:nowrap}
@@ -799,6 +821,21 @@ vocabulary between chunks (<i>inconsistent context</i>).</p>
 </details>"""
 
 
+def findings_index_html() -> str:
+    """The findings, by name, in one screen — so the whole argument is visible
+    before scrolling into the clips. Each name jumps to its bullet."""
+    cols = []
+    for sec in SECTIONS:
+        items = "".join(
+            f'<li class="{b["tone"]}"><a href="#{b["id"]}">{html.escape(b["title"])}</a>'
+            f'<span title="{len(b["eps"])} sample'
+            f'{"s" if len(b["eps"]) > 1 else ""}">{len(b["eps"])}</span></li>'
+            for b in sec["bullets"])
+        cols.append(f'<div class="fi-col"><h3>{html.escape(sec["title"])}</h3>'
+                    f'<ol>{items}</ol></div>')
+    return f'<div class="findings-index">{"".join(cols)}</div>'
+
+
 def render_html(examples: dict[str, dict]) -> str:
     def summary_row(ex):
         return (f'<span class="mono">#{ex["idx"]}</span>'
@@ -855,7 +892,8 @@ def render_html(examples: dict[str, dict]) -> str:
     <span class="tag cosmos">Cosmos3-Nano = local chunked rollout (20s chunks, 1.5s overlap)</span>
   </div>
 </div></header>
-<div class="wrap">{pipeline_html(examples)}</div>
+<div class="wrap">{pipeline_html(examples)}
+{findings_index_html()}</div>
 <nav class="jump"><div class="wrap">{nav}</div></nav>
 <main class="wrap">{"".join(parts)}</main>
 <script>

@@ -152,6 +152,7 @@ Sampling is fixed at `temperature=0.7, top_p=0.8, seed=0` in `GEN_KWARGS`.
 |---|---|
 | `N/M videos do not exist` | wrong paths — run from the repo root, or use `--video-root-map` |
 | `command failed: ffprobe ...` | `ffmpeg`/`ffprobe` not on `PATH` |
+| `module 'torchvision.io' has no attribute 'read_video'` | `torchcodec` missing — transformers fell back to torchvision, which dropped that API in 0.28. `pip install torchcodec` |
 | `ImportError: Cosmos3OmniForConditionalGeneration` | `transformers` older than 5.11 |
 | `Cosmos3ForConditionalGeneration` not found | that name is in the checkpoint's `config.json` but does not exist — load the `Omni` class |
 | `no parseable timestamped lines in any chunk` | model answered in prose; check `--prompt` points at `system_prompt.txt` |

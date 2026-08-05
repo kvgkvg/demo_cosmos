@@ -306,6 +306,23 @@ def build_chunk_prompt(global_caption: str, previous_summary: str | None,
 # ---------------------------------------------------------------------------
 # Model
 # ---------------------------------------------------------------------------
+def warn_missing_decoder() -> None:
+    """Say it up front if the video decoder is missing.
+
+    transformers decodes chunk video with torchcodec and falls back to
+    torchvision — but torchvision >= 0.28 dropped `io.read_video`, so the
+    fallback raises. That surfaces per episode, which means loading 33 GB of
+    weights and then failing on every one of them with the same message."""
+    try:
+        import torchcodec  # noqa: F401 — probe only
+    except ImportError:
+        print("WARNING: torchcodec is not installed. transformers will fall back to "
+              "torchvision, whose `io.read_video` was removed in 0.28 — every episode "
+              "will fail with:\n"
+              "    AttributeError: module 'torchvision.io' has no attribute 'read_video'\n"
+              "  Fix: pip install torchcodec   (see requirements.txt)", file=sys.stderr)
+
+
 def load_model(model_id: str):
     import torch  # imported here so --selfcheck runs without torch installed
     from transformers import AutoProcessor, Cosmos3OmniForConditionalGeneration
@@ -476,6 +493,7 @@ def main():
         print("nothing to do (all episodes already in --out)")
         return
 
+    warn_missing_decoder()
     print(f"loading {args.model} via transformers (may take a while)...")
     processor, model = load_model(args.model)
     print(f"model on {model.device} | chunk={args.chunk_seconds}s "

@@ -54,7 +54,7 @@ SECTIONS = [
              "note": "", "eps": [30, 33], "won": "v1"},
             {"id": "cosmos-better", "tone": "cosmos", "title": "Cosmos's better",
              "note": "", "eps": [29, 36], "won": "v2"},
-            {"id": "both-bad", "tone": "bad", "title": "Both bad",
+            {"id": "tie", "tone": "bad", "title": "Tie",
              "note": "", "eps": [28, 93, 95], "won": "tie"},
         ],
     },
@@ -906,7 +906,7 @@ def overall_report_html(judged: dict) -> str:
     total = judged["total"]
     order = [("v2", "Cosmos's better", "cosmos", "cosmos-better"),
              ("v1", "Qwen's better", "qwen", "qwen-better"),
-             ("tie", "Both bad", "tie", "both-bad")]
+             ("tie", "Tie", "tie", "tie")]
     rows, segs = [], []
     for key, label, cls, anchor in order:
         n = judged["counts"].get(key, 0)
@@ -990,7 +990,7 @@ def render_html(examples: dict[str, dict], judged: dict) -> str:
             # say what the percentages are out of, and that the review tool
             # records "both bad" as a tie rather than as its own option
             blurb += (f' Counts are over the <b>{judged["total"]} episodes</b> judged '
-                      f'in the review tool, where “Both bad” is recorded as a tie.')
+                      f'in the review tool.')
         parts.append(
             f'<section id="{sec["id"]}"><div class="sec-head">'
             f'<h2>{html.escape(sec["title"])}</h2><p>{blurb}</p></div>'

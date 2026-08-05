@@ -77,7 +77,7 @@ SECTIONS = [
         "blurb": "Where it still loses to Qwen, and what a prompt or post-process would have to fix.",
         "bullets": [
             {"id": "gap-timestamp", "tone": "bad", "title": "Timestamp gaps / overlaps",
-             "note": "", "eps": [24, 47, 82]},
+             "note": "", "eps": [82]},
             {"id": "too-many-actions", "tone": "bad",
              "title": "Too many actions in a single caption",
              "note": "", "eps": [37, 38]},

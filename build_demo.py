@@ -62,14 +62,10 @@ SECTIONS = [
         "blurb": "What the chunked Cosmos3-Nano pipeline does well.",
         "bullets": [
             {"id": "hand-identity", "tone": "good", "title": "Hand identity",
-             "note": "Trên đa số sample, cosmos detect được khá tốt được hành động "
-                     "của tay trái và tay phải.",
-             "eps": [43, 45]},
+             "note": "", "eps": [43, 45]},
             {"id": "more-detail", "tone": "good",
              "title": "More detailed and clearly separated actions",
-             "note": "Describes actions in greater detail than Qwen or provides "
-                     "similarly detailed descriptions.",
-             "eps": [79, 82, 48, 156]},
+             "note": "", "eps": [79, 82, 48, 156]},
             {"id": "no-overtime", "tone": "good",
              "title": "Effective strategy (no overtime)",
              "note": "", "eps": [24, 27]},

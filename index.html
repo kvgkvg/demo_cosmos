@@ -8,11 +8,13 @@
 :root{
   --bg:#f6f7f9; --panel:#fff; --ink:#16181d; --muted:#697086; --line:#e3e6ec;
   --qwen:#7c5cff; --cosmos:#0e9f6e; --gt:#8a93a6; --bad:#e0435a; --good:#0e9f6e;
+  --tie:#8a93a6;
   --chip:#eef0f5;
 }
 @media (prefers-color-scheme:dark){
   :root{ --bg:#0f1116; --panel:#171a21; --ink:#e8eaf0; --muted:#98a0b5; --line:#272c38;
          --qwen:#a48cff; --cosmos:#3ddc97; --gt:#8a93a6; --bad:#ff6b81; --good:#3ddc97;
+         --tie:#6b7280;
          --chip:#222736; }
 }
 *{box-sizing:border-box}
@@ -94,8 +96,37 @@ svg.pipe{width:100%;height:auto;display:block}
   padding:5px 10px;border-radius:6px}
 .how-body .why{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
 
+/* overall report — the head-to-head result on its own.
+   Tie neutral is per-mode: #8a93a6 on light, #6b7280 on dark, both validated
+   against the two series hues (normal-vision ΔE 21.2 / 21.5). */
+.overall-report{border:1px solid var(--line);border-radius:12px;background:var(--panel);
+  padding:16px 18px 14px;margin:14px 0 0}
+.or-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;margin-bottom:12px}
+.or-head h2{margin:0;font-size:17px;letter-spacing:-.01em}
+.or-head p{margin:0;font-size:12.5px;color:var(--muted)}
+.or-head p b{color:var(--ink)}
+.or-bar{display:flex;gap:2px;height:26px;margin-bottom:12px}   /* 2px surface gap */
+.or-bar i{border-radius:3px;min-width:3px}
+.or-bar i:first-child{border-radius:5px 3px 3px 5px}
+.or-bar i:last-child{border-radius:3px 5px 5px 3px}
+.or-bar i.cosmos,.sw.cosmos{background:var(--cosmos)}
+.or-bar i.qwen,.sw.qwen{background:var(--qwen)}
+.or-bar i.tie,.sw.tie{background:var(--tie)}
+.or-rows{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:720px){.or-rows{grid-template-columns:1fr}}
+.or-row{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:inherit;
+  border:1px solid var(--line);border-radius:9px;padding:9px 11px}
+.or-row:hover{background:var(--chip)}
+.sw{width:10px;height:10px;border-radius:3px;flex:none;align-self:center}
+.or-label{flex:1;font-size:13px}
+.or-n{font-size:19px;font-weight:700;letter-spacing:-.02em}   /* ink, not series colour */
+.or-pct{font-size:12px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.or-foot{margin:11px 0 0;font-size:12.5px;color:var(--muted)}
+.or-foot b{color:var(--ink)}
+
 /* the findings by name, before the clips */
-.findings-index{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0 6px}
+.findings-index{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0 6px}
 @media (max-width:820px){.findings-index{grid-template-columns:1fr}}
 .fi-col{border:1px solid var(--line);border-radius:12px;background:var(--panel);
   padding:13px 15px 14px}
@@ -371,7 +402,16 @@ vocabulary between chunks (<i>inconsistent context</i>).</p>
 
 </div>
 </details>
-<div class="findings-index"><div class="fi-col"><h3>Overall verdict</h3><ol><li class="qwen"><a href="#qwen-better">Qwen&#x27;s better</a><span title="30 of 98 judged episodes">31%</span></li><li class="cosmos"><a href="#cosmos-better">Cosmos&#x27;s better</a><span title="46 of 98 judged episodes">47%</span></li><li class="bad"><a href="#both-bad">Both bad</a><span title="22 of 98 judged episodes">22%</span></li></ol></div><div class="fi-col"><h3>Strengths</h3><ol><li class="good"><a href="#hand-identity">Hand identity</a><span title="2 samples">2</span></li><li class="good"><a href="#more-detail">More detailed and clearly separated actions</a><span title="4 samples">4</span></li><li class="good"><a href="#no-overtime">Effective strategy (no overtime)</a><span title="2 samples">2</span></li></ol></div><div class="fi-col"><h3>Weaknesses</h3><ol><li class="bad"><a href="#gap-timestamp">Timestamp gaps / overlaps</a><span title="1 sample">1</span></li><li class="bad"><a href="#too-many-actions">Too many actions in a single caption</a><span title="2 samples">2</span></li><li class="bad"><a href="#misunderstand-action">Misunderstand the action</a><span title="1 sample">1</span></li><li class="bad"><a href="#repetitive">Repetitive</a><span title="2 samples">2</span></li></ol></div></div></div>
+<section class="overall-report" id="report">
+  <div class="or-head">
+    <h2>Overall report</h2>
+    <p>Human A/B review · <b>98 episodes</b> judged</p>
+  </div>
+  <div class="or-bar"><i class="cosmos" style="flex:46" title="Cosmos's better: 46 of 98"></i><i class="qwen" style="flex:30" title="Qwen's better: 30 of 98"></i><i class="tie" style="flex:22" title="Both bad: 22 of 98"></i></div>
+  <div class="or-rows"><a class="or-row" href="#cosmos-better"><span class="sw cosmos"></span><span class="or-label">Cosmos&#x27;s better</span><span class="or-n">46</span><span class="or-pct">46.9%</span></a><a class="or-row" href="#qwen-better"><span class="sw qwen"></span><span class="or-label">Qwen&#x27;s better</span><span class="or-n">30</span><span class="or-pct">30.6%</span></a><a class="or-row" href="#both-bad"><span class="sw tie"></span><span class="or-label">Both bad</span><span class="or-n">22</span><span class="or-pct">22.4%</span></a></div>
+  <p class="or-foot">Excluding ties, Cosmos wins <b>61%</b> of the 76 decided head-to-heads.</p>
+</section>
+<div class="findings-index"><div class="fi-col"><h3>Strengths</h3><ol><li class="good"><a href="#hand-identity">Hand identity</a><span title="2 samples">2</span></li><li class="good"><a href="#more-detail">More detailed and clearly separated actions</a><span title="4 samples">4</span></li><li class="good"><a href="#no-overtime">Effective strategy (no overtime)</a><span title="2 samples">2</span></li></ol></div><div class="fi-col"><h3>Weaknesses</h3><ol><li class="bad"><a href="#gap-timestamp">Timestamp gaps / overlaps</a><span title="1 sample">1</span></li><li class="bad"><a href="#too-many-actions">Too many actions in a single caption</a><span title="2 samples">2</span></li><li class="bad"><a href="#misunderstand-action">Misunderstand the action</a><span title="1 sample">1</span></li><li class="bad"><a href="#repetitive">Repetitive</a><span title="2 samples">2</span></li></ol></div></div></div>
 <nav class="jump"><div class="wrap"><a href="#verdict">Overall verdict</a><a href="#strength">Strengths</a><a href="#weakness">Weaknesses</a></div></nav>
 <main class="wrap"><section id="verdict"><div class="sec-head"><h2>Overall verdict</h2><p>Head-to-head on the val split: which model&#x27;s caption a human reviewer preferred. Counts are over the <b>98 episodes</b> judged in the review tool, where “Both bad” is recorded as a tie.</p></div><div class="bullet qwen" id="qwen-better"><h3>Qwen&#x27;s better<span class="count tally" title="30 of 98 judged episodes"><b>30</b> / 98 · 30.6%</span></h3><div class="ex" data-ep="ep030"><div class="ex-head"><span class="mono">#30</span><span class="uid">assemble_disassemble_structures_v2.1/episode_000084</span><span class="mono uid">13.7s · gt 5 / qwen 9 / cosmos 7 cues</span></div><div class="ex-body"></div></div><div class="ex" data-ep="ep033"><div class="ex-head"><span class="mono">#33</span><span class="uid">assemble_disassemble_soft_legos_v2.1/episode_000127</span><span class="mono uid">10.0s · gt 4 / qwen 6 / cosmos 4 cues</span></div><div class="ex-body"></div></div></div><div class="bullet cosmos" id="cosmos-better"><h3>Cosmos&#x27;s better<span class="count tally" title="46 of 98 judged episodes"><b>46</b> / 98 · 46.9%</span></h3><div class="ex" data-ep="ep029"><div class="ex-head"><span class="mono">#29</span><span class="uid">arrange_topple_dominoes_v2.1/episode_000390</span><span class="mono uid">45.2s · gt 10 / qwen 14 / cosmos 19 cues</span></div><div class="ex-body"></div></div><div class="ex" data-ep="ep036"><div class="ex-head"><span class="mono">#36</span><span class="uid">assemble_jenga_v2.1/episode_000108</span><span class="mono uid">10.0s · gt 5 / qwen 4 / cosmos 5 cues</span></div><div class="ex-body"></div></div></div><div class="bullet bad" id="both-bad"><h3>Both bad<span class="count tally" title="22 of 98 judged episodes"><b>22</b> / 98 · 22.4%</span></h3><div class="ex" data-ep="ep028"><div class="ex-head"><span class="mono">#28</span><span class="uid">assemble_jenga_v2.1/episode_000202</span><span class="mono uid">10.0s · gt 4 / qwen 3 / cosmos 8 cues</span></div><div class="ex-body"></div></div><div class="ex" data-ep="ep093"><div class="ex-head"><span class="mono">#93</span><span class="uid">braid_unbraid_v2.1/episode_000092</span><span class="mono uid">26.8s · gt 5 / qwen 6 / cosmos 23 cues</span></div><div class="ex-body"></div></div><div class="ex" data-ep="ep095"><div class="ex-head"><span class="mono">#95</span><span class="uid">basic_fold-part2_v2.1/episode_000144</span><span class="mono uid">11.6s · gt 6 / qwen 5 / cosmos 10 cues</span></div><div class="ex-body"></div></div></div></section><section id="strength"><div class="sec-head"><h2>Strengths</h2><p>What the chunked Cosmos3-Nano pipeline does well.</p></div><div class="bullet good" id="hand-identity"><h3>Hand identity<span class="count">Samples: 43, 45</span></h3><div class="ex" data-ep="ep043"><div class="ex-head"><span class="mono">#43</span><span class="uid">arrange_topple_dominoes_v2.1/episode_000365</span><span class="mono uid">41.5s · gt 8 / qwen 10 / cosmos 13 cues</span></div><div class="ex-body"></div></div><div class="ex" data-ep="ep045"><div class="ex-head"><span class="mono">#45</span><span class="uid">assemble_jenga_v2.1/episode_000519</span><span class="mono uid">10.0s · gt 5 / qwen 3 / cosmos 5 cues</span></div><div class="ex-body"></div></div></div><div class="bullet good" id="more-detail"><h3>More detailed and clearly separated actions<span class="count">Samples: 79, 82, 48, 156</span></h3><div class="ex" data-ep="ep079"><div class="ex-head"><span class="mono">#79</span><span class="uid">assemble_disassemble_tiles_v2.1/episode_000301</span><span class="mono uid">40.9s · gt 6 / qwen 8 / cosmos 31 cues</span></div><div class="ex-body"></div></div><div class="ex" data-ep="ep082"><div class="ex-head"><span class="mono">#82</span><span class="uid">declutter_desk_v2.1/episode_000054</span><span class="mono uid">46.9s · gt 9 / qwen 8 / cosmos 34 cues</span></div><div class="ex-body"></div></div><div class="ex" data-ep="ep048"><div class="ex-head"><span class="mono">#48</span><span class="uid">assemble_disassemble_soft_legos_v2.1/episode_000102</span><span class="mono uid">25.1s · gt 5 / qwen 8 / cosmos 23 cues</span></div><div class="ex-body"></div></div><div class="ex" data-ep="ep156"><div class="ex-head"><span class="mono">#156</span><span class="uid">add_remove_lid_v2.1/episode_000944</span><span class="mono uid">14.9s · gt 11 / qwen 5 / cosmos 5 cues</span></div><div class="ex-body"></div></div></div><div class="bullet good" id="no-overtime"><h3>Effective strategy (no overtime)<span class="count">Samples: 24, 27</span></h3><div class="ex" data-ep="ep024"><div class="ex-head"><span class="mono">#24</span><span class="uid">assemble_disassemble_soft_legos_v2.1/episode_000137</span><span class="mono uid">10.0s · gt 4 / qwen 8 / cosmos 4 cues</span></div><div class="ex-body"></div></div><div class="ex" data-ep="ep027"><div class="ex-head"><span class="mono">#27</span><span class="uid">assemble_disassemble_legos_v2.1/episode_000184</span><span class="mono uid">7.3s · gt 4 / qwen 5 / cosmos 8 cues</span></div><div class="ex-body"></div></div></div></section><section id="weakness"><div class="sec-head"><h2>Weaknesses</h2><p>Where it still loses to Qwen, and what a prompt or post-process would have to fix.</p></div><div class="bullet bad" id="gap-timestamp"><h3>Timestamp gaps / overlaps<span class="count">Samples: 82</span></h3><div class="ex" data-ep="ep082"><div class="ex-head"><span class="mono">#82</span><span class="uid">declutter_desk_v2.1/episode_000054</span><span class="mono uid">46.9s · gt 9 / qwen 8 / cosmos 34 cues</span></div><div class="ex-body"></div></div></div><div class="bullet bad" id="too-many-actions"><h3>Too many actions in a single caption<span class="count">Samples: 37, 38</span></h3><div class="ex" data-ep="ep037"><div class="ex-head"><span class="mono">#37</span><span class="uid">assemble_disassemble_soft_legos_v2.1/episode_000289</span><span class="mono uid">70.2s · gt 14 / qwen 14 / cosmos 23 cues</span></div><div class="ex-body"></div></div><div class="ex" data-ep="ep038"><div class="ex-head"><span class="mono">#38</span><span class="uid">assemble_jenga_v2.1/episode_000079</span><span class="mono uid">10.0s · gt 5 / qwen 6 / cosmos 12 cues</span></div><div class="ex-body"></div></div></div><div class="bullet bad" id="misunderstand-action"><h3>Misunderstand the action<span class="count">Samples: 31</span></h3><div class="ex" data-ep="ep031"><div class="ex-head"><span class="mono">#31</span><span class="uid">assemble_disassemble_structures_v2.1/episode_000180</span><span class="mono uid">19.0s · gt 5 / qwen 189 / cosmos 6 cues</span></div><div class="ex-body"></div></div></div><div class="bullet bad" id="repetitive"><h3>Repetitive<span class="count">Samples: 57, 92</span></h3><div class="ex" data-ep="ep057"><div class="ex-head"><span class="mono">#57</span><span class="uid">arrange_topple_dominoes_v2.1/episode_000536</span><span class="mono uid">90.8s · gt 9 / qwen 31 / cosmos 31 cues</span></div><div class="ex-body"></div></div><div class="ex" data-ep="ep092"><div class="ex-head"><span class="mono">#92</span><span class="uid">play_piano-part1_v2.1/episode_000311</span><span class="mono uid">10.0s · gt 4 / qwen 1 / cosmos 1 cues</span></div><div class="ex-body"></div></div></div></section></main>
 <script>

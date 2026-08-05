@@ -280,11 +280,13 @@ CSS = """
 :root{
   --bg:#f6f7f9; --panel:#fff; --ink:#16181d; --muted:#697086; --line:#e3e6ec;
   --qwen:#7c5cff; --cosmos:#0e9f6e; --gt:#8a93a6; --bad:#e0435a; --good:#0e9f6e;
+  --tie:#8a93a6;
   --chip:#eef0f5;
 }
 @media (prefers-color-scheme:dark){
   :root{ --bg:#0f1116; --panel:#171a21; --ink:#e8eaf0; --muted:#98a0b5; --line:#272c38;
          --qwen:#a48cff; --cosmos:#3ddc97; --gt:#8a93a6; --bad:#ff6b81; --good:#3ddc97;
+         --tie:#6b7280;
          --chip:#222736; }
 }
 *{box-sizing:border-box}
@@ -352,8 +354,37 @@ svg.pipe{width:100%;height:auto;display:block}
   padding:5px 10px;border-radius:6px}
 .how-body .why{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
 
+/* overall report — the head-to-head result on its own.
+   Tie neutral is per-mode: #8a93a6 on light, #6b7280 on dark, both validated
+   against the two series hues (normal-vision ΔE 21.2 / 21.5). */
+.overall-report{border:1px solid var(--line);border-radius:12px;background:var(--panel);
+  padding:16px 18px 14px;margin:14px 0 0}
+.or-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;margin-bottom:12px}
+.or-head h2{margin:0;font-size:17px;letter-spacing:-.01em}
+.or-head p{margin:0;font-size:12.5px;color:var(--muted)}
+.or-head p b{color:var(--ink)}
+.or-bar{display:flex;gap:2px;height:26px;margin-bottom:12px}   /* 2px surface gap */
+.or-bar i{border-radius:3px;min-width:3px}
+.or-bar i:first-child{border-radius:5px 3px 3px 5px}
+.or-bar i:last-child{border-radius:3px 5px 5px 3px}
+.or-bar i.cosmos,.sw.cosmos{background:var(--cosmos)}
+.or-bar i.qwen,.sw.qwen{background:var(--qwen)}
+.or-bar i.tie,.sw.tie{background:var(--tie)}
+.or-rows{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:720px){.or-rows{grid-template-columns:1fr}}
+.or-row{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:inherit;
+  border:1px solid var(--line);border-radius:9px;padding:9px 11px}
+.or-row:hover{background:var(--chip)}
+.sw{width:10px;height:10px;border-radius:3px;flex:none;align-self:center}
+.or-label{flex:1;font-size:13px}
+.or-n{font-size:19px;font-weight:700;letter-spacing:-.02em}   /* ink, not series colour */
+.or-pct{font-size:12px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.or-foot{margin:11px 0 0;font-size:12.5px;color:var(--muted)}
+.or-foot b{color:var(--ink)}
+
 /* the findings by name, before the clips */
-.findings-index{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0 6px}
+.findings-index{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0 6px}
 @media (max-width:820px){.findings-index{grid-template-columns:1fr}}
 .fi-col{border:1px solid var(--line);border-radius:12px;background:var(--panel);
   padding:13px 15px 14px}
@@ -862,6 +893,48 @@ def judged_chip(bullet: dict, judged: dict) -> str:
             f'<b>{n}</b> / {total} · {100 * n / total:.1f}%</span>')
 
 
+def overall_report_html(judged: dict) -> str:
+    """The head-to-head result as its own report: a proportion bar plus a row
+    per outcome.
+
+    Segment order is Cosmos / Qwen / tie deliberately — the neutral tie grey and
+    the Cosmos green sit at ΔE 14.9 for normal vision, under the readability
+    floor, so they are never placed adjacent. Counts are ink-coloured; the swatch
+    carries identity, so the numbers stay legible for colour-blind readers."""
+    if not judged:
+        return ""
+    total = judged["total"]
+    order = [("v2", "Cosmos's better", "cosmos", "cosmos-better"),
+             ("v1", "Qwen's better", "qwen", "qwen-better"),
+             ("tie", "Both bad", "tie", "both-bad")]
+    rows, segs = [], []
+    for key, label, cls, anchor in order:
+        n = judged["counts"].get(key, 0)
+        pct = 100 * n / total if total else 0
+        segs.append(f'<i class="{cls}" style="flex:{n or 0.001}" '
+                    f'title="{label}: {n} of {total}"></i>')
+        rows.append(
+            f'<a class="or-row" href="#{anchor}">'
+            f'<span class="sw {cls}"></span>'
+            f'<span class="or-label">{html.escape(label)}</span>'
+            f'<span class="or-n">{n}</span>'
+            f'<span class="or-pct">{pct:.1f}%</span></a>')
+
+    v1, v2 = judged["counts"].get("v1", 0), judged["counts"].get("v2", 0)
+    decided = v1 + v2
+    head = (f'Excluding ties, Cosmos wins <b>{100*v2/decided:.0f}%</b> of the '
+            f'{decided} decided head-to-heads.' if decided else "")
+    return f"""<section class="overall-report" id="report">
+  <div class="or-head">
+    <h2>Overall report</h2>
+    <p>Human A/B review · <b>{total} episodes</b> judged</p>
+  </div>
+  <div class="or-bar">{"".join(segs)}</div>
+  <div class="or-rows">{"".join(rows)}</div>
+  <p class="or-foot">{head}</p>
+</section>"""
+
+
 def findings_index_html(judged: dict) -> str:
     """The findings, by name, in one screen — so the whole argument is visible
     before scrolling into the clips. Each name jumps to its bullet."""
@@ -875,6 +948,8 @@ def findings_index_html(judged: dict) -> str:
 
     cols = []
     for sec in SECTIONS:
+        if judged and all(b.get("won") for b in sec["bullets"]):
+            continue          # the verdict has its own report block above
         items = "".join(
             f'<li class="{b["tone"]}"><a href="#{b["id"]}">{html.escape(b["title"])}</a>'
             f'{right(b)}</li>'
@@ -948,6 +1023,7 @@ def render_html(examples: dict[str, dict], judged: dict) -> str:
   </div>
 </div></header>
 <div class="wrap">{pipeline_html(examples)}
+{overall_report_html(judged)}
 {findings_index_html(judged)}</div>
 <nav class="jump"><div class="wrap">{nav}</div></nav>
 <main class="wrap">{"".join(parts)}</main>

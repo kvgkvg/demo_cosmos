@@ -1,0 +1,19 @@
+1
+00:00:00,100 --> 00:00:02,700
+[left hand] hold the cup steady | [right hand] grasp and lift the lid off the cup | [right hand] place the lid on the table | [ego] stay still
+
+2
+00:00:02,700 --> 00:00:05,800
+[left hand] hold the cup steady | [right hand] grasp and lift the lid off the cup | [right hand] place the lid on the table | [ego] stay still
+
+3
+00:00:05,800 --> 00:00:08,300
+[left hand] hold the cup steady | [right hand] grasp and lift the lid off the cup | [right hand] place the lid on the table | [ego] stay still
+
+4
+00:00:08,300 --> 00:00:10,900
+[left hand] hold the cup steady | [right hand] grasp and lift the lid off the cup | [right hand] place the lid on the table | [ego] stay still
+
+5
+00:00:10,900 --> 00:00:14,900
+[left hand] hold the cup steady | [right hand] grasp and lift the lid off the cup | [right hand] place the lid on the table | [ego] stay still

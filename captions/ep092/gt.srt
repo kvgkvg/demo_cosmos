@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:03,000
+[left hand] play the piano | [right hand] rest on the piano | [ego] look down
+
+2
+00:00:03,000 --> 00:00:06,000
+[left hand] continue playing the piano | [right hand] rest on the piano | [ego] look down
+
+3
+00:00:06,000 --> 00:00:09,000
+[left hand] continue playing the piano | [right hand] rest on the piano | [ego] look down
+
+4
+00:00:09,000 --> 00:00:10,000
+[left hand] continue playing | [right hand] rest on the piano | [ego] look down

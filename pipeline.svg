@@ -24,7 +24,7 @@
 
 <rect class="s-box" x="180" y="14" width="280" height="40" rx="8"/>
 <text class="s-tb" x="320" y="32" text-anchor="middle">episode.mp4</text>
-<text class="s-mono" x="320" y="47" text-anchor="middle">70.2 s · one clip, one manifest line</text>
+<text class="s-mono" x="320" y="47" text-anchor="middle">90.83 s · one clip, one manifest line</text>
 <path class="s-ar" d="M460,34 L516,34"/>
 <path class="s-ar" d="M320,54 L320,92"/>
 
@@ -49,7 +49,7 @@
 <rect class="s-box" x="180" y="94" width="280" height="38" rx="8"/>
 <text class="s-t" x="320" y="111" text-anchor="middle">ffmpeg — 20 s chunks, 1.5 s overlap</text>
 <text class="s-mono" x="320" y="125" text-anchor="middle">tail &lt; 2× overlap merges into the previous</text>
-<text class="s-mono" x="174" y="153.0" text-anchor="end">0–20 s</text><rect class="s-chunk" x="180.0" y="142.0" width="79.8" height="14.0" rx="4"/><text class="s-mono" x="174" y="171.0" text-anchor="end">18.5–38.5 s</text><rect class="s-chunk" x="253.8" y="160.0" width="79.8" height="14.0" rx="4"/><text class="s-mono" x="174" y="189.0" text-anchor="end">37–57 s</text><rect class="s-chunk" x="327.6" y="178.0" width="79.8" height="14.0" rx="4"/><text class="s-mono" x="174" y="207.0" text-anchor="end">55.5–70.2 s</text><rect class="s-chunk" x="401.4" y="196.0" width="58.6" height="14.0" rx="4"/>
+<text class="s-mono" x="174" y="153.0" text-anchor="end">0–20 s</text><rect class="s-chunk" x="180.0" y="142.0" width="61.7" height="10.4" rx="4"/><text class="s-mono" x="174" y="167.4" text-anchor="end">18.5–38.5 s</text><rect class="s-chunk" x="237.0" y="156.4" width="61.7" height="10.4" rx="4"/><text class="s-mono" x="174" y="181.8" text-anchor="end">37–57 s</text><rect class="s-chunk" x="294.1" y="170.8" width="61.7" height="10.4" rx="4"/><text class="s-mono" x="174" y="196.2" text-anchor="end">55.5–75.5 s</text><rect class="s-chunk" x="351.1" y="185.2" width="61.7" height="10.4" rx="4"/><text class="s-mono" x="174" y="210.6" text-anchor="end">74–90.83 s</text><rect class="s-chunk" x="408.1" y="199.6" width="51.9" height="10.4" rx="4"/>
 <path class="s-ar" d="M320,214 L320,296"/>
 <text class="s-m" x="330" y="240">for each chunk, 2 fps</text>
 

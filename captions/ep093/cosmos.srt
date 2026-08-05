@@ -1,0 +1,91 @@
+1
+00:00:00,100 --> 00:00:01,100
+[left hand] hold the left side of the pink ribbon | [right hand] hold the right side of the pink ribbon | [ego] stay still
+
+2
+00:00:01,100 --> 00:00:02,100
+[left hand] grasp the left strand of the pink ribbon | [right hand] grasp the right strand of the pink ribbon | [ego] stay still
+
+3
+00:00:02,100 --> 00:00:03,200
+[left hand] pull the left strand downward | [right hand] pull the right strand downward | [ego] stay still
+
+4
+00:00:03,200 --> 00:00:04,200
+[left hand] release the left strand | [right hand] release the right strand | [ego] stay still
+
+5
+00:00:04,200 --> 00:00:05,200
+[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still
+
+6
+00:00:05,200 --> 00:00:06,200
+[left hand] pull the left strand downward | [right hand] pull the right strand downward | [ego] stay still
+
+7
+00:00:06,200 --> 00:00:07,200
+[left hand] release the left strand | [right hand] release the right strand | [ego] stay still
+
+8
+00:00:07,200 --> 00:00:08,200
+[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still
+
+9
+00:00:08,200 --> 00:00:09,200
+[left hand] pull the left strand downward | [right hand] pull the right strand downward | [ego] stay still
+
+10
+00:00:09,200 --> 00:00:10,200
+[left hand] release the left strand | [right hand] release the right strand | [ego] stay still
+
+11
+00:00:10,200 --> 00:00:11,200
+[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still
+
+12
+00:00:11,200 --> 00:00:12,300
+[left hand] pull the left strand downward | [right hand] pull the right strand downward | [ego] stay still
+
+13
+00:00:12,300 --> 00:00:13,300
+[left hand] release the left strand | [right hand] release the right strand | [ego] stay still
+
+14
+00:00:13,300 --> 00:00:14,300
+[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still
+
+15
+00:00:14,300 --> 00:00:15,300
+[left hand] pull the left strand downward | [right hand] pull the right strand downward | [ego] stay still
+
+16
+00:00:15,300 --> 00:00:16,300
+[left hand] release the left strand | [right hand] release the right strand | [ego] stay still
+
+17
+00:00:16,300 --> 00:00:17,300
+[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still
+
+18
+00:00:17,300 --> 00:00:18,300
+[left hand] pull the left strand downward | [right hand] pull the right strand downward | [ego] stay still
+
+19
+00:00:18,300 --> 00:00:19,300
+[left hand] release the left strand | [right hand] release the right strand | [ego] stay still
+
+20
+00:00:19,300 --> 00:00:19,800
+[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still
+
+21
+00:00:20,000 --> 00:00:22,200
+[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still
+
+22
+00:00:22,200 --> 00:00:25,300
+[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still
+
+23
+00:00:25,300 --> 00:00:26,700
+[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still

@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:05,000
+[both hands] separate orange triangles from the stack and place on table | [ego] look down at tiles
+
+2
+00:00:05,000 --> 00:00:15,000
+[both hands] separate various small triangles from the stack and place on table | [ego] look down at tiles
+
+3
+00:00:15,000 --> 00:00:25,000
+[both hands] separate green and orange square tiles from the stack and place on table | [ego] look down at tiles
+
+4
+00:00:25,000 --> 00:00:29,641
+[both hands] separate blue, yellow, and pink square tiles from the stack and place on table | [ego] look down at tiles
+
+5
+00:00:29,641 --> 00:00:36,855
+[both hands] separate orange square, yellow square, and yellow and purple triangles from the stack and place on table | [ego] look down at tiles
+
+6
+00:00:36,855 --> 00:00:40,867
+[both hands] separate remaining blue square and orange triangle and spread tiles on table | [ego] look down at tiles

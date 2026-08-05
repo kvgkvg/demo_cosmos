@@ -1,0 +1,135 @@
+1
+00:00:00,100 --> 00:00:02,100
+[ego] stay still with hands positioned near the cardboard box on the desk
+
+2
+00:00:02,100 --> 00:00:04,700
+[left hand] reach toward the cardboard box and grasp its edge | [right hand] support the box from below | [ego] lift the box slightly off the desk
+
+3
+00:00:07,200 --> 00:00:11,200
+[right hand] pick up the white paper cup from the desk | [right hand] place the paper cup inside the cardboard box | [ego] hold the box steady with the left hand
+
+4
+00:00:12,300 --> 00:00:18,800
+[right hand] pick up the crumpled paper from the desk | [right hand] place the crumpled paper inside the cardboard box | [ego] adjust the box position slightly with the left hand
+
+5
+00:00:18,800 --> 00:00:19,800
+[right hand] reach toward the snack packet on the desk | [right hand] grasp the snack packet | [ego] prepare to move the snack packet into the box
+
+6
+00:00:20,000 --> 00:00:22,700
+[right hand] lift the snack packet off the desk | [right hand] place the snack packet into the cardboard box | [right hand] release the snack packet inside the box
+
+7
+00:00:22,700 --> 00:00:25,700
+[right hand] reach toward the green t-shirt on the desk | [right hand] grasp the green t-shirt | [right hand] lift the green t-shirt off the desk | [right hand] place the green t-shirt into the cardboard box | [right hand] release the green t-shirt inside the box
+
+8
+00:00:25,700 --> 00:00:28,200
+[right hand] reach toward the orange t-shirt on the desk | [right hand] grasp the orange t-shirt | [right hand] lift the orange t-shirt off the desk | [right hand] place the orange t-shirt into the cardboard box | [right hand] release the orange t-shirt inside the box
+
+9
+00:00:28,200 --> 00:00:34,300
+[right hand] reach toward the orange cloth on the desk | [right hand] grasp the orange cloth | [right hand] lift the orange cloth off the desk | [right hand] place the orange cloth into the cardboard box | [right hand] release the orange cloth inside the box
+
+10
+00:00:34,300 --> 00:00:37,800
+[right hand] reach toward the plastic bottle on the desk | [right hand] grasp the plastic bottle | [right hand] lift the plastic bottle off the desk | [right hand] place the plastic bottle into the cardboard box | [right hand] release the plastic bottle inside the box | [right hand] retract from the box
+
+11
+00:00:37,800 --> 00:00:37,800
+[right hand] hover above the cardboard box after releasing the plastic bottle
+
+12
+00:00:37,800 --> 00:00:37,800
+[right hand] release the plastic bottle inside the box
+
+13
+00:00:37,800 --> 00:00:37,800
+[right hand] retract from the box
+
+14
+00:00:37,800 --> 00:00:37,800
+[right hand] hover above the cardboard box after releasing the plastic bottle
+
+15
+00:00:37,800 --> 00:00:37,800
+[right hand] release the plastic bottle inside the box
+
+16
+00:00:37,800 --> 00:00:37,800
+[right hand] retract from the box
+
+17
+00:00:37,800 --> 00:00:37,800
+[right hand] hover above the cardboard box after releasing the plastic bottle
+
+18
+00:00:37,800 --> 00:00:37,800
+[right hand] release the plastic bottle inside the box
+
+19
+00:00:37,800 --> 00:00:37,800
+[right hand] retract from the box
+
+20
+00:00:37,800 --> 00:00:37,800
+[right hand] hover above the cardboard box after releasing the plastic bottle
+
+21
+00:00:37,800 --> 00:00:37,800
+[right hand] release the plastic bottle inside the box
+
+22
+00:00:37,800 --> 00:00:37,800
+[right hand] retract from the box
+
+23
+00:00:37,800 --> 00:00:37,800
+[right hand] hover above the cardboard box after releasing the plastic bottle
+
+24
+00:00:37,800 --> 00:00:37,800
+[right hand] release the plastic bottle inside the box
+
+25
+00:00:37,800 --> 00:00:37,800
+[right hand] retract from the box
+
+26
+00:00:37,800 --> 00:00:37,800
+[right hand] hover above the cardboard box after releasing the plastic bottle
+
+27
+00:00:37,800 --> 00:00:37,800
+[right hand] release the plastic bottle inside the box
+
+28
+00:00:37,800 --> 00:00:37,800
+[right hand] retract from the box
+
+29
+00:00:37,800 --> 00:00:37,800
+[right hand] hover above the cardboard box after releasing the plastic bottle
+
+30
+00:00:37,800 --> 00:00:37,800
+[right hand] release the plastic bottle inside the box
+
+31
+00:00:37,800 --> 00:00:37,800
+[right hand] retract from the box
+
+32
+00:00:37,800 --> 00:00:37,800
+[right hand] hover above the cardboard box after releasing the plastic bottle
+
+33
+00:00:38,000 --> 00:00:40,300
+[left hand] hold the cardboard box steady | [right hand] release the plastic bottle into the box | [ego] adjust the box position on the desk
+
+34
+00:00:40,300 --> 00:00:46,900
+[ego] stay still with hands resting near the desk surface, observing the arrangement of items including the box, laptop, notebook, and pen

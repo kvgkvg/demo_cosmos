@@ -1,0 +1,39 @@
+1
+00:00:00,100 --> 00:00:01,200
+[left hand] reach toward the gray t-shirt on the yellow surface | [ego] stay still
+
+2
+00:00:01,200 --> 00:00:03,200
+[left hand] grasp the gray t-shirt | [right hand] assist in lifting the t-shirt | [ego] stay still
+
+3
+00:00:03,200 --> 00:00:04,200
+[left hand] hold the gray t-shirt while [right hand] smooths it out on the yellow surface | [ego] stay still
+
+4
+00:00:04,200 --> 00:00:05,300
+[left hand] smooth the gray t-shirt on the yellow surface | [right hand] adjust the t-shirt | [ego] stay still
+
+5
+00:00:05,300 --> 00:00:06,300
+[left hand] hold the bottom edge of the gray t-shirt | [right hand] fold the side seam inward | [ego] stay still
+
+6
+00:00:06,300 --> 00:00:07,300
+[right hand] smooth the folded gray t-shirt | [left hand] hold the edge | [ego] stay still
+
+7
+00:00:07,300 --> 00:00:08,300
+[right hand] fold the gray t-shirt from the bottom upward | [left hand] hold the folded section | [ego] stay still
+
+8
+00:00:08,300 --> 00:00:09,400
+[left hand] hold the folded gray t-shirt | [right hand] fold the t-shirt again | [ego] stay still
+
+9
+00:00:09,400 --> 00:00:10,400
+[right hand] roll the gray t-shirt into a compact bundle | [left hand] assist in rolling | [ego] stay still
+
+10
+00:00:10,400 --> 00:00:11,400
+[right hand] press down on the rolled gray t-shirt bundle | [left hand] hold the bundle | [ego] stay still

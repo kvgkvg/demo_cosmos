@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:03,400
+[left hand] grasp the grey t-shirt and lift it upward | [right hand] hover near the shirt | [ego] stay still
+
+2
+00:00:03,400 --> 00:00:06,300
+[both hands] spread the t-shirt flat on the table | [ego] stay still
+
+3
+00:00:06,300 --> 00:00:08,100
+[right hand] fold the right side of the shirt inward | [left hand] hold the left edge | [ego] stay still
+
+4
+00:00:08,100 --> 00:00:09,700
+[both hands] fold the bottom hem upward toward the collar | [ego] stay still
+
+5
+00:00:09,700 --> 00:00:11,600
+[right hand] fold the top section downward to complete the fold | [left hand] retract | [ego] stay still

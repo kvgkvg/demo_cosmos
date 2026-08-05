@@ -3109,1192 +3109,1527 @@
    }
   }
  },
- "ep049": {
-  "key": "ep049",
-  "idx": 49,
-  "uid": "assemble_disassemble_soft_legos_v2.1/episode_000534",
-  "task": "assemble_disassemble_soft_legos_v2.1",
-  "instruction": "assemble_disassemble_soft_legos: Disassemble the soft lego tower back into individual pieces on a white background while sitting.",
-  "duration": 32.433333,
-  "span": 227.0,
-  "video": "videos/ep049.mp4",
-  "poster": "posters/ep049.jpg",
+ "ep057": {
+  "key": "ep057",
+  "idx": 57,
+  "uid": "arrange_topple_dominoes_v2.1/episode_000536",
+  "task": "arrange_topple_dominoes_v2.1",
+  "instruction": "arrange_topple_dominoes: Arrange dominoes upright on a metal table and topple them.",
+  "duration": 90.833333,
+  "span": 90.833,
+  "video": "videos/ep057.mp4",
+  "poster": "posters/ep057.jpg",
   "tracks": {
    "gt": [
     {
      "s": 0.0,
-     "e": 3.0,
-     "t": "[right hand] grasp blue block from left tower | [left hand] stabilize left tower"
+     "e": 6.0,
+     "t": "[both hands] gather scattered dominoes | [ego] look down"
     },
     {
-     "s": 3.0,
-     "e": 4.451,
-     "t": "[right hand] place blue block on right structure | [left hand] stabilize left tower"
-    },
-    {
-     "s": 4.451,
-     "e": 5.232,
-     "t": "[right hand] grasp yellow block from left tower | [left hand] stabilize left tower"
-    },
-    {
-     "s": 5.232,
-     "e": 9.0,
-     "t": "[right hand] place yellow block on right structure | [left hand] stabilize left tower"
-    },
-    {
-     "s": 9.0,
-     "e": 11.0,
-     "t": "[right hand] remove light green block from left tower and place on table"
-    },
-    {
-     "s": 11.0,
+     "s": 7.0,
      "e": 13.0,
-     "t": "[right hand] remove teal block from left tower and place on table"
+     "t": "[both hands] stack dominoes upright | [ego] look down"
     },
     {
-     "s": 13.0,
-     "e": 15.0,
-     "t": "[right hand] remove grey block from left tower and place on table | [left hand] remove red block and place on table"
+     "s": 14.0,
+     "e": 22.668,
+     "t": "[right hand] arrange dominoes in a line | [ego] look down"
     },
     {
-     "s": 15.0,
-     "e": 17.0,
-     "t": "[right hand] remove yellow block from right structure and place on table | [left hand] remove blue block from right structure and place on table"
+     "s": 22.668,
+     "e": 40.0,
+     "t": "[both hands] continue placing dominoes in a chain | [ego] look down"
     },
     {
-     "s": 17.0,
-     "e": 18.476,
-     "t": "[left hand] remove white block from right structure and place on table | [right hand] hold the light green block"
+     "s": 41.0,
+     "e": 51.0,
+     "t": "[both hands] add dominoes to the chain | [ego] look down"
     },
     {
-     "s": 18.476,
-     "e": 20.372,
-     "t": "[right hand] remove light green block from right structure and place on table | [left hand] remove yellow block from right structure and place on table"
+     "s": 52.0,
+     "e": 63.0,
+     "t": "[right hand] curve the domino line | [ego] look down"
     },
     {
-     "s": 20.372,
-     "e": 23.0,
-     "t": "[right hand] remove blue block from right structure and place on table | [left hand] hold the structure"
+     "s": 64.0,
+     "e": 70.0,
+     "t": "[right hand] place domino at end of line | [ego] look down"
     },
     {
-     "s": 23.0,
-     "e": 25.0,
-     "t": "[right hand] remove red block from right structure and place on table | [left hand] remove green from right structure and place on table"
+     "s": 71.0,
+     "e": 85.562,
+     "t": "[right hand] finish arranging dominoes | [ego] look down"
     },
     {
-     "s": 25.0,
-     "e": 27.0,
-     "t": "[right hand] remove purple block from right structure and place on table | [left hand] hold the structure"
-    },
-    {
-     "s": 27.0,
-     "e": 29.0,
-     "t": "[right hand] remove yellow block from right structure and place on table | | [left hand] hold the structure"
-    },
-    {
-     "s": 29.0,
-     "e": 31.0,
-     "t": "[right hand] remove light blue block from right structure and place on table | [left hand] remove white from right structure and place on table"
-    },
-    {
-     "s": 31.0,
-     "e": 32.433,
-     "t": "[both hands] scatter remaining blocks on table"
+     "s": 85.562,
+     "e": 90.0,
+     "t": "[right hand] push first domino to topple chain | [ego] watch dominoes fall"
     }
    ],
    "qwen": [
     {
      "s": 0.0,
-     "e": 2.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
+     "e": 3.1,
+     "t": "[both hands] gather dominoes together | [ego] stay still"
     },
     {
-     "s": 2.0,
-     "e": 8.0,
-     "t": "[right hand] lift and place the blue block on the tower | [left hand] hold the tower | [ego] stay still"
+     "s": 3.1,
+     "e": 6.4,
+     "t": "[both hands] separate dominoes | [ego] stay still"
     },
     {
-     "s": 8.0,
-     "e": 13.0,
-     "t": "[right hand] grasp and lift the yellow block | [left hand] hold the tower | [ego] stay still"
+     "s": 6.4,
+     "e": 10.1,
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
-     "s": 13.0,
-     "e": 14.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
+     "s": 10.1,
+     "e": 13.1,
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
-     "s": 14.0,
-     "e": 18.0,
-     "t": "[right hand] lift and place the yellow block on the tower | [left hand] hold the tower | [ego] stay still"
+     "s": 13.1,
+     "e": 16.0,
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
-     "s": 18.0,
-     "e": 20.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
+     "s": 16.0,
+     "e": 19.0,
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
-     "s": 20.0,
-     "e": 25.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
+     "s": 19.0,
+     "e": 22.0,
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
-     "s": 25.0,
-     "e": 26.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
+     "s": 22.0,
+     "e": 24.7,
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
-     "s": 26.0,
-     "e": 28.0,
-     "t": "[right hand] grasp the gray block | [left hand] hold the tower | [ego] stay still"
+     "s": 24.7,
+     "e": 27.1,
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
-     "s": 28.0,
+     "s": 27.1,
      "e": 30.0,
-     "t": "[right hand] lift the gray block | [left hand] hold the tower | [ego] stay still"
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
      "s": 30.0,
-     "e": 31.0,
-     "t": "[right hand] lift the gray block | [left hand] hold the tower | [ego] stay still"
+     "e": 33.1,
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
-     "s": 31.0,
-     "e": 32.0,
-     "t": "[right hand] grasp the red block | [left hand] hold the tower | [ego] stay still"
+     "s": 33.1,
+     "e": 35.6,
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
-     "s": 32.0,
-     "e": 33.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
+     "s": 35.6,
+     "e": 38.5,
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
-     "s": 33.0,
-     "e": 35.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
+     "s": 38.5,
+     "e": 41.5,
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
-     "s": 35.0,
-     "e": 36.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
+     "s": 41.5,
+     "e": 44.4,
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
-     "s": 36.0,
-     "e": 37.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
+     "s": 44.4,
+     "e": 47.1,
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
-     "s": 37.0,
-     "e": 38.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 38.0,
-     "e": 40.0,
-     "t": "[right hand] grasp the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 40.0,
-     "e": 41.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 41.0,
-     "e": 42.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 42.0,
-     "e": 43.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 43.0,
-     "e": 44.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 44.0,
-     "e": 45.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 45.0,
-     "e": 46.0,
-     "t": "[right hand] grasp the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 46.0,
-     "e": 47.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 47.0,
-     "e": 48.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 48.0,
-     "e": 49.0,
-     "t": "[right hand] grasp the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 49.0,
+     "s": 47.1,
      "e": 50.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
+     "t": "[both hands] place domino upright | [ego] stay still"
     },
     {
      "s": 50.0,
-     "e": 51.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
+     "e": 53.1,
+     "t": "[right hand] place domino upright | [ego] stay still"
     },
     {
-     "s": 51.0,
-     "e": 52.0,
-     "t": "[right hand] grasp the yellow block | [left hand] hold the tower | [ego] stay still"
+     "s": 53.1,
+     "e": 55.8,
+     "t": "[right hand] place domino upright | [ego] stay still"
     },
     {
-     "s": 52.0,
-     "e": 53.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
+     "s": 55.8,
+     "e": 58.8,
+     "t": "[right hand] place domino upright | [ego] stay still"
     },
     {
-     "s": 53.0,
-     "e": 54.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
+     "s": 58.8,
+     "e": 61.5,
+     "t": "[right hand] place domino upright | [ego] stay still"
     },
     {
-     "s": 54.0,
-     "e": 55.0,
-     "t": "[right hand] grasp the red block | [left hand] hold the tower | [ego] stay still"
+     "s": 61.5,
+     "e": 64.4,
+     "t": "[right hand] place domino upright | [ego] stay still"
     },
     {
-     "s": 55.0,
-     "e": 56.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
+     "s": 64.4,
+     "e": 67.1,
+     "t": "[right hand] place domino upright | [ego] stay still"
     },
     {
-     "s": 56.0,
-     "e": 57.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
+     "s": 67.1,
+     "e": 69.8,
+     "t": "[right hand] place domino upright | [ego] stay still"
     },
     {
-     "s": 57.0,
-     "e": 58.0,
-     "t": "[right hand] grasp the white block | [left hand] hold the tower | [ego] stay still"
+     "s": 69.8,
+     "e": 72.5,
+     "t": "[right hand] place domino upright | [ego] stay still"
     },
     {
-     "s": 58.0,
-     "e": 59.0,
-     "t": "[right hand] lift the white block | [left hand] hold the tower | [ego] stay still"
+     "s": 72.5,
+     "e": 75.5,
+     "t": "[right hand] place domino upright | [ego] stay still"
     },
     {
-     "s": 59.0,
-     "e": 60.0,
-     "t": "[right hand] lift the white block | [left hand] hold the tower | [ego] stay still"
+     "s": 75.5,
+     "e": 78.2,
+     "t": "[right hand] place domino upright | [ego] stay still"
     },
     {
-     "s": 60.0,
-     "e": 61.0,
-     "t": "[right hand] grasp the gray block | [left hand] hold the tower | [ego] stay still"
+     "s": 78.2,
+     "e": 81.1,
+     "t": "[right hand] place domino upright | [ego] stay still"
     },
     {
-     "s": 61.0,
-     "e": 62.0,
-     "t": "[right hand] lift the gray block | [left hand] hold the tower | [ego] stay still"
+     "s": 81.1,
+     "e": 84.1,
+     "t": "[right hand] place domino upright | [ego] stay still"
     },
     {
-     "s": 62.0,
-     "e": 63.0,
-     "t": "[right hand] lift the gray block | [left hand] hold the tower | [ego] stay still"
+     "s": 84.1,
+     "e": 87.1,
+     "t": "[right hand] topple dominoes | [ego] stay still"
     },
     {
-     "s": 63.0,
-     "e": 64.0,
-     "t": "[right hand] grasp the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 64.0,
-     "e": 65.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 65.0,
-     "e": 66.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 66.0,
-     "e": 67.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 67.0,
-     "e": 68.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 68.0,
-     "e": 69.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 69.0,
-     "e": 70.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 70.0,
-     "e": 71.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 71.0,
-     "e": 72.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 72.0,
-     "e": 73.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 73.0,
-     "e": 74.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 74.0,
-     "e": 75.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 75.0,
-     "e": 76.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 76.0,
-     "e": 77.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 77.0,
-     "e": 78.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 78.0,
-     "e": 79.0,
-     "t": "[right hand] grasp the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 79.0,
-     "e": 80.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 80.0,
-     "e": 81.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 81.0,
-     "e": 82.0,
-     "t": "[right hand] grasp the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 82.0,
-     "e": 83.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 83.0,
-     "e": 84.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 84.0,
-     "e": 85.0,
-     "t": "[right hand] grasp the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 85.0,
-     "e": 86.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 86.0,
-     "e": 87.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 87.0,
-     "e": 88.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 88.0,
-     "e": 89.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 89.0,
-     "e": 90.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 90.0,
-     "e": 91.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 91.0,
-     "e": 92.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 92.0,
-     "e": 93.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 93.0,
-     "e": 94.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 94.0,
-     "e": 95.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 95.0,
-     "e": 96.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 96.0,
-     "e": 97.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 97.0,
-     "e": 98.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 98.0,
-     "e": 99.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 99.0,
-     "e": 100.0,
-     "t": "[right hand] grasp the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 100.0,
-     "e": 101.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 101.0,
-     "e": 102.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 102.0,
-     "e": 103.0,
-     "t": "[right hand] grasp the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 103.0,
-     "e": 104.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 104.0,
-     "e": 105.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 105.0,
-     "e": 106.0,
-     "t": "[right hand] grasp the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 106.0,
-     "e": 107.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 107.0,
-     "e": 108.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 108.0,
-     "e": 109.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 109.0,
-     "e": 110.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 110.0,
-     "e": 111.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 111.0,
-     "e": 112.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 112.0,
-     "e": 113.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 113.0,
-     "e": 114.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 114.0,
-     "e": 115.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 115.0,
-     "e": 116.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 116.0,
-     "e": 117.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 117.0,
-     "e": 118.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 118.0,
-     "e": 119.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 119.0,
-     "e": 120.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 120.0,
-     "e": 121.0,
-     "t": "[right hand] grasp the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 121.0,
-     "e": 122.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 122.0,
-     "e": 123.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 123.0,
-     "e": 124.0,
-     "t": "[right hand] grasp the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 124.0,
-     "e": 125.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 125.0,
-     "e": 126.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 126.0,
-     "e": 127.0,
-     "t": "[right hand] grasp the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 127.0,
-     "e": 128.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 128.0,
-     "e": 129.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 129.0,
-     "e": 130.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 130.0,
-     "e": 131.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 131.0,
-     "e": 132.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 132.0,
-     "e": 133.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 133.0,
-     "e": 134.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 134.0,
-     "e": 135.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 135.0,
-     "e": 136.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 136.0,
-     "e": 137.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 137.0,
-     "e": 138.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 138.0,
-     "e": 139.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 139.0,
-     "e": 140.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 140.0,
-     "e": 141.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 141.0,
-     "e": 142.0,
-     "t": "[right hand] grasp the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 142.0,
-     "e": 143.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 143.0,
-     "e": 144.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 144.0,
-     "e": 145.0,
-     "t": "[right hand] grasp the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 145.0,
-     "e": 146.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 146.0,
-     "e": 147.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 147.0,
-     "e": 148.0,
-     "t": "[right hand] grasp the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 148.0,
-     "e": 149.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 149.0,
-     "e": 150.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 150.0,
-     "e": 151.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 151.0,
-     "e": 152.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 152.0,
-     "e": 153.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 153.0,
-     "e": 154.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 154.0,
-     "e": 155.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 155.0,
-     "e": 156.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 156.0,
-     "e": 157.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 157.0,
-     "e": 158.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 158.0,
-     "e": 159.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 159.0,
-     "e": 160.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 160.0,
-     "e": 161.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 161.0,
-     "e": 162.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 162.0,
-     "e": 163.0,
-     "t": "[right hand] grasp the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 163.0,
-     "e": 164.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 164.0,
-     "e": 165.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 165.0,
-     "e": 166.0,
-     "t": "[right hand] grasp the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 166.0,
-     "e": 167.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 167.0,
-     "e": 168.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 168.0,
-     "e": 169.0,
-     "t": "[right hand] grasp the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 169.0,
-     "e": 170.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 170.0,
-     "e": 171.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 171.0,
-     "e": 172.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 172.0,
-     "e": 173.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 173.0,
-     "e": 174.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 174.0,
-     "e": 175.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 175.0,
-     "e": 176.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 176.0,
-     "e": 177.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 177.0,
-     "e": 178.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 178.0,
-     "e": 179.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 179.0,
-     "e": 180.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 180.0,
-     "e": 181.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 181.0,
-     "e": 182.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 182.0,
-     "e": 183.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 183.0,
-     "e": 184.0,
-     "t": "[right hand] grasp the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 184.0,
-     "e": 185.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 185.0,
-     "e": 186.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 186.0,
-     "e": 187.0,
-     "t": "[right hand] grasp the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 187.0,
-     "e": 188.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 188.0,
-     "e": 189.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 189.0,
-     "e": 190.0,
-     "t": "[right hand] grasp the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 190.0,
-     "e": 191.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 191.0,
-     "e": 192.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 192.0,
-     "e": 193.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 193.0,
-     "e": 194.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 194.0,
-     "e": 195.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 195.0,
-     "e": 196.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 196.0,
-     "e": 197.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 197.0,
-     "e": 198.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 198.0,
-     "e": 199.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 199.0,
-     "e": 200.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 200.0,
-     "e": 201.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 201.0,
-     "e": 202.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 202.0,
-     "e": 203.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 203.0,
-     "e": 204.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 204.0,
-     "e": 205.0,
-     "t": "[right hand] grasp the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 205.0,
-     "e": 206.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 206.0,
-     "e": 207.0,
-     "t": "[right hand] lift the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 207.0,
-     "e": 208.0,
-     "t": "[right hand] grasp the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 208.0,
-     "e": 209.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 209.0,
-     "e": 210.0,
-     "t": "[right hand] lift the red block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 210.0,
-     "e": 211.0,
-     "t": "[right hand] grasp the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 211.0,
-     "e": 212.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 212.0,
-     "e": 213.0,
-     "t": "[right hand] lift the purple block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 213.0,
-     "e": 214.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 214.0,
-     "e": 215.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 215.0,
-     "e": 216.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 216.0,
-     "e": 217.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 217.0,
-     "e": 218.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 218.0,
-     "e": 219.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 219.0,
-     "e": 220.0,
-     "t": "[right hand] grasp the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 220.0,
-     "e": 221.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 221.0,
-     "e": 222.0,
-     "t": "[right hand] lift the green block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 222.0,
-     "e": 223.0,
-     "t": "[right hand] grasp the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 223.0,
-     "e": 224.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 224.0,
-     "e": 225.0,
-     "t": "[right hand] lift the blue block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 225.0,
-     "e": 226.0,
-     "t": "[right hand] grasp the yellow block | [left hand] hold the tower | [ego] stay still"
-    },
-    {
-     "s": 226.0,
-     "e": 227.0,
-     "t": "[right hand"
+     "s": 87.1,
+     "e": 90.8,
+     "t": "[ego] stay still"
     }
    ],
    "cosmos": [
     {
      "s": 0.1,
-     "e": 4.2,
-     "t": "[left hand] hold the stack of blocks steady | [right hand] grasp the blue block on top and place it onto the adjacent stack | [ego] stay still"
+     "e": 3.2,
+     "t": "[left hand] gather scattered dominoes on the table | [right hand] assist in collecting pieces | [ego] stay still"
     },
     {
-     "s": 4.2,
-     "e": 8.2,
-     "t": "[left hand] hold the stack of blocks steady | [right hand] grasp the yellow block on top and place it onto the adjacent stack | [ego] stay still"
+     "s": 3.2,
+     "e": 6.2,
+     "t": "[left hand] pick up a domino piece | [right hand] hold another piece | [ego] stay still"
     },
     {
-     "s": 8.2,
+     "s": 6.2,
+     "e": 10.7,
+     "t": "[both hands] align two dominoes vertically and place them upright on the table | [ego] stay still"
+    },
+    {
+     "s": 10.7,
      "e": 14.3,
-     "t": "[left hand] hold the stack of blocks steady | [right hand] grasp the green block on top, lift it, and place it on the table to the left | [ego] stay still"
+     "t": "[left hand] pick up a domino piece | [right hand] place a domino piece horizontally near the upright stack | [ego] stay still"
     },
     {
      "s": 14.3,
      "e": 19.8,
-     "t": "[left hand] hold the stack of blocks steady | [right hand] grasp the blue block on top, lift it, and place it on the table to the left | [ego] stay still"
+     "t": "[right hand] place a domino piece horizontally adjacent to the upright stack | [left hand] adjust position of nearby dominoes | [ego] stay still"
     },
     {
      "s": 20.0,
-     "e": 21.7,
-     "t": "[left hand] hold the stack of blocks steady | [right hand] grasp the blue block on top, lift it, and place it on the table to the left | [ego] stay still"
+     "e": 24.2,
+     "t": "[right hand] pick up a domino piece and place it vertically on the table | [left hand] hold and adjust nearby dominoes | [ego] stay still"
     },
     {
-     "s": 21.7,
-     "e": 24.8,
-     "t": "[left hand] hold the stack of blocks steady | [right hand] grasp the red block on top, lift it, and place it on the table to the left | [ego] stay still"
+     "s": 24.2,
+     "e": 27.2,
+     "t": "[right hand] place the domino piece onto the top of an existing vertical stack | [left hand] adjust the position of the stack for stability | [ego] stay still"
     },
     {
-     "s": 24.8,
-     "e": 27.9,
-     "t": "[left hand] hold the stack of blocks steady | [right hand] grasp the purple block on top, lift it, and place it on the table to the left | [ego] stay still"
+     "s": 27.2,
+     "e": 31.3,
+     "t": "[right hand] pick up another domino piece and place it vertically next to the stack | [left hand] hold and stabilize the stack | [ego] stay still"
     },
     {
-     "s": 27.9,
-     "e": 31.5,
-     "t": "[left hand] hold the stack of blocks steady | [right hand] grasp the gray block on top, lift it, and place it on the table to the left | [ego] stay still"
+     "s": 31.3,
+     "e": 35.8,
+     "t": "[right hand] place the domino piece onto the top of the stack | [left hand] adjust the alignment of the dominoes in the stack | [ego] stay still"
     },
     {
-     "s": 31.5,
-     "e": 32.4,
-     "t": "[ego] stay still"
+     "s": 35.8,
+     "e": 38.0,
+     "t": "[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] hold and stabilize the stack | [ego] stay still"
+    },
+    {
+     "s": 38.0,
+     "e": 39.7,
+     "t": "[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 39.7,
+     "e": 41.7,
+     "t": "[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 41.7,
+     "e": 46.7,
+     "t": "[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 46.7,
+     "e": 48.8,
+     "t": "[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 48.8,
+     "e": 50.8,
+     "t": "[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 50.8,
+     "e": 53.3,
+     "t": "[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 53.3,
+     "e": 55.8,
+     "t": "[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 56.0,
+     "e": 57.2,
+     "t": "[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 57.2,
+     "e": 59.7,
+     "t": "[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 59.7,
+     "e": 61.7,
+     "t": "[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 61.7,
+     "e": 63.7,
+     "t": "[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 63.7,
+     "e": 65.8,
+     "t": "[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 65.8,
+     "e": 67.8,
+     "t": "[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 67.8,
+     "e": 69.8,
+     "t": "[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 69.8,
+     "e": 71.8,
+     "t": "[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 71.8,
+     "e": 73.8,
+     "t": "[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 74.0,
+     "e": 76.7,
+     "t": "[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 76.7,
+     "e": 80.8,
+     "t": "[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 80.8,
+     "e": 84.3,
+     "t": "[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still"
+    },
+    {
+     "s": 84.3,
+     "e": 86.3,
+     "t": "[right hand] push the domino line, causing it to topple over | [left hand] remain stationary on the table | [ego] stay still"
+    },
+    {
+     "s": 86.3,
+     "e": 90.8,
+     "t": "[right hand] release the domino line after it has fallen | [left hand] remain stationary on the table | [ego] stay still"
     }
    ]
   },
-  "qwen_prompt_tokens": 73592,
+  "qwen_prompt_tokens": 73642,
   "stats": {
    "gt": {
-    "n": 16,
+    "n": 9,
+    "over": 0.0,
+    "gap": 6.83,
+    "overlap": 0.0
+   },
+   "qwen": {
+    "n": 31,
+    "over": 0.0,
+    "gap": 0.03,
+    "overlap": 0.0
+   },
+   "cosmos": {
+    "n": 31,
+    "over": 0.0,
+    "gap": 0.73,
+    "overlap": 0.0
+   }
+  }
+ },
+ "ep079": {
+  "key": "ep079",
+  "idx": 79,
+  "uid": "assemble_disassemble_tiles_v2.1/episode_000301",
+  "task": "assemble_disassemble_tiles_v2.1",
+  "instruction": "assemble_disassemble_tiles: Disassemble nineteen tiles on a wooden table while sitting against a white background.",
+  "duration": 40.866667,
+  "span": 41.0,
+  "video": "videos/ep079.mp4",
+  "poster": "posters/ep079.jpg",
+  "tracks": {
+   "gt": [
+    {
+     "s": 0.0,
+     "e": 5.0,
+     "t": "[both hands] separate orange triangles from the stack and place on table | [ego] look down at tiles"
+    },
+    {
+     "s": 5.0,
+     "e": 15.0,
+     "t": "[both hands] separate various small triangles from the stack and place on table | [ego] look down at tiles"
+    },
+    {
+     "s": 15.0,
+     "e": 25.0,
+     "t": "[both hands] separate green and orange square tiles from the stack and place on table | [ego] look down at tiles"
+    },
+    {
+     "s": 25.0,
+     "e": 29.641,
+     "t": "[both hands] separate blue, yellow, and pink square tiles from the stack and place on table | [ego] look down at tiles"
+    },
+    {
+     "s": 29.641,
+     "e": 36.855,
+     "t": "[both hands] separate orange square, yellow square, and yellow and purple triangles from the stack and place on table | [ego] look down at tiles"
+    },
+    {
+     "s": 36.855,
+     "e": 40.867,
+     "t": "[both hands] separate remaining blue square and orange triangle and spread tiles on table | [ego] look down at tiles"
+    }
+   ],
+   "qwen": [
+    {
+     "s": 0.0,
+     "e": 5.0,
+     "t": "[both hands] remove tiles from the stack | [ego] stay still"
+    },
+    {
+     "s": 5.0,
+     "e": 10.0,
+     "t": "[both hands] separate the tiles | [ego] stay still"
+    },
+    {
+     "s": 10.0,
+     "e": 15.0,
+     "t": "[both hands] place tiles on the table | [ego] stay still"
+    },
+    {
+     "s": 15.0,
+     "e": 20.0,
+     "t": "[both hands] remove tiles from the stack | [ego] stay still"
+    },
+    {
+     "s": 20.0,
+     "e": 25.0,
+     "t": "[both hands] separate the tiles | [ego] stay still"
+    },
+    {
+     "s": 25.0,
+     "e": 30.0,
+     "t": "[both hands] place tiles on the table | [ego] stay still"
+    },
+    {
+     "s": 30.0,
+     "e": 35.0,
+     "t": "[both hands] remove tiles from the stack | [ego] stay still"
+    },
+    {
+     "s": 35.0,
+     "e": 41.0,
+     "t": "[both hands] separate the tiles | [ego] stay still"
+    }
+   ],
+   "cosmos": [
+    {
+     "s": 0.0,
+     "e": 3.2,
+     "t": "[left hand] grasp the stack of blocks | [right hand] support the stack | [ego] stay still"
+    },
+    {
+     "s": 3.2,
+     "e": 5.2,
+     "t": "[left hand] lift the orange triangular block | [right hand] lift the red triangular block | [both hands] separate the blocks"
+    },
+    {
+     "s": 5.2,
+     "e": 6.7,
+     "t": "[left hand] place the orange triangular block on the table | [right hand] lift the green triangular block from the stack | [ego] stay still"
+    },
+    {
+     "s": 6.7,
+     "e": 8.2,
+     "t": "[right hand] lift the green triangular block | [left hand] hold the remaining stack | [ego] stay still"
+    },
+    {
+     "s": 8.2,
+     "e": 9.7,
+     "t": "[right hand] place the green triangular block on the table | [left hand] lift the green square block from the stack | [ego] stay still"
+    },
+    {
+     "s": 9.7,
+     "e": 11.2,
+     "t": "[right hand] place the green triangular block on the table | [left hand] lift the green square block | [ego] stay still"
+    },
+    {
+     "s": 11.2,
+     "e": 12.8,
+     "t": "[right hand] place the green triangular block on the table | [left hand] lift the blue triangular block from the stack | [ego] stay still"
+    },
+    {
+     "s": 12.8,
+     "e": 14.3,
+     "t": "[right hand] place the blue triangular block on the table | [left hand] lift the blue triangular block from the stack | [ego] stay still"
+    },
+    {
+     "s": 14.3,
+     "e": 15.8,
+     "t": "[right hand] place the blue triangular block on the table | [left hand] lift the green square block from the stack | [ego] stay still"
+    },
+    {
+     "s": 15.8,
+     "e": 17.3,
+     "t": "[right hand] place the green square block on the table | [left hand] hold the remaining stack | [ego] stay still"
+    },
+    {
+     "s": 17.3,
+     "e": 19.3,
+     "t": "[right hand] lift the green square block from the stack | [left hand] hold the remaining stack | [ego] stay still"
+    },
+    {
+     "s": 19.3,
+     "e": 19.8,
+     "t": "[right hand] place the green square block on the table | [ego] stay still"
+    },
+    {
+     "s": 20.0,
+     "e": 21.2,
+     "t": "[right hand] pick up a green square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 21.2,
+     "e": 22.7,
+     "t": "[right hand] place the green square block on the table | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 22.7,
+     "e": 23.7,
+     "t": "[right hand] pick up an orange square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 23.7,
+     "e": 24.2,
+     "t": "[right hand] place the orange square block on the table | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 24.2,
+     "e": 25.7,
+     "t": "[right hand] pick up a blue square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 25.7,
+     "e": 26.2,
+     "t": "[right hand] place the blue square block on the table | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 26.2,
+     "e": 27.3,
+     "t": "[right hand] pick up a yellow square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 27.3,
+     "e": 28.3,
+     "t": "[right hand] place the yellow square block on the table | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 28.3,
+     "e": 29.3,
+     "t": "[right hand] pick up a pink square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 29.3,
+     "e": 29.8,
+     "t": "[right hand] place the pink square block on the table | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 29.8,
+     "e": 30.8,
+     "t": "[right hand] pick up a purple square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 30.8,
+     "e": 31.8,
+     "t": "[right hand] place the purple square block on the table | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 31.8,
+     "e": 32.8,
+     "t": "[right hand] pick up a blue square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 32.8,
+     "e": 33.9,
+     "t": "[right hand] place the blue square block on the table | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 33.9,
+     "e": 34.9,
+     "t": "[right hand] pick up a blue square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 34.9,
+     "e": 35.9,
+     "t": "[right hand] place the blue square block on the table | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 35.9,
+     "e": 37.4,
+     "t": "[right hand] pick up a blue square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 37.4,
+     "e": 38.4,
+     "t": "[right hand] place the blue square block on the table | [left hand] hold the remaining stack steady | [ego] stay still"
+    },
+    {
+     "s": 38.4,
+     "e": 40.4,
+     "t": "[right hand] pick up a blue square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still"
+    }
+   ]
+  },
+  "qwen_prompt_tokens": 73604,
+  "stats": {
+   "gt": {
+    "n": 6,
     "over": 0.0,
     "gap": 0.0,
     "overlap": 0.0
    },
    "qwen": {
-    "n": 205,
-    "over": 194.57,
+    "n": 8,
+    "over": 0.13,
     "gap": 0.0,
     "overlap": 0.0
    },
    "cosmos": {
+    "n": 31,
+    "over": 0.0,
+    "gap": 0.67,
+    "overlap": 0.0
+   }
+  }
+ },
+ "ep082": {
+  "key": "ep082",
+  "idx": 82,
+  "uid": "declutter_desk_v2.1/episode_000054",
+  "task": "declutter_desk_v2.1",
+  "instruction": "declutter_desk: Identify and remove clutter objects including red shirts, paper towel, cup, snack wrapper, and bottle from a student desk with computer, notebook, and pens, placing them into a box.",
+  "duration": 46.933333,
+  "span": 46.933,
+  "video": "videos/ep082.mp4",
+  "poster": "posters/ep082.jpg",
+  "tracks": {
+   "gt": [
+    {
+     "s": 0.0,
+     "e": 3.0,
+     "t": "[left hand] rest on laptop | [right hand] rest on laptop | [ego] look down at desk"
+    },
+    {
+     "s": 3.0,
+     "e": 7.0,
+     "t": "[both hands] lift and move cardboard box toward center | [ego] look down at box"
+    },
+    {
+     "s": 7.0,
+     "e": 12.0,
+     "t": "[right hand] grasp white cup and place into box | [left hand] hold box edge"
+    },
+    {
+     "s": 12.0,
+     "e": 18.0,
+     "t": "[right hand] grasp crumpled paper and place into box | [left hand] hold box edge"
+    },
+    {
+     "s": 18.0,
+     "e": 23.0,
+     "t": "[right hand] grasp blue wrapper and place into box | [left hand] hold box edge"
+    },
+    {
+     "s": 23.0,
+     "e": 28.0,
+     "t": "[right hand] grasp green cloth and place into box | [left hand] hold box edge"
+    },
+    {
+     "s": 28.0,
+     "e": 33.0,
+     "t": "[right hand] grasp orange cloth and place into box | [left hand] hold box edge"
+    },
+    {
+     "s": 33.0,
+     "e": 38.0,
+     "t": "[right hand] grasp water bottle and place into box | [left hand] hold box edge"
+    },
+    {
+     "s": 38.0,
+     "e": 46.933,
+     "t": "[left hand] push box to the right and rest on laptop | [ego] look at cleared desk"
+    }
+   ],
+   "qwen": [
+    {
+     "s": 0.0,
+     "e": 6.9,
+     "t": "[left hand] hold the box | [right hand] push the box to the left | [ego] stay still"
+    },
+    {
+     "s": 6.9,
+     "e": 11.4,
+     "t": "[right hand] grasp the cup | [right hand] lift the cup | [right hand] place the cup into the box | [ego] stay still"
+    },
+    {
+     "s": 11.4,
+     "e": 17.8,
+     "t": "[right hand] grasp the paper towel | [right hand] lift the paper towel | [right hand] place the paper towel into the box | [ego] stay still"
+    },
+    {
+     "s": 17.8,
+     "e": 22.0,
+     "t": "[right hand] grasp the snack wrapper | [right hand] lift the snack wrapper | [right hand] place the snack wrapper into the box | [ego] stay still"
+    },
+    {
+     "s": 22.0,
+     "e": 27.5,
+     "t": "[right hand] grasp the green shirt | [right hand] lift the green shirt | [right hand] place the green shirt into the box | [ego] stay still"
+    },
+    {
+     "s": 27.5,
+     "e": 32.5,
+     "t": "[right hand] grasp the orange shirt | [right hand] lift the orange shirt | [right hand] place the orange shirt into the box | [ego] stay still"
+    },
+    {
+     "s": 32.5,
+     "e": 37.5,
+     "t": "[right hand] grasp the bottle | [right hand] lift the bottle | [right hand] place the bottle into the box | [ego] stay still"
+    },
+    {
+     "s": 37.5,
+     "e": 46.9,
+     "t": "[both hands] hold the box | [ego] stay still"
+    }
+   ],
+   "cosmos": [
+    {
+     "s": 0.1,
+     "e": 2.1,
+     "t": "[ego] stay still with hands positioned near the cardboard box on the desk"
+    },
+    {
+     "s": 2.1,
+     "e": 4.7,
+     "t": "[left hand] reach toward the cardboard box and grasp its edge | [right hand] support the box from below | [ego] lift the box slightly off the desk"
+    },
+    {
+     "s": 7.2,
+     "e": 11.2,
+     "t": "[right hand] pick up the white paper cup from the desk | [right hand] place the paper cup inside the cardboard box | [ego] hold the box steady with the left hand"
+    },
+    {
+     "s": 12.3,
+     "e": 18.8,
+     "t": "[right hand] pick up the crumpled paper from the desk | [right hand] place the crumpled paper inside the cardboard box | [ego] adjust the box position slightly with the left hand"
+    },
+    {
+     "s": 18.8,
+     "e": 19.8,
+     "t": "[right hand] reach toward the snack packet on the desk | [right hand] grasp the snack packet | [ego] prepare to move the snack packet into the box"
+    },
+    {
+     "s": 20.0,
+     "e": 22.7,
+     "t": "[right hand] lift the snack packet off the desk | [right hand] place the snack packet into the cardboard box | [right hand] release the snack packet inside the box"
+    },
+    {
+     "s": 22.7,
+     "e": 25.7,
+     "t": "[right hand] reach toward the green t-shirt on the desk | [right hand] grasp the green t-shirt | [right hand] lift the green t-shirt off the desk | [right hand] place the green t-shirt into the cardboard box | [right hand] release the green t-shirt inside the box"
+    },
+    {
+     "s": 25.7,
+     "e": 28.2,
+     "t": "[right hand] reach toward the orange t-shirt on the desk | [right hand] grasp the orange t-shirt | [right hand] lift the orange t-shirt off the desk | [right hand] place the orange t-shirt into the cardboard box | [right hand] release the orange t-shirt inside the box"
+    },
+    {
+     "s": 28.2,
+     "e": 34.3,
+     "t": "[right hand] reach toward the orange cloth on the desk | [right hand] grasp the orange cloth | [right hand] lift the orange cloth off the desk | [right hand] place the orange cloth into the cardboard box | [right hand] release the orange cloth inside the box"
+    },
+    {
+     "s": 34.3,
+     "e": 37.8,
+     "t": "[right hand] reach toward the plastic bottle on the desk | [right hand] grasp the plastic bottle | [right hand] lift the plastic bottle off the desk | [right hand] place the plastic bottle into the cardboard box | [right hand] release the plastic bottle inside the box | [right hand] retract from the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] hover above the cardboard box after releasing the plastic bottle"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] release the plastic bottle inside the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] retract from the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] hover above the cardboard box after releasing the plastic bottle"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] release the plastic bottle inside the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] retract from the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] hover above the cardboard box after releasing the plastic bottle"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] release the plastic bottle inside the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] retract from the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] hover above the cardboard box after releasing the plastic bottle"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] release the plastic bottle inside the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] retract from the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] hover above the cardboard box after releasing the plastic bottle"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] release the plastic bottle inside the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] retract from the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] hover above the cardboard box after releasing the plastic bottle"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] release the plastic bottle inside the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] retract from the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] hover above the cardboard box after releasing the plastic bottle"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] release the plastic bottle inside the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] retract from the box"
+    },
+    {
+     "s": 37.8,
+     "e": 37.8,
+     "t": "[right hand] hover above the cardboard box after releasing the plastic bottle"
+    },
+    {
+     "s": 38.0,
+     "e": 40.3,
+     "t": "[left hand] hold the cardboard box steady | [right hand] release the plastic bottle into the box | [ego] adjust the box position on the desk"
+    },
+    {
+     "s": 40.3,
+     "e": 46.9,
+     "t": "[ego] stay still with hands resting near the desk surface, observing the arrangement of items including the box, laptop, notebook, and pen"
+    }
+   ]
+  },
+  "qwen_prompt_tokens": 73635,
+  "stats": {
+   "gt": {
     "n": 9,
     "over": 0.0,
-    "gap": 0.33,
+    "gap": 0.0,
+    "overlap": 0.0
+   },
+   "qwen": {
+    "n": 8,
+    "over": 0.0,
+    "gap": 0.03,
+    "overlap": 0.0
+   },
+   "cosmos": {
+    "n": 34,
+    "over": 0.0,
+    "gap": 4.13,
+    "overlap": 0.0
+   }
+  }
+ },
+ "ep092": {
+  "key": "ep092",
+  "idx": 92,
+  "uid": "play_piano-part1_v2.1/episode_000311",
+  "task": "play_piano-part1_v2.1",
+  "instruction": "play_piano: Use one or both hands and fingers to play the piano while sitting at a green tablecloth with a blue background.",
+  "duration": 10.0,
+  "span": 10.0,
+  "video": "videos/ep092.mp4",
+  "poster": "posters/ep092.jpg",
+  "tracks": {
+   "gt": [
+    {
+     "s": 0.0,
+     "e": 3.0,
+     "t": "[left hand] play the piano | [right hand] rest on the piano | [ego] look down"
+    },
+    {
+     "s": 3.0,
+     "e": 6.0,
+     "t": "[left hand] continue playing the piano | [right hand] rest on the piano | [ego] look down"
+    },
+    {
+     "s": 6.0,
+     "e": 9.0,
+     "t": "[left hand] continue playing the piano | [right hand] rest on the piano | [ego] look down"
+    },
+    {
+     "s": 9.0,
+     "e": 10.0,
+     "t": "[left hand] continue playing | [right hand] rest on the piano | [ego] look down"
+    }
+   ],
+   "qwen": [
+    {
+     "s": 0.0,
+     "e": 10.0,
+     "t": "[both hands] play the piano | [ego] stay still"
+    }
+   ],
+   "cosmos": [
+    {
+     "s": 0.1,
+     "e": 9.8,
+     "t": "[left hand] press keys on the keyboard | [right hand] press keys on the keyboard | [ego] stay still"
+    }
+   ]
+  },
+  "qwen_prompt_tokens": 73486,
+  "stats": {
+   "gt": {
+    "n": 4,
+    "over": 0.0,
+    "gap": 0.0,
+    "overlap": 0.0
+   },
+   "qwen": {
+    "n": 1,
+    "over": 0.0,
+    "gap": 0.0,
+    "overlap": 0.0
+   },
+   "cosmos": {
+    "n": 1,
+    "over": 0.0,
+    "gap": 0.3,
+    "overlap": 0.0
+   }
+  }
+ },
+ "ep093": {
+  "key": "ep093",
+  "idx": 93,
+  "uid": "braid_unbraid_v2.1/episode_000092",
+  "task": "braid_unbraid_v2.1",
+  "instruction": "braid_unbraid: Braid the three strands of the striped ribbon.",
+  "duration": 26.766667,
+  "span": 26.8,
+  "video": "videos/ep093.mp4",
+  "poster": "posters/ep093.jpg",
+  "tracks": {
+   "gt": [
+    {
+     "s": 0.0,
+     "e": 5.0,
+     "t": "[right hand] cross right strand over middle | [left hand] cross left strand over middle | [ego] look down"
+    },
+    {
+     "s": 5.0,
+     "e": 10.0,
+     "t": "[right hand] cross right strand over middle | [left hand] cross left strand over middle | [ego] look down"
+    },
+    {
+     "s": 10.0,
+     "e": 15.0,
+     "t": "[right hand] cross right strand over middle | [left hand] cross left strand over middle | [ego] look down"
+    },
+    {
+     "s": 15.0,
+     "e": 20.0,
+     "t": "[right hand] cross right strand over middle | [left hand] cross left strand over middle | [ego] look down"
+    },
+    {
+     "s": 20.0,
+     "e": 26.0,
+     "t": "[right hand] cross right strand over middle | [left hand] cross left strand over middle | [ego] look down"
+    }
+   ],
+   "qwen": [
+    {
+     "s": 0.0,
+     "e": 5.4,
+     "t": "[right hand] lift and cross right ribbon strand over middle strand | [left hand] hold left ribbon strand | [ego] stay still"
+    },
+    {
+     "s": 5.4,
+     "e": 10.0,
+     "t": "[right hand] pull right ribbon strand downward to tighten knot | [left hand] hold left ribbon strand | [ego] stay still"
+    },
+    {
+     "s": 10.0,
+     "e": 14.4,
+     "t": "[left hand] lift and cross left ribbon strand over middle strand | [right hand] hold right ribbon strand | [ego] stay still"
+    },
+    {
+     "s": 14.4,
+     "e": 18.4,
+     "t": "[left hand] pull left ribbon strand downward to tighten knot | [right hand] hold right ribbon strand | [ego] stay still"
+    },
+    {
+     "s": 18.4,
+     "e": 22.4,
+     "t": "[right hand] lift and cross right ribbon strand over middle strand | [left hand] hold left ribbon strand | [ego] stay still"
+    },
+    {
+     "s": 22.4,
+     "e": 26.8,
+     "t": "[right hand] pull right ribbon strand downward to tighten knot | [left hand] hold left ribbon strand | [ego] stay still"
+    }
+   ],
+   "cosmos": [
+    {
+     "s": 0.1,
+     "e": 1.1,
+     "t": "[left hand] hold the left side of the pink ribbon | [right hand] hold the right side of the pink ribbon | [ego] stay still"
+    },
+    {
+     "s": 1.1,
+     "e": 2.1,
+     "t": "[left hand] grasp the left strand of the pink ribbon | [right hand] grasp the right strand of the pink ribbon | [ego] stay still"
+    },
+    {
+     "s": 2.1,
+     "e": 3.2,
+     "t": "[left hand] pull the left strand downward | [right hand] pull the right strand downward | [ego] stay still"
+    },
+    {
+     "s": 3.2,
+     "e": 4.2,
+     "t": "[left hand] release the left strand | [right hand] release the right strand | [ego] stay still"
+    },
+    {
+     "s": 4.2,
+     "e": 5.2,
+     "t": "[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still"
+    },
+    {
+     "s": 5.2,
+     "e": 6.2,
+     "t": "[left hand] pull the left strand downward | [right hand] pull the right strand downward | [ego] stay still"
+    },
+    {
+     "s": 6.2,
+     "e": 7.2,
+     "t": "[left hand] release the left strand | [right hand] release the right strand | [ego] stay still"
+    },
+    {
+     "s": 7.2,
+     "e": 8.2,
+     "t": "[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still"
+    },
+    {
+     "s": 8.2,
+     "e": 9.2,
+     "t": "[left hand] pull the left strand downward | [right hand] pull the right strand downward | [ego] stay still"
+    },
+    {
+     "s": 9.2,
+     "e": 10.2,
+     "t": "[left hand] release the left strand | [right hand] release the right strand | [ego] stay still"
+    },
+    {
+     "s": 10.2,
+     "e": 11.2,
+     "t": "[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still"
+    },
+    {
+     "s": 11.2,
+     "e": 12.3,
+     "t": "[left hand] pull the left strand downward | [right hand] pull the right strand downward | [ego] stay still"
+    },
+    {
+     "s": 12.3,
+     "e": 13.3,
+     "t": "[left hand] release the left strand | [right hand] release the right strand | [ego] stay still"
+    },
+    {
+     "s": 13.3,
+     "e": 14.3,
+     "t": "[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still"
+    },
+    {
+     "s": 14.3,
+     "e": 15.3,
+     "t": "[left hand] pull the left strand downward | [right hand] pull the right strand downward | [ego] stay still"
+    },
+    {
+     "s": 15.3,
+     "e": 16.3,
+     "t": "[left hand] release the left strand | [right hand] release the right strand | [ego] stay still"
+    },
+    {
+     "s": 16.3,
+     "e": 17.3,
+     "t": "[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still"
+    },
+    {
+     "s": 17.3,
+     "e": 18.3,
+     "t": "[left hand] pull the left strand downward | [right hand] pull the right strand downward | [ego] stay still"
+    },
+    {
+     "s": 18.3,
+     "e": 19.3,
+     "t": "[left hand] release the left strand | [right hand] release the right strand | [ego] stay still"
+    },
+    {
+     "s": 19.3,
+     "e": 19.8,
+     "t": "[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still"
+    },
+    {
+     "s": 20.0,
+     "e": 22.2,
+     "t": "[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still"
+    },
+    {
+     "s": 22.2,
+     "e": 25.3,
+     "t": "[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still"
+    },
+    {
+     "s": 25.3,
+     "e": 26.7,
+     "t": "[left hand] grasp the left strand again | [right hand] grasp the right strand again | [ego] stay still"
+    }
+   ]
+  },
+  "qwen_prompt_tokens": 73565,
+  "stats": {
+   "gt": {
+    "n": 5,
+    "over": 0.0,
+    "gap": 0.77,
+    "overlap": 0.0
+   },
+   "qwen": {
+    "n": 6,
+    "over": 0.03,
+    "gap": 0.0,
+    "overlap": 0.0
+   },
+   "cosmos": {
+    "n": 23,
+    "over": 0.0,
+    "gap": 0.37,
+    "overlap": 0.0
+   }
+  }
+ },
+ "ep095": {
+  "key": "ep095",
+  "idx": 95,
+  "uid": "basic_fold-part2_v2.1/episode_000144",
+  "task": "basic_fold-part2_v2.1",
+  "instruction": "basic fold: Fold a small tshirt on a wooden table while sitting.",
+  "duration": 11.6,
+  "span": 11.6,
+  "video": "videos/ep095.mp4",
+  "poster": "posters/ep095.jpg",
+  "tracks": {
+   "gt": [
+    {
+     "s": 0.0,
+     "e": 3.071,
+     "t": "[both hands] lift and unfold the shirt | [ego] look down"
+    },
+    {
+     "s": 3.071,
+     "e": 5.738,
+     "t": "[both hands] place the shirt flat on the table | [ego] look down"
+    },
+    {
+     "s": 5.738,
+     "e": 6.925,
+     "t": "[both hands] fold the left side inward | [ego] look down"
+    },
+    {
+     "s": 6.925,
+     "e": 7.925,
+     "t": "[both hands] fold the right side inward | [ego] look down"
+    },
+    {
+     "s": 7.925,
+     "e": 9.648,
+     "t": "[both hands] fold the bottom of the shirt upward | [ego] look down"
+    },
+    {
+     "s": 9.648,
+     "e": 11.6,
+     "t": "[both hands] fold the top of the shirt downward | [ego] look down"
+    }
+   ],
+   "qwen": [
+    {
+     "s": 0.0,
+     "e": 3.4,
+     "t": "[left hand] grasp the grey t-shirt and lift it upward | [right hand] hover near the shirt | [ego] stay still"
+    },
+    {
+     "s": 3.4,
+     "e": 6.3,
+     "t": "[both hands] spread the t-shirt flat on the table | [ego] stay still"
+    },
+    {
+     "s": 6.3,
+     "e": 8.1,
+     "t": "[right hand] fold the right side of the shirt inward | [left hand] hold the left edge | [ego] stay still"
+    },
+    {
+     "s": 8.1,
+     "e": 9.7,
+     "t": "[both hands] fold the bottom hem upward toward the collar | [ego] stay still"
+    },
+    {
+     "s": 9.7,
+     "e": 11.6,
+     "t": "[right hand] fold the top section downward to complete the fold | [left hand] retract | [ego] stay still"
+    }
+   ],
+   "cosmos": [
+    {
+     "s": 0.1,
+     "e": 1.2,
+     "t": "[left hand] reach toward the gray t-shirt on the yellow surface | [ego] stay still"
+    },
+    {
+     "s": 1.2,
+     "e": 3.2,
+     "t": "[left hand] grasp the gray t-shirt | [right hand] assist in lifting the t-shirt | [ego] stay still"
+    },
+    {
+     "s": 3.2,
+     "e": 4.2,
+     "t": "[left hand] hold the gray t-shirt while [right hand] smooths it out on the yellow surface | [ego] stay still"
+    },
+    {
+     "s": 4.2,
+     "e": 5.3,
+     "t": "[left hand] smooth the gray t-shirt on the yellow surface | [right hand] adjust the t-shirt | [ego] stay still"
+    },
+    {
+     "s": 5.3,
+     "e": 6.3,
+     "t": "[left hand] hold the bottom edge of the gray t-shirt | [right hand] fold the side seam inward | [ego] stay still"
+    },
+    {
+     "s": 6.3,
+     "e": 7.3,
+     "t": "[right hand] smooth the folded gray t-shirt | [left hand] hold the edge | [ego] stay still"
+    },
+    {
+     "s": 7.3,
+     "e": 8.3,
+     "t": "[right hand] fold the gray t-shirt from the bottom upward | [left hand] hold the folded section | [ego] stay still"
+    },
+    {
+     "s": 8.3,
+     "e": 9.4,
+     "t": "[left hand] hold the folded gray t-shirt | [right hand] fold the t-shirt again | [ego] stay still"
+    },
+    {
+     "s": 9.4,
+     "e": 10.4,
+     "t": "[right hand] roll the gray t-shirt into a compact bundle | [left hand] assist in rolling | [ego] stay still"
+    },
+    {
+     "s": 10.4,
+     "e": 11.4,
+     "t": "[right hand] press down on the rolled gray t-shirt bundle | [left hand] hold the bundle | [ego] stay still"
+    }
+   ]
+  },
+  "qwen_prompt_tokens": 74560,
+  "stats": {
+   "gt": {
+    "n": 6,
+    "over": 0.0,
+    "gap": 0.0,
+    "overlap": 0.0
+   },
+   "qwen": {
+    "n": 5,
+    "over": 0.0,
+    "gap": 0.0,
+    "overlap": 0.0
+   },
+   "cosmos": {
+    "n": 10,
+    "over": 0.0,
+    "gap": 0.3,
+    "overlap": 0.0
+   }
+  }
+ },
+ "ep156": {
+  "key": "ep156",
+  "idx": 156,
+  "uid": "add_remove_lid_v2.1/episode_000944",
+  "task": "add_remove_lid_v2.1",
+  "instruction": "Add Remove Lid: Remove the lid from the cup on a wooden table while sitting.",
+  "duration": 14.9,
+  "span": 25.7,
+  "video": "videos/ep156.mp4",
+  "poster": "posters/ep156.jpg",
+  "tracks": {
+   "gt": [
+    {
+     "s": 0.0,
+     "e": 1.372,
+     "t": "[left hand] reach toward the middle cup | [right hand] reach toward the middle cup lid"
+    },
+    {
+     "s": 1.372,
+     "e": 2.819,
+     "t": "[left hand] hold the middle cup | [right hand] twist and remove the lid"
+    },
+    {
+     "s": 2.819,
+     "e": 3.86,
+     "t": "[right hand] place the lid on the table | [left hand] reach toward the leftmost cup"
+    },
+    {
+     "s": 3.86,
+     "e": 5.199,
+     "t": "[left hand] hold the leftmost cup | [right hand] remove the lid"
+    },
+    {
+     "s": 5.199,
+     "e": 6.494,
+     "t": "[right hand] place the lid on the table | [right hand] reach toward the rightmost cup"
+    },
+    {
+     "s": 6.494,
+     "e": 7.773,
+     "t": "[left hand] hold the rightmost cup | [right hand] remove the lid"
+    },
+    {
+     "s": 7.773,
+     "e": 9.196,
+     "t": "[right hand] place the lid on the table | [right hand] reach toward the fourth cup"
+    },
+    {
+     "s": 9.196,
+     "e": 10.516,
+     "t": "[left hand] hold the fourth cup | [right hand] remove the lid"
+    },
+    {
+     "s": 10.516,
+     "e": 11.664,
+     "t": "[right hand] place the lid on the table | [left hand] reach toward the second cup"
+    },
+    {
+     "s": 11.664,
+     "e": 13.931,
+     "t": "[left hand] hold the second cup | [right hand] remove the lid"
+    },
+    {
+     "s": 13.931,
+     "e": 23.0,
+     "t": "[right hand] place the lid on the table"
+    }
+   ],
+   "qwen": [
+    {
+     "s": 0.0,
+     "e": 6.2,
+     "t": "[both hands] remove the lid from the middle cup | [ego] stay still"
+    },
+    {
+     "s": 6.2,
+     "e": 11.3,
+     "t": "[both hands] remove the lid from the left cup | [ego] stay still"
+    },
+    {
+     "s": 11.3,
+     "e": 16.3,
+     "t": "[both hands] remove the lid from the right cup | [ego] stay still"
+    },
+    {
+     "s": 16.3,
+     "e": 20.9,
+     "t": "[both hands] remove the lid from the second left cup | [ego] stay still"
+    },
+    {
+     "s": 20.9,
+     "e": 25.7,
+     "t": "[both hands] remove the lid from the second right cup | [ego] stay still"
+    }
+   ],
+   "cosmos": [
+    {
+     "s": 0.1,
+     "e": 2.7,
+     "t": "[left hand] hold the cup steady | [right hand] grasp and lift the lid off the cup | [right hand] place the lid on the table | [ego] stay still"
+    },
+    {
+     "s": 2.7,
+     "e": 5.8,
+     "t": "[left hand] hold the cup steady | [right hand] grasp and lift the lid off the cup | [right hand] place the lid on the table | [ego] stay still"
+    },
+    {
+     "s": 5.8,
+     "e": 8.3,
+     "t": "[left hand] hold the cup steady | [right hand] grasp and lift the lid off the cup | [right hand] place the lid on the table | [ego] stay still"
+    },
+    {
+     "s": 8.3,
+     "e": 10.9,
+     "t": "[left hand] hold the cup steady | [right hand] grasp and lift the lid off the cup | [right hand] place the lid on the table | [ego] stay still"
+    },
+    {
+     "s": 10.9,
+     "e": 14.9,
+     "t": "[left hand] hold the cup steady | [right hand] grasp and lift the lid off the cup | [right hand] place the lid on the table | [ego] stay still"
+    }
+   ]
+  },
+  "qwen_prompt_tokens": 74109,
+  "stats": {
+   "gt": {
+    "n": 11,
+    "over": 8.1,
+    "gap": 0.0,
+    "overlap": 0.0
+   },
+   "qwen": {
+    "n": 5,
+    "over": 10.8,
+    "gap": 0.0,
+    "overlap": 0.0
+   },
+   "cosmos": {
+    "n": 5,
+    "over": 0.0,
+    "gap": 0.1,
     "overlap": 0.0
    }
   }

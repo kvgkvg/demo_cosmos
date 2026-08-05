@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:03,000
+[left hand] rest on laptop | [right hand] rest on laptop | [ego] look down at desk
+
+2
+00:00:03,000 --> 00:00:07,000
+[both hands] lift and move cardboard box toward center | [ego] look down at box
+
+3
+00:00:07,000 --> 00:00:12,000
+[right hand] grasp white cup and place into box | [left hand] hold box edge
+
+4
+00:00:12,000 --> 00:00:18,000
+[right hand] grasp crumpled paper and place into box | [left hand] hold box edge
+
+5
+00:00:18,000 --> 00:00:23,000
+[right hand] grasp blue wrapper and place into box | [left hand] hold box edge
+
+6
+00:00:23,000 --> 00:00:28,000
+[right hand] grasp green cloth and place into box | [left hand] hold box edge
+
+7
+00:00:28,000 --> 00:00:33,000
+[right hand] grasp orange cloth and place into box | [left hand] hold box edge
+
+8
+00:00:33,000 --> 00:00:38,000
+[right hand] grasp water bottle and place into box | [left hand] hold box edge
+
+9
+00:00:38,000 --> 00:00:46,933
+[left hand] push box to the right and rest on laptop | [ego] look at cleared desk

@@ -1,0 +1,3 @@
+1
+00:00:00,100 --> 00:00:09,800
+[left hand] press keys on the keyboard | [right hand] press keys on the keyboard | [ego] stay still

@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:06,000
+[both hands] gather scattered dominoes | [ego] look down
+
+2
+00:00:07,000 --> 00:00:13,000
+[both hands] stack dominoes upright | [ego] look down
+
+3
+00:00:14,000 --> 00:00:22,668
+[right hand] arrange dominoes in a line | [ego] look down
+
+4
+00:00:22,668 --> 00:00:40,000
+[both hands] continue placing dominoes in a chain | [ego] look down
+
+5
+00:00:41,000 --> 00:00:51,000
+[both hands] add dominoes to the chain | [ego] look down
+
+6
+00:00:52,000 --> 00:01:03,000
+[right hand] curve the domino line | [ego] look down
+
+7
+00:01:04,000 --> 00:01:10,000
+[right hand] place domino at end of line | [ego] look down
+
+8
+00:01:11,000 --> 00:01:25,562
+[right hand] finish arranging dominoes | [ego] look down
+
+9
+00:01:25,562 --> 00:01:30,000
+[right hand] push first domino to topple chain | [ego] watch dominoes fall

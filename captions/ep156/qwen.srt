@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:06,200
+[both hands] remove the lid from the middle cup | [ego] stay still
+
+2
+00:00:06,200 --> 00:00:11,300
+[both hands] remove the lid from the left cup | [ego] stay still
+
+3
+00:00:11,300 --> 00:00:16,300
+[both hands] remove the lid from the right cup | [ego] stay still
+
+4
+00:00:16,300 --> 00:00:20,900
+[both hands] remove the lid from the second left cup | [ego] stay still
+
+5
+00:00:20,900 --> 00:00:25,700
+[both hands] remove the lid from the second right cup | [ego] stay still

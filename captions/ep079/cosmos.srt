@@ -1,0 +1,123 @@
+1
+00:00:00,000 --> 00:00:03,200
+[left hand] grasp the stack of blocks | [right hand] support the stack | [ego] stay still
+
+2
+00:00:03,200 --> 00:00:05,200
+[left hand] lift the orange triangular block | [right hand] lift the red triangular block | [both hands] separate the blocks
+
+3
+00:00:05,200 --> 00:00:06,700
+[left hand] place the orange triangular block on the table | [right hand] lift the green triangular block from the stack | [ego] stay still
+
+4
+00:00:06,700 --> 00:00:08,200
+[right hand] lift the green triangular block | [left hand] hold the remaining stack | [ego] stay still
+
+5
+00:00:08,200 --> 00:00:09,700
+[right hand] place the green triangular block on the table | [left hand] lift the green square block from the stack | [ego] stay still
+
+6
+00:00:09,700 --> 00:00:11,200
+[right hand] place the green triangular block on the table | [left hand] lift the green square block | [ego] stay still
+
+7
+00:00:11,200 --> 00:00:12,800
+[right hand] place the green triangular block on the table | [left hand] lift the blue triangular block from the stack | [ego] stay still
+
+8
+00:00:12,800 --> 00:00:14,300
+[right hand] place the blue triangular block on the table | [left hand] lift the blue triangular block from the stack | [ego] stay still
+
+9
+00:00:14,300 --> 00:00:15,800
+[right hand] place the blue triangular block on the table | [left hand] lift the green square block from the stack | [ego] stay still
+
+10
+00:00:15,800 --> 00:00:17,300
+[right hand] place the green square block on the table | [left hand] hold the remaining stack | [ego] stay still
+
+11
+00:00:17,300 --> 00:00:19,300
+[right hand] lift the green square block from the stack | [left hand] hold the remaining stack | [ego] stay still
+
+12
+00:00:19,300 --> 00:00:19,800
+[right hand] place the green square block on the table | [ego] stay still
+
+13
+00:00:20,000 --> 00:00:21,200
+[right hand] pick up a green square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still
+
+14
+00:00:21,200 --> 00:00:22,700
+[right hand] place the green square block on the table | [left hand] hold the remaining stack steady | [ego] stay still
+
+15
+00:00:22,700 --> 00:00:23,700
+[right hand] pick up an orange square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still
+
+16
+00:00:23,700 --> 00:00:24,200
+[right hand] place the orange square block on the table | [left hand] hold the remaining stack steady | [ego] stay still
+
+17
+00:00:24,200 --> 00:00:25,700
+[right hand] pick up a blue square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still
+
+18
+00:00:25,700 --> 00:00:26,200
+[right hand] place the blue square block on the table | [left hand] hold the remaining stack steady | [ego] stay still
+
+19
+00:00:26,200 --> 00:00:27,300
+[right hand] pick up a yellow square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still
+
+20
+00:00:27,300 --> 00:00:28,300
+[right hand] place the yellow square block on the table | [left hand] hold the remaining stack steady | [ego] stay still
+
+21
+00:00:28,300 --> 00:00:29,300
+[right hand] pick up a pink square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still
+
+22
+00:00:29,300 --> 00:00:29,800
+[right hand] place the pink square block on the table | [left hand] hold the remaining stack steady | [ego] stay still
+
+23
+00:00:29,800 --> 00:00:30,800
+[right hand] pick up a purple square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still
+
+24
+00:00:30,800 --> 00:00:31,800
+[right hand] place the purple square block on the table | [left hand] hold the remaining stack steady | [ego] stay still
+
+25
+00:00:31,800 --> 00:00:32,800
+[right hand] pick up a blue square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still
+
+26
+00:00:32,800 --> 00:00:33,900
+[right hand] place the blue square block on the table | [left hand] hold the remaining stack steady | [ego] stay still
+
+27
+00:00:33,900 --> 00:00:34,900
+[right hand] pick up a blue square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still
+
+28
+00:00:34,900 --> 00:00:35,900
+[right hand] place the blue square block on the table | [left hand] hold the remaining stack steady | [ego] stay still
+
+29
+00:00:35,900 --> 00:00:37,400
+[right hand] pick up a blue square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still
+
+30
+00:00:37,400 --> 00:00:38,400
+[right hand] place the blue square block on the table | [left hand] hold the remaining stack steady | [ego] stay still
+
+31
+00:00:38,400 --> 00:00:40,400
+[right hand] pick up a blue square block from the stack | [left hand] hold the remaining stack steady | [ego] stay still

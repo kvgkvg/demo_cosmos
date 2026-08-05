@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:03,071
+[both hands] lift and unfold the shirt | [ego] look down
+
+2
+00:00:03,071 --> 00:00:05,738
+[both hands] place the shirt flat on the table | [ego] look down
+
+3
+00:00:05,738 --> 00:00:06,925
+[both hands] fold the left side inward | [ego] look down
+
+4
+00:00:06,925 --> 00:00:07,925
+[both hands] fold the right side inward | [ego] look down
+
+5
+00:00:07,925 --> 00:00:09,648
+[both hands] fold the bottom of the shirt upward | [ego] look down
+
+6
+00:00:09,648 --> 00:00:11,600
+[both hands] fold the top of the shirt downward | [ego] look down

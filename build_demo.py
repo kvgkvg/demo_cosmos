@@ -48,45 +48,47 @@ SECTIONS = [
         "title": "Overall verdict",
         "blurb": "Head-to-head on the val split: which model's caption a human reviewer preferred.",
         "bullets": [
-            {"id": "qwen-better", "tone": "qwen", "title": "Qwen is better",
-             "note": "Qwen's caption is the more faithful of the two.", "eps": [30, 33]},
-            {"id": "cosmos-better", "tone": "cosmos", "title": "Cosmos is better",
-             "note": "Cosmos' caption is the more faithful of the two.", "eps": [29, 36]},
-            {"id": "both-bad", "tone": "bad", "title": "Both are bad",
-             "note": "Neither caption is usable as a label.", "eps": [28]},
+            {"id": "qwen-better", "tone": "qwen", "title": "Qwen's better",
+             "note": "", "eps": [30, 33]},
+            {"id": "cosmos-better", "tone": "cosmos", "title": "Cosmos's better",
+             "note": "", "eps": [29, 36]},
+            {"id": "both-bad", "tone": "bad", "title": "Both bad",
+             "note": "", "eps": [28, 93, 95]},
         ],
     },
     {
         "id": "strength",
-        "title": "Cosmos — strengths",
+        "title": "Strengths",
         "blurb": "What the chunked Cosmos3-Nano pipeline does well.",
         "bullets": [
             {"id": "hand-identity", "tone": "good", "title": "Hand identity",
-             "note": "Left/right hand attribution is quite good.", "eps": [43, 45]},
-            {"id": "more-detail", "tone": "good", "title": "More detail in actions",
-             "note": "More clearly separated actions and more detailed descriptions — "
-                     "as detailed as Qwen or better.", "eps": [43, 45, 48]},
-            {"id": "no-error-accum", "tone": "good", "title": "No error accumulation",
-             "note": "Long episode, no drift: a wrong chunk does not poison the ones after it.",
-             "eps": [49]},
-            {"id": "no-overtime", "tone": "good", "title": "No overtime",
-             "note": "The chunking strategy holds — no caption runs past the end of the video.",
-             "eps": [24, 27]},
+             "note": "Trên đa số sample, cosmos detect được khá tốt được hành động "
+                     "của tay trái và tay phải.",
+             "eps": [43, 45]},
+            {"id": "more-detail", "tone": "good",
+             "title": "More detailed and clearly separated actions",
+             "note": "Describes actions in greater detail than Qwen or provides "
+                     "similarly detailed descriptions.",
+             "eps": [79, 82, 48, 156]},
+            {"id": "no-overtime", "tone": "good",
+             "title": "Effective strategy (no overtime)",
+             "note": "", "eps": [24, 27]},
         ],
     },
     {
         "id": "weakness",
-        "title": "Cosmos — weaknesses",
+        "title": "Weaknesses",
         "blurb": "Where it still loses to Qwen, and what a prompt or post-process would have to fix.",
         "bullets": [
-            {"id": "gap-timestamp", "tone": "bad", "title": "Gap / overlap in timestamps",
-             "note": "The cue track is not continuous — stretches of video carry no caption.",
-             "eps": [24, 47]},
-            {"id": "too-many-actions", "tone": "bad", "title": "Too many actions in one caption",
-             "note": "One cue packs several distinct actions instead of splitting them.",
-             "eps": [37, 38]},
-            {"id": "inconsistent-context", "tone": "bad", "title": "Sometimes inconsistent context",
-             "note": "The described context drifts, even within a single chunk.", "eps": [31]},
+            {"id": "gap-timestamp", "tone": "bad", "title": "Timestamp gaps / overlaps",
+             "note": "", "eps": [24, 47, 82]},
+            {"id": "too-many-actions", "tone": "bad",
+             "title": "Too many actions in a single caption",
+             "note": "", "eps": [37, 38]},
+            {"id": "misunderstand-action", "tone": "bad", "title": "Misunderstand the action",
+             "note": "", "eps": [31]},
+            {"id": "repetitive", "tone": "bad", "title": "Repetitive",
+             "note": "", "eps": [57, 92]},
         ],
     },
 ]
@@ -211,6 +213,19 @@ def build_examples(repo: Path, copy_videos: bool) -> dict[str, dict]:
         }
         print(f"  {key}  {uid}  cues gt={len(tracks['gt'])} "
               f"qwen={len(tracks['qwen'])} cosmos={len(tracks['cosmos'])}")
+
+    # drop assets for episodes that SECTIONS no longer references, so editing
+    # the table does not leave orphaned clips behind (they are ~10 MB each)
+    keep = set(examples)
+    for d, pat in ((vid_dir, "*.mp4"), (pos_dir, "*.jpg")):
+        for f in d.glob(pat):
+            if f.stem not in keep:
+                f.unlink()
+                print(f"  pruned {f.relative_to(HERE)}")
+    for sub in cap_dir.iterdir():
+        if sub.is_dir() and sub.name not in keep:
+            shutil.rmtree(sub)
+            print(f"  pruned {sub.relative_to(HERE)}/")
     return examples
 
 
@@ -602,7 +617,7 @@ def pipeline_svg(examples: dict[str, dict], standalone: bool = False) -> str:
     row_h = min(18, 72 / max(1, len(chunks)))
     bars = "".join(
         f'<text class="s-mono" x="174" y="{142 + i*row_h + 11:.1f}" text-anchor="end">'
-        f'{s:g}–{e:g} s</text>'
+        f'{round(s,2):g}–{round(e,2):g} s</text>'
         f'<rect class="s-chunk" x="{x0 + w*s/d:.1f}" y="{142 + i*row_h:.1f}" '
         f'width="{max(3, w*(e-s)/d):.1f}" height="{min(14, row_h - 4):.1f}" rx="4"/>'
         for i, (s, e) in enumerate(chunks))
@@ -621,7 +636,7 @@ def pipeline_svg(examples: dict[str, dict], standalone: bool = False) -> str:
 
 <rect class="s-box" x="180" y="14" width="280" height="40" rx="8"/>
 <text class="s-tb" x="320" y="32" text-anchor="middle">episode.mp4</text>
-<text class="s-mono" x="320" y="47" text-anchor="middle">{d:g} s · one clip, one manifest line</text>
+<text class="s-mono" x="320" y="47" text-anchor="middle">{round(d,2):g} s · one clip, one manifest line</text>
 <path class="s-ar" d="M460,34 L516,34"/>
 <path class="s-ar" d="M320,54 L320,92"/>
 
@@ -749,7 +764,7 @@ still knows what the episode is about.</p>
 than 2× the overlap it is merged into the previous chunk instead of becoming a
 stub. Across this demo's {len(examples)} episodes that gives
 {counts[0]}–{counts[-1]} chunks; the longest clip here
-({d:g}s) splits like this:</p>
+({round(d,2):g}s) splits like this:</p>
 <div class="chunks">{bars}</div>
 <p>Each chunk is re-encoded by <code>ffmpeg</code> and sampled at
 {ic.CHUNK_FPS:g} fps. Every chunk request carries four things:</p>
@@ -805,12 +820,14 @@ def render_html(examples: dict[str, dict]) -> str:
                 f'<div class="ex-head">{summary_row(examples[f"ep{i:03d}"])}</div>'
                 f'<div class="ex-body"></div></div>'
                 for i in b["eps"])
+            samples = ", ".join(str(i) for i in b["eps"])
+            note = (f'<p class="note">{html.escape(b["note"])}</p>'
+                    if b.get("note") else "")
             items.append(
                 f'<div class="bullet {b["tone"]}" id="{b["id"]}">'
                 f'<h3>{html.escape(b["title"])}'
-                f'<span class="count">{len(b["eps"])} example'
-                f'{"s" if len(b["eps"]) > 1 else ""}</span></h3>'
-                f'<p class="note">{html.escape(b["note"])}</p>{exs}</div>')
+                f'<span class="count">Samples: {samples}</span></h3>'
+                f'{note}{exs}</div>')
         parts.append(
             f'<section id="{sec["id"]}"><div class="sec-head">'
             f'<h2>{html.escape(sec["title"])}</h2><p>{html.escape(sec["blurb"])}</p></div>'

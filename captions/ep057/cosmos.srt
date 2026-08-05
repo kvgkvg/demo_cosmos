@@ -1,0 +1,123 @@
+1
+00:00:00,100 --> 00:00:03,200
+[left hand] gather scattered dominoes on the table | [right hand] assist in collecting pieces | [ego] stay still
+
+2
+00:00:03,200 --> 00:00:06,200
+[left hand] pick up a domino piece | [right hand] hold another piece | [ego] stay still
+
+3
+00:00:06,200 --> 00:00:10,700
+[both hands] align two dominoes vertically and place them upright on the table | [ego] stay still
+
+4
+00:00:10,700 --> 00:00:14,300
+[left hand] pick up a domino piece | [right hand] place a domino piece horizontally near the upright stack | [ego] stay still
+
+5
+00:00:14,300 --> 00:00:19,800
+[right hand] place a domino piece horizontally adjacent to the upright stack | [left hand] adjust position of nearby dominoes | [ego] stay still
+
+6
+00:00:20,000 --> 00:00:24,200
+[right hand] pick up a domino piece and place it vertically on the table | [left hand] hold and adjust nearby dominoes | [ego] stay still
+
+7
+00:00:24,200 --> 00:00:27,200
+[right hand] place the domino piece onto the top of an existing vertical stack | [left hand] adjust the position of the stack for stability | [ego] stay still
+
+8
+00:00:27,200 --> 00:00:31,300
+[right hand] pick up another domino piece and place it vertically next to the stack | [left hand] hold and stabilize the stack | [ego] stay still
+
+9
+00:00:31,300 --> 00:00:35,800
+[right hand] place the domino piece onto the top of the stack | [left hand] adjust the alignment of the dominoes in the stack | [ego] stay still
+
+10
+00:00:35,800 --> 00:00:38,000
+[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] hold and stabilize the stack | [ego] stay still
+
+11
+00:00:38,000 --> 00:00:39,700
+[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+12
+00:00:39,700 --> 00:00:41,700
+[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+13
+00:00:41,700 --> 00:00:46,700
+[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+14
+00:00:46,700 --> 00:00:48,800
+[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+15
+00:00:48,800 --> 00:00:50,800
+[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+16
+00:00:50,800 --> 00:00:53,300
+[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+17
+00:00:53,300 --> 00:00:55,800
+[left hand] pick up a domino piece and place it vertically adjacent to the stack | [right hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+18
+00:00:56,000 --> 00:00:57,200
+[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+19
+00:00:57,200 --> 00:00:59,700
+[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+20
+00:00:59,700 --> 00:01:01,700
+[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+21
+00:01:01,700 --> 00:01:03,700
+[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+22
+00:01:03,700 --> 00:01:05,800
+[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+23
+00:01:05,800 --> 00:01:07,800
+[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+24
+00:01:07,800 --> 00:01:09,800
+[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+25
+00:01:09,800 --> 00:01:11,800
+[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+26
+00:01:11,800 --> 00:01:13,800
+[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+27
+00:01:14,000 --> 00:01:16,700
+[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+28
+00:01:16,700 --> 00:01:20,800
+[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+29
+00:01:20,800 --> 00:01:24,300
+[right hand] pick up a domino piece and place it vertically adjacent to the stack | [left hand] pick up a domino piece and place it vertically adjacent to the stack | [ego] stay still
+
+30
+00:01:24,300 --> 00:01:26,300
+[right hand] push the domino line, causing it to topple over | [left hand] remain stationary on the table | [ego] stay still
+
+31
+00:01:26,300 --> 00:01:30,800
+[right hand] release the domino line after it has fallen | [left hand] remain stationary on the table | [ego] stay still

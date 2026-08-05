@@ -1,0 +1,31 @@
+1
+00:00:00,000 --> 00:00:06,900
+[left hand] hold the box | [right hand] push the box to the left | [ego] stay still
+
+2
+00:00:06,900 --> 00:00:11,400
+[right hand] grasp the cup | [right hand] lift the cup | [right hand] place the cup into the box | [ego] stay still
+
+3
+00:00:11,400 --> 00:00:17,800
+[right hand] grasp the paper towel | [right hand] lift the paper towel | [right hand] place the paper towel into the box | [ego] stay still
+
+4
+00:00:17,800 --> 00:00:22,000
+[right hand] grasp the snack wrapper | [right hand] lift the snack wrapper | [right hand] place the snack wrapper into the box | [ego] stay still
+
+5
+00:00:22,000 --> 00:00:27,500
+[right hand] grasp the green shirt | [right hand] lift the green shirt | [right hand] place the green shirt into the box | [ego] stay still
+
+6
+00:00:27,500 --> 00:00:32,500
+[right hand] grasp the orange shirt | [right hand] lift the orange shirt | [right hand] place the orange shirt into the box | [ego] stay still
+
+7
+00:00:32,500 --> 00:00:37,500
+[right hand] grasp the bottle | [right hand] lift the bottle | [right hand] place the bottle into the box | [ego] stay still
+
+8
+00:00:37,500 --> 00:00:46,900
+[both hands] hold the box | [ego] stay still

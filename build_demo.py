@@ -48,12 +48,14 @@ SECTIONS = [
         "title": "Overall verdict",
         "blurb": "Head-to-head on the val split: which model's caption a human reviewer preferred.",
         "bullets": [
+            # `won` keys into the review tool's `better` field, so these three
+            # bullets report the judged tally instead of their sample indices
             {"id": "qwen-better", "tone": "qwen", "title": "Qwen's better",
-             "note": "", "eps": [30, 33]},
+             "note": "", "eps": [30, 33], "won": "v1"},
             {"id": "cosmos-better", "tone": "cosmos", "title": "Cosmos's better",
-             "note": "", "eps": [29, 36]},
+             "note": "", "eps": [29, 36], "won": "v2"},
             {"id": "both-bad", "tone": "bad", "title": "Both bad",
-             "note": "", "eps": [28, 93, 95]},
+             "note": "", "eps": [28, 93, 95], "won": "tie"},
         ],
     },
     {
@@ -141,6 +143,29 @@ def coverage_gaps(cues: list[dict], duration: float) -> dict:
         elif n > 1:
             overlap += b - a
     return {"gap": round(gap, 2), "overlap": round(overlap, 2)}
+
+
+def load_judgements(repo: Path) -> dict:
+    """Tally the human A/B verdicts recorded by stage0/review_server.py.
+
+    One row is appended per save, so the same episode can appear more than
+    once — the server resumes on the last row, and so do we. Returns {} when
+    the file is absent, and the page falls back to sample indices."""
+    path = repo / "stage0/reviews/val_reviews.jsonl"
+    if not path.exists():
+        return {}
+    last = {}
+    for line in path.read_text().splitlines():
+        if line.strip():
+            r = json.loads(line)
+            last[r["episode_uid"]] = r
+    judged = [r for r in last.values() if r.get("action") == "judge"]
+    if not judged:
+        return {}
+    counts = {}
+    for r in judged:
+        counts[r.get("better", "")] = counts.get(r.get("better", ""), 0) + 1
+    return {"total": len(judged), "counts": counts}
 
 
 def make_poster(video: Path, duration: float, out: Path) -> bool:
@@ -370,6 +395,11 @@ section{margin-bottom:44px}
 .bullet h3{margin:0 0 4px;font-size:16px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
 .count{font-size:11px;font-weight:600;color:var(--muted);background:var(--chip);
   padding:2px 8px;border-radius:999px}
+.count.tally{font-size:12px;font-weight:500}
+.count.tally b{font-size:14px;font-weight:700;color:var(--ink)}
+.bullet.qwen .count.tally b{color:var(--qwen)}
+.bullet.cosmos .count.tally b{color:var(--cosmos)}
+.bullet.bad .count.tally b{color:var(--bad)}
 .bullet .note{margin:0 0 12px;color:var(--muted);font-size:14px}
 
 .ex{border:1px solid var(--line);border-radius:10px;margin-top:11px;background:var(--bg)}
@@ -821,22 +851,40 @@ vocabulary between chunks (<i>inconsistent context</i>).</p>
 </details>"""
 
 
-def findings_index_html() -> str:
+def judged_chip(bullet: dict, judged: dict) -> str:
+    """Verdict bullets show how often the reviewer picked that side, out of
+    every episode judged — the count the samples below are drawn from."""
+    if not judged or not bullet.get("won"):
+        return ""
+    n = judged["counts"].get(bullet["won"], 0)
+    total = judged["total"]
+    return (f'<span class="count tally" title="{n} of {total} judged episodes">'
+            f'<b>{n}</b> / {total} · {100 * n / total:.1f}%</span>')
+
+
+def findings_index_html(judged: dict) -> str:
     """The findings, by name, in one screen — so the whole argument is visible
     before scrolling into the clips. Each name jumps to its bullet."""
+    def right(b):
+        if judged and b.get("won"):
+            n = judged["counts"].get(b["won"], 0)
+            return (f'<span title="{n} of {judged["total"]} judged episodes">'
+                    f'{100 * n / judged["total"]:.0f}%</span>')
+        return (f'<span title="{len(b["eps"])} sample'
+                f'{"s" if len(b["eps"]) > 1 else ""}">{len(b["eps"])}</span>')
+
     cols = []
     for sec in SECTIONS:
         items = "".join(
             f'<li class="{b["tone"]}"><a href="#{b["id"]}">{html.escape(b["title"])}</a>'
-            f'<span title="{len(b["eps"])} sample'
-            f'{"s" if len(b["eps"]) > 1 else ""}">{len(b["eps"])}</span></li>'
+            f'{right(b)}</li>'
             for b in sec["bullets"])
         cols.append(f'<div class="fi-col"><h3>{html.escape(sec["title"])}</h3>'
                     f'<ol>{items}</ol></div>')
     return f'<div class="findings-index">{"".join(cols)}</div>'
 
 
-def render_html(examples: dict[str, dict]) -> str:
+def render_html(examples: dict[str, dict], judged: dict) -> str:
     def summary_row(ex):
         return (f'<span class="mono">#{ex["idx"]}</span>'
                 f'<span class="uid">{html.escape(ex["uid"])}</span>'
@@ -853,17 +901,24 @@ def render_html(examples: dict[str, dict]) -> str:
                 f'<div class="ex-head">{summary_row(examples[f"ep{i:03d}"])}</div>'
                 f'<div class="ex-body"></div></div>'
                 for i in b["eps"])
-            samples = ", ".join(str(i) for i in b["eps"])
             note = (f'<p class="note">{html.escape(b["note"])}</p>'
                     if b.get("note") else "")
+            chip = judged_chip(b, judged) or (
+                f'<span class="count">Samples: '
+                f'{", ".join(str(i) for i in b["eps"])}</span>')
             items.append(
                 f'<div class="bullet {b["tone"]}" id="{b["id"]}">'
-                f'<h3>{html.escape(b["title"])}'
-                f'<span class="count">Samples: {samples}</span></h3>'
+                f'<h3>{html.escape(b["title"])}{chip}</h3>'
                 f'{note}{exs}</div>')
+        blurb = html.escape(sec["blurb"])
+        if judged and any(b.get("won") for b in sec["bullets"]):
+            # say what the percentages are out of, and that the review tool
+            # records "both bad" as a tie rather than as its own option
+            blurb += (f' Counts are over the <b>{judged["total"]} episodes</b> judged '
+                      f'in the review tool, where “Both bad” is recorded as a tie.')
         parts.append(
             f'<section id="{sec["id"]}"><div class="sec-head">'
-            f'<h2>{html.escape(sec["title"])}</h2><p>{html.escape(sec["blurb"])}</p></div>'
+            f'<h2>{html.escape(sec["title"])}</h2><p>{blurb}</p></div>'
             f'{"".join(items)}</section>')
 
     nav = "".join(f'<a href="#{s["id"]}">{html.escape(s["title"])}</a>' for s in SECTIONS)
@@ -893,7 +948,7 @@ def render_html(examples: dict[str, dict]) -> str:
   </div>
 </div></header>
 <div class="wrap">{pipeline_html(examples)}
-{findings_index_html()}</div>
+{findings_index_html(judged)}</div>
 <nav class="jump"><div class="wrap">{nav}</div></nav>
 <main class="wrap">{"".join(parts)}</main>
 <script>
@@ -916,9 +971,14 @@ def main():
     args = ap.parse_args()
 
     print(f"reading {args.repo}")
+    judged = load_judgements(args.repo)
+    if judged:
+        print(f"judged verdicts: {judged['total']} episodes  {judged['counts']}")
+    else:
+        print("no judgements found — verdict bullets fall back to sample indices")
     examples = build_examples(args.repo, copy_videos=not args.no_videos)
     (HERE / "examples.json").write_text(json.dumps(examples, indent=1))
-    (HERE / "index.html").write_text(render_html(examples))
+    (HERE / "index.html").write_text(render_html(examples, judged))
     # a runnable manifest over the clips vendored here, so infer_cosmos.py has
     # something to point at without a VR-finetune-VLM checkout
     # standalone copy of the pipeline diagram, for slides — same drawing, but
